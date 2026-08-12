@@ -9,18 +9,55 @@
 </head>
 
 <body>
-	<header>
-		<div> <a href="../index.html"> <span>Hermanos Jota</span> </a> <button type="button" aria-label="Abrir menú"
-				aria-expanded="false"> Menú </button>
-			<nav aria-label="Navegación principal">
+	<header class="header">
+
+		<div class="header-contenedor">
+
+			<a href="../index.html" class="logo" aria-label="Hermanos Jota - Inicio">
+				<img src="../assets/logo.svg" alt="Hermanos Jota">
+			</a>
+
+			<nav class="navegacion" aria-label="Navegación principal">
 				<ul>
-					<li><a href="../index.html">Inicio</a></li>
-					<li><a href="../pages/productos.html">Catálogo</a></li>
-					<li><a href="./contacto.html" aria-current="page">Contacto</a></li>
+					<li>
+						<a href="../index.html">Inicio</a>
+					</li>
+
+					<li>
+						<a href="../pages/productos.html">Tienda</a>
+					</li>
+
+					<li>
+						<a href="../pages/productos.html">Colecciones</a>
+					</li>
+
+					<li>
+						<a href="../pages/nosotros.html">Nosotros</a>
+					</li>
+
+					<li>
+						<a href="./contacto.html" aria-current="page">Contacto</a>
+					</li>
 				</ul>
 			</nav>
-			<div> <a href="../pages/productos.html#carrito" aria-label="Ver carrito"> Carrito <span>0</span> </a> </div>
+
+			<div class="header-acciones">
+
+				<button type="button" class="accion-buscar" aria-label="Buscar">
+				</button>
+
+				<a href="../pages/productos.html#carrito" class="accion-carrito" aria-label="Ver carrito">
+					<span>0</span>
+				</a>
+
+			</div>
+
+			<button type="button" class="menu-movil" aria-label="Abrir menú" aria-expanded="false">
+				Menú
+			</button>
+
 		</div>
+
 	</header>
 	<main>
 		<section>
