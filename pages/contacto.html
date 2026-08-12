@@ -1,9 +1,157 @@
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Contacto</title>
-	</head>
-	<body></body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Contacto</title>
+	<link rel="stylesheet" href="../styles/contacto.css" />
+</head>
+
+<body>
+	<header>
+		<div> <a href="../index.html"> <span>Hermanos Jota</span> </a> <button type="button" aria-label="Abrir menú"
+				aria-expanded="false"> Menú </button>
+			<nav aria-label="Navegación principal">
+				<ul>
+					<li><a href="../index.html">Inicio</a></li>
+					<li><a href="../pages/productos.html">Catálogo</a></li>
+					<li><a href="./contacto.html" aria-current="page">Contacto</a></li>
+				</ul>
+			</nav>
+			<div> <a href="../pages/productos.html#carrito" aria-label="Ver carrito"> Carrito <span>0</span> </a> </div>
+		</div>
+	</header>
+	<main>
+		<section>
+			<div> <span>Atención personalizada</span>
+				<h1>Ponete en contacto con nuestro equipo hoy</h1>
+				<p> Estamos acá para resolver tus dudas sobre el catálogo, coordinar visitas a nuestro taller o
+					asesorarte en proyectos de diseño a medida. </p> <span> Respondemos todas las consultas en un plazo
+					máximo de 24 horas hábiles. </span>
+			</div>
+		</section>
+		<section>
+			<div>
+				<div>
+					<div>
+						<h3>Showroom &amp; Casa Taller</h3>
+						<p> Av. San Juan 2847<br> San Cristóbal, Buenos Aires </p>
+						<p> Lun. a Vie. 10 a 19 h — Sáb. 10 a 14 h </p>
+					</div>
+					<div>
+						<h3>Atención Digital</h3>
+						<p> <strong>General:</strong> info@hermanosjota.com.ar </p>
+						<p> WhatsApp: +54 11 4567-8900 </p>
+					</div>
+					<div>
+						<h3>Proyectos a Medida</h3>
+						<p> ¿Ya tenés un proyecto en mente? </p>
+						<p> Coordinamos una llamada con nuestro equipo de diseño para pensarlo juntos. </p>
+					</div>
+				</div>
+				<div>
+					<div> <span>Formulario</span>
+						<h2>Enviános un mensaje</h2>
+						<p> Completá el formulario y nos pondremos en contacto a la brevedad. </p>
+					</div>
+					<form id="formulario-contacto" novalidate>
+						<div>
+							<div> <label for="nombre"> Nombre y Apellido <span>*</span> </label> <input type="text"
+									id="nombre" name="nombre" autocomplete="name">
+								<p data-error-de="nombre"></p>
+							</div>
+							<div> <label for="email"> Correo Electrónico <span>*</span> </label> <input type="email"
+									id="email" name="email" autocomplete="email">
+								<p data-error-de="email"></p>
+							</div>
+						</div>
+						<div>
+							<div> <label for="telefono"> Teléfono / WhatsApp <span>(opcional)</span> </label> <input
+									type="tel" id="telefono" name="telefono" autocomplete="tel"
+									placeholder="Ej: 11 2233-4455"> </div>
+							<div> <label for="motivo"> Motivo de Consulta <span>*</span> </label> <select id="motivo"
+									name="motivo">
+									<option value="" disabled selected> Seleccioná una opción… </option>
+									<option value="catalogo"> Consulta sobre producto del catálogo </option>
+									<option value="medida"> Encargo a medida </option>
+									<option value="visita"> Coordinar una visita al showroom </option>
+									<option value="mayorista"> Venta mayorista al Showroom </option>
+									<option value="otro"> Otro motivo </option>
+								</select>
+								<p data-error-de="motivo"></p>
+							</div>
+						</div>
+						<div> <label for="mensaje"> Mensaje <span>*</span> </label> <textarea id="mensaje"
+								name="mensaje" rows="5"></textarea>
+							<p data-error-de="mensaje"></p>
+						</div> <label for="privacidad"> <input type="checkbox" id="privacidad" name="privacidad"> Acepto
+							la <a href="#">política de privacidad</a> y el tratamiento de mis datos personales. </label>
+						<p data-error-de="privacidad"></p> <button type="submit"> Enviar Mensaje </button>
+						<div id="confirmacion-envio" role="status"> <span>✓</span>
+							<p> ¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad. </p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div>
+				<div> <span>Dudas frecuentes</span>
+					<h2>Preguntas Frecuentes</h2>
+				</div>
+				<div>
+					<div>
+						<h3> ¿Realizan envíos a todo el país? </h3>
+						<p> Sí, enviamos a todo el territorio argentino. Nuestras piezas viajan protegidas y con
+							seguimiento hasta la puerta de tu casa. </p>
+					</div>
+					<div>
+						<h3> ¿Puedo solicitar muebles no incluidos en el catálogo? </h3>
+						<p> Ofrecemos un servicio de diseño a medida: contanos tu idea y la traducimos a una pieza única
+							en madera nativa. </p>
+					</div>
+					<div>
+						<h3> ¿Qué garantía tienen los muebles? </h3>
+						<p> Todas nuestras piezas ingresan al Programa Herencia Viva, con hasta 10 años de garantía en
+							estructura. </p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div> <span>Hermanos Jota</span> </div>
+		<div>
+			<div>
+				<h4>Hermanos Jota</h4>
+				<p> Av. San Juan 2847<br> C1232AAB — San Cristóbal<br> Buenos Aires, Argentina </p>
+			</div>
+			<div>
+				<h4>Horario Showroom</h4>
+				<p> Lunes a viernes: 10 a 19 h<br> Sábados: 10 a 14 h </p>
+			</div>
+			<div>
+				<h4>Contacto Digital</h4>
+				<ul>
+					<li> <a href="mailto:info@hermanosjota.com.ar"> info@hermanosjota.com.ar </a> </li>
+					<li> <a href="https://wa.me/5491145678900" target="_blank" rel="noopener"> +54 11 4567-8900 </a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h4>Compromiso Sustentable</h4>
+				<p> Madera FSC de bosques argentinos y 30% mínimo de materiales recuperados en cada pieza. </p>
+			</div>
+		</div>
+		<div>
+			<div> <a href="../index.html">Inicio</a> <a href="../pages/productos.html">Catálogo</a> <a
+					href="https://instagram.com/hermanosjota_ba" target="_blank" rel="noopener"> Instagram </a> <a
+					href="../pages/contacto.html">Contacto</a> </div> <span> © 2026 Hermanos Jota. Todos los derechos
+				reservados.
+			</span>
+		</div>
+	</footer>
+</body>
+
 </html>
