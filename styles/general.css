@@ -12,6 +12,7 @@
 	--color-bg-body: #fdfbf7;
 	--color-bg-surface: #ffffff;
 	--color-bg-subtle: #f5e6d3;
+	--color-bg-soft: #f4efea;
 	--color-text-main: #2c2825;
 	--color-text-muted: #6c645d;
 	--color-border: #e5d8ca;
@@ -107,10 +108,6 @@ img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-
-svg {
-	fill: currentColor;
 }
 
 button,
