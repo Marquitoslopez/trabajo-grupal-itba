@@ -1,0 +1,285 @@
+:root {
+	/* paleta de colores: */
+	--color-brand-primary: #a0522d; /* Títulos principales, color principal */
+	--color-brand-primary-hover: #833f20;
+	--color-brand-secondary: #87a96b; /* Acento secundario (y sustentabilidad) */
+	--color-brand-bg: #f5e6d3; /* Fondos principales */
+	--color-brand-gold: #d4a437; /* Detalles premium y acentos */
+	--color-brand-gold-hover: #c2932e;
+	--color-brand-accent-soft: #c47a6d; /* Acentos suaves, detalles cálidos */
+
+	/* superficies y texto */
+	--color-bg-body: #fdfbf7;
+	--color-bg-surface: #ffffff;
+	--color-bg-subtle: #f5e6d3;
+	--color-text-main: #2c2825;
+	--color-text-muted: #6c645d;
+	--color-border: #e5d8ca;
+	--color-border-hover: var(--color-brand-primary);
+
+	/* estados */
+	--color-success: #87a96b;
+	--color-error: #c47a6d;
+
+	/* tipografia */
+	--font-primary: "Inter", system-ui, -apple-system, sans-serif;
+	--font-secondary: "Playfair Display", Georgia, serif;
+
+	/* estilo de fuente (weight) */
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+
+	/* configuración de font-size */
+	--font-size-caption: 0.75rem;
+	--font-size-body: clamp(0.915rem, 0.88rem + 0.25vw, 1rem);
+	--font-size-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+	--font-size-h2: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	--font-size-h1: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+
+	/* espaciado (padding | margin) */
+	--space-xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+	--space-sm: clamp(0.5rem, 0.4rem + 0.4vw, 0.875rem);
+	--space-md: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
+	--space-lg: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem);
+	--space-xl: clamp(2.5rem, 1.8rem + 2.5vw, 4.5rem);
+
+	/* layout */
+	--container-max-width: 1200px;
+
+	/* bordes redondeados */
+	--radius-sm: 6px;
+	--radius-md: 12px;
+	--radius-lg: 20px;
+	--radius-pill: 9999px;
+
+	/* shadows */
+	--shadow-sm: 0 2px 8px rgba(44, 40, 37, 0.04);
+	--shadow-md: 0 6px 20px rgba(44, 40, 37, 0.06);
+	--shadow-lg: 0 12px 32px rgba(160, 82, 45, 0.1);
+
+	/* transiciones */
+	--transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	--focus-outline: 3px solid var(--color-brand-primary);
+
+	/* z-index */
+	--z-negative: -1;
+	--z-normal: 1;
+	--z-header: 100;
+	--z-modal: 1000;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: var(--font-primary);
+	font-weight: var(--font-weight-regular);
+	font-size: var(--font-size-body);
+	line-height: 1.6;
+	color: var(--color-text-main);
+	background-color: var(--color-bg-body);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+:focus-visible {
+	outline: var(--focus-outline);
+	outline-offset: 3px;
+	outline-offset: 3px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	fill: currentColor;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* tipografía */
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-secondary);
+	color: var(--color-brand-primary);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	line-height: 1.25;
+}
+
+h1,
+.h1 {
+	font-size: var(--font-size-h1);
+	font-weight: var(--font-weight-bold);
+	margin-bottom: var(--space-md);
+}
+
+h2,
+.h2 {
+	font-size: var(--font-size-h2);
+	font-weight: var(--font-weight-bold);
+	margin-bottom: var(--space-sm);
+}
+
+h3,
+.h3 {
+	font-size: var(--font-size-h3);
+	font-weight: var(--font-weight-regular);
+}
+
+small {
+	font-size: var(--font-size-caption);
+	font-weight: var(--font-weight-light);
+	letter-spacing: 0.02em;
+	color: var(--color-text-muted);
+}
+
+.quote-editorial {
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-h3);
+	color: var(--color-brand-primary);
+	border-left: 3px solid var(--color-brand-gold);
+	padding-left: var(--space-md);
+	margin: var(--space-md) 0;
+}
+
+/* --- utilidades --- */
+.container {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: var(--space-md);
+	padding-left: var(--space-md);
+}
+
+/* accesibilidad -> elementos ocultos visualmente */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* botones */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+	padding: 0.85em 1.75em;
+
+	font-family: var(--font-primary);
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size-body);
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.08em;
+	white-space: nowrap;
+
+	border-radius: var(--radius-pill);
+	border: 1px solid transparent;
+	cursor: pointer;
+
+	transition: var(--transition-normal);
+}
+
+.btn--primary {
+	background-color: var(--color-brand-primary);
+	color: var(--color-bg-surface);
+}
+
+.btn--primary:hover {
+	background-color: var(--color-brand-primary-hover);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-md);
+}
+
+.btn--gold {
+	background-color: var(--color-brand-gold);
+	color: var(--color-text-main);
+}
+
+.btn--gold:hover {
+	background-color: var(--color-brand-gold-hover);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+	background-color: transparent;
+	border-color: var(--color-brand-primary);
+	color: var(--color-brand-primary);
+}
+
+.btn--outline:hover {
+	background-color: var(--color-brand-primary);
+	color: var(--color-bg-surface);
+}
+
+.btn--small {
+	padding: 0.5em 1.2em;
+	font-size: var(--font-size-caption);
+	background-color: var(--color-bg-surface);
+	color: var(--color-text-main);
+}
+
+.btn--small:hover {
+	background-color: var(--color-brand-primary);
+	color: var(--color-bg-surface);
+}
+
+/* accesibilidad -> desactiva animaciones por mareos (salud) */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
