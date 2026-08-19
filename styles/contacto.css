@@ -509,6 +509,14 @@
 	text-decoration: underline;
 }
 
+.input-error {
+    border-color: var(--color-error) !important;
+}
+
+.input-error:focus {
+    box-shadow: 0 0 0 2px rgba(180, 60, 60, 0.15);
+}
+
 /* media queries footer */
 @media (max-width: 768px) {
 	.footer__bottom {
