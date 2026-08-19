@@ -1,323 +1,365 @@
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Contacto</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"/>
-		
-		<link rel="stylesheet" href="../styles/general.css" />
-		<link rel="stylesheet" href="../styles/header.css">
-		<link rel="stylesheet" href="../styles/footer.css">
-		<link rel="stylesheet" href="../styles/contacto.css" />
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Contacto</title>
 
-	<body>
-		<header class="header">
-			<div class="header__container">
-				<a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
-					<img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
-				</a>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
 
-				<!-- Checkbox hamburguesa -->
-				<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
-				<label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación" role="button" tabindex="0">
-					<span class="header__toggle-bar"></span>
-					<span class="header__toggle-bar"></span>
-					<span class="header__toggle-bar"></span>
-				</label>
+	<link rel="stylesheet" href="../styles/general.css" />
+	<link rel="stylesheet" href="../styles/header.css">
+	<link rel="stylesheet" href="../styles/footer.css">
+	<link rel="stylesheet" href="../styles/contacto.css" />
+</head>
 
-				<!-- nav desplegable -->
-				<nav class="header__nav" aria-label="Navegación principal">
-					
-					<ul class="header__menu">
-						<li class="header__menu-item">
-							<a href="../index.html" class="header__menu-link">Inicio</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="./catalogo.html" class="header__menu-link">Tienda</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="../index.html#colecciones" class="header__menu-link">Colecciones</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="#nosotros" class="header__menu-link">Nosotros</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="./contacto.html" class="header__menu-link  header__menu-link--active" aria-current="page">Contacto</a>
-						</li>
-					</ul>
+<body>
+	<header class="header">
+		<div class="header__container">
+			<a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
+				<img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
+			</a>
 
-					<!-- sidebar actions -->
-					<div class="header__actions">
-						<button type="button" class="header__action-btn" aria-label="Buscar productos">
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<circle cx="11" cy="11" r="8" />
-								<path d="m21 21-4.3-4.3" />
-							</svg>
-						</button>
+			<!-- Checkbox hamburguesa -->
+			<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
+			<label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación"
+				role="button" tabindex="0">
+				<span class="header__toggle-bar"></span>
+				<span class="header__toggle-bar"></span>
+				<span class="header__toggle-bar"></span>
+			</label>
 
-						<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-							</svg>
-						</button>
+			<!-- nav desplegable -->
+			<nav class="header__nav" aria-label="Navegación principal">
 
-						<button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-								<line x1="3" y1="6" x2="21" y2="6" />
-								<path d="M16 10a4 4 0 0 1-8 0" />
-							</svg>
-							<span class="header__cart-count" aria-hidden="true">0</span>
-						</button>
-					</div>
-				</nav>
-			</div>
-		</header>
+				<ul class="header__menu">
+					<li class="header__menu-item">
+						<a href="../index.html" class="header__menu-link">Inicio</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="./catalogo.html" class="header__menu-link">Tienda</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="../index.html#colecciones" class="header__menu-link">Colecciones</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#nosotros" class="header__menu-link">Nosotros</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="./contacto.html" class="header__menu-link  header__menu-link--active"
+							aria-current="page">Contacto</a>
+					</li>
+				</ul>
 
-		<main id="contacto-main">
+				<!-- sidebar actions -->
+				<div class="header__actions">
+					<button type="button" class="header__action-btn" aria-label="Buscar productos">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<circle cx="11" cy="11" r="8" />
+							<path d="m21 21-4.3-4.3" />
+						</svg>
+					</button>
 
-			<section class="hero-contact" aria-labelledby="contact-hero-title">
-				<div class="container">
-					<div class="hero-contact__content">
-						<span class="hero-contact__badge">Atención personalizada</span>
-						<h1 id="contact-hero-title">Ponete en contacto con nuestro equipo hoy</h1>
-						<p class="hero-contact__description">
-							Estamos aquí para resolver tus dudas sobre el catálogo, coordinar visitas a nuestro taller o asesorarte en proyectos de diseño a medida.
-						</p>
-						<div class="hero-contact__notice" role="note">
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-							</svg>
-							<span>Respondemos todas las consultas en un plazo máximo de 24 horas hábiles.</span>
-						</div>
-					</div>
+					<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path
+								d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+						</svg>
+					</button>
+
+					<button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+							<line x1="3" y1="6" x2="21" y2="6" />
+							<path d="M16 10a4 4 0 0 1-8 0" />
+						</svg>
+						<span class="header__cart-count" aria-hidden="true">0</span>
+					</button>
 				</div>
-			</section>
+			</nav>
+		</div>
+	</header>
 
-			<section class="contact-channels" aria-label="Canales principales de contacto">
-				<div class="container">
-					<div class="contact-channels__grid">
-						<article class="contact-card">
-							<div class="contact-card__icon" aria-hidden="true">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-									<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
-								</svg>
-							</div>
-							<h2 class="contact-card__title">Showroom &amp; Casa Taller</h2>
-							<address class="contact-card__info">
-								Av. San Juan 2847, C1232AAB<br/>
-								Barrio de San Cristóbal, Buenos Aires
-							</address>
-							<p class="contact-card__subtext">
-								<strong>Horarios:</strong><br/>
-								Lun a Vie: 10:00 - 19:00 hs<br/>
-              					Sábados: 10:00 - 14:00 hs
-							</p>
-						</article>
+	<main id="contacto-main">
 
-						<article class="contact-card">
-							<div class="contact-card__icon" aria-hidden="true">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-									<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-								</svg>
-							</div>
-							<h2 class="contact-card__title">Atención Digital</h2>
-							<p class="contact-card__info">
-								<strong>General:</strong><a href="mailto:info@hermanosjota.com.ar" class="contact-card__link">info@hermanosjota.com.ar</a>
-								<strong>Ventas:</strong> <a href="mailto:ventas@hermanosjota.com.ar" class="contact-card__link">ventas@hermanosjota.com.ar</a>
-							</p>
-							<p class="contact-card__subtext">
-								<strong>WhatsApp:</strong> <a href="https://wa.me/541145678900" class="contact-card__link">+54 11 4567-8900</a>
-							</p>
-						</article>
-
-						<article class="contact-card">
-							<div class="contact-card__icon" aria-hidden="true">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-							</div>
-							<h2 class="contact-card__title">Proyectos A Medida</h2>
-							<p class="contact-card__info">¿Ya tenés un proyecto en mente?</p>
-							<p class="contact-card__subtext">
-								Coordiná una llamada con nuestro equipo de diseño para pensarlo juntos.
-							</p>
-						</article>
-					</div>
-				</div>
-			</section>
-
-			<section class="contact-form-section" aria-labelledby="form-section-title">
-				<div class="container">
-					<div class="contact-form-container">
-				
-						<header class="contact-form-container__header">
-							<h2 id="form-section-title" class="contact-form-container__title">Envianos un mensaje</h2>
-							<p class="contact-form-container__subtitle">Completa el formulario y nos pondremos en contacto a la brevedad.</p>
-						</header>
-
-						<form action="#" method="POST" class="contact-form" novalidate>
-							<div class="contact-form__grid">
-
-								<div class="contact-form__field">
-									<label for="full-name" class="contact-form__label">
-										Nombre y Apellido <span class="contact-form__required" aria-hidden="true">*</span>
-									</label>
-									<input type="text" id="full-name" name="full-name" class="contact-form__input" required placeholder="Ej: Lucía Gómez" autocomplete="name" aria-describedby="full-name-error">
-									<p id="full-name-error" class="contact-form__error" data-error-of="full-name"></p>
-								</div>
-
-								<div class="contact-form__field">
-									<label for="email" class="contact-form__label">
-										Correo Electrónico <span class="contact-form__required" aria-hidden="true">*</span>
-									</label>
-									<input type="email" id="email" name="email" class="contact-form__input" required placeholder="tu@email.com" autocomplete="email" aria-describedby="email-error">
-									<p id="email-error" class="contact-form__error" data-error-of="email"></p>
-								</div>
-
-								<div class="contact-form__field">
-									<label for="phone" class="contact-form__label">Teléfono / WhatsApp</label>
-									<input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="+54 11 2233-4455" autocomplete="tel" aria-describedby="phone-error">
-									<p id="phone-error" class="contact-form__error" data-error-of="phone"></p>
-								</div>
-
-								<div class="contact-form__field">
-									<label for="subject" class="contact-form__label">
-										Motivo de Consulta <span class="contact-form__required" aria-hidden="true">*</span>
-									</label>
-									<div class="contact-form__select-wrapper">
-										<select name="subject" id="subject" class="contact-form__select" required aria-describedby="subject-error">
-											<option value="" disabled selected>Selecciona una opción</option>
-											<option value="catalogo">Consulta sobre un producto del catálogo</option>
-											<option value="pedido">Estado de mi pedido</option>
-											<option value="medida">Cotización para proyecto a medida</option>
-											<option value="showroom">Visita guiada al Showroom</option>
-											<option value="otro">Otro motivo</option>
-										</select>
-									</div>
-									<p id="subject-error" class="contact-form__error" data-error-of="subject"></p>
-								</div>
-
-								<div class="contact-form__field contact-form__field--full">
-									<label for="message" class="contact-form__label">
-										Mensaje <span class="contact-form__required" aria-hidden="true">*</span>
-									</label>
-									<textarea id="message" name="message" rows="5" class="contact-form__textarea" required placeholder="Escribe aquí los detalles de tu consulta..." aria-describedby="message-error"></textarea>
-									<p id="message-error" class="contact-form__error" data-error-of="message"></p>
-								</div>
-
-								<div class="contact-form__field contact-form__field--full">
-									<label for="privacy" class="contact-form__checkbox-label">
-										<input type="checkbox" id="privacy" name="privacy" class="contact-form__checkbox" required aria-describedby="privacy-error">
-										<span>Acepto la <a href="#" class="contact-form__checkbox-link">política de privacidad</a> y el tratamiento de mis datos de contacto.</span>
-									</label>
-									<p id="privacy-error" class="contact-form__error" data-error-of="privacy"></p>
-								</div>
-							</div>
-
-							<button type="submit" class="btn btn--gold-pill contact-form__submit">Enviar Mensaje</button>
-								
-							<div id="confirmacion-envio" class="contact-form__confirmation" role="status" aria-live="polite">
-								<span class="contact-form__confirmation-icon" aria-hidden="true">✓</span>
-								<p>¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad.</p>
-							</div>
-
-						</form>
-
-					</div>
-				</div>
-			</section>
-				
-					
-			<section class="contact-faq" aria-labelledby="faq-section-title">
-				<div class="container">
-					<h2 id="faq-section-title" class="contact-faq__title">Preguntas Frecuentes</h2>
-					
-					<div class="contact-faq__grid">
-						
-						<article class="faq-item">
-							<h3 class="faq-item__question">¿Realizan envíos a todo el país?</h3>
-							<p class="faq-item__answer">Sí, embalamos cuidadosamente nuestras piezas con protección ecológica y coordinamos envíos a todo el territorio argentino con transporte especializado.</p>
-						</article>
-
-						<article class="faq-item">
-							<h3 class="faq-item__question">¿Puedo solicitar muestras de maderas o cueros?</h3>
-							<p class="faq-item__answer">Ofrecemos el envío de un muestrario físico a tu domicilio o la posibilidad de verlos y tocarlos directamente en nuestro Showroom.</p>
-						</article>
-
-						<article class="faq-item">
-							<h3 class="faq-item__question">¿Qué garantía tienen los muebles?</h3>
-							<p class="faq-item__answer">Todas nuestras piezas ingresan al Programa Herencia Viva, con hasta 10 años de garantía en estructura.</p>
-						</article>
-
-					</div>
-				</div>
-			</section>
-
-		</main>
-
-		<footer class="footer">
+		<section class="hero-contact" aria-labelledby="contact-hero-title">
 			<div class="container">
-				<div class="footer__brand">
-					<a href="../index.html" class="footer__logo-link">
-					<img src="../assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60" aria-hidden="true" />
-					<span class="footer__brand-name">Hermanos Jota</span>
-					</a>
-				</div>
-
-				<div class="footer__grid">
-					<div class="footer__col">
-						<h3 class="footer__title">Hermanos Jota</h3>
-						<p class="footer__text">
-							Casa Taller & Showroom<br/>
-							Av. San Juan 2847<br/>
-							C1232AAB - Barrio de San Cristóbal<br/>
-							Buenos Aires, Argentina
-						</p>
+				<div class="hero-contact__content">
+					<span class="hero-contact__badge">Atención personalizada</span>
+					<h1 id="contact-hero-title">Ponete en contacto con nuestro equipo hoy</h1>
+					<p class="hero-contact__description">
+						Estamos aquí para resolver tus dudas sobre el catálogo, coordinar visitas a nuestro taller o
+						asesorarte en proyectos de diseño a medida.
+					</p>
+					<div class="hero-contact__notice" role="note">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2" aria-hidden="true" focusable="false">
+							<circle cx="12" cy="12" r="10" />
+							<polyline points="12 6 12 12 16 14" />
+						</svg>
+						<span>Respondemos todas las consultas en un plazo máximo de 24 horas hábiles.</span>
 					</div>
+				</div>
+			</div>
+		</section>
 
-					<div class="footer__col">
-						<h3 class="footer__title">Horarios Showroom</h3>
-						<p class="footer__text">
-							Lunes a Viernes: 10:00 - 19:00 hs<br/>
+		<section class="contact-channels" aria-label="Canales principales de contacto">
+			<div class="container">
+				<div class="contact-channels__grid">
+					<article class="contact-card">
+						<div class="contact-card__icon" aria-hidden="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+								<circle cx="12" cy="10" r="3" />
+							</svg>
+						</div>
+						<h2 class="contact-card__title">Showroom &amp; Casa Taller</h2>
+						<address class="contact-card__info">
+							Av. San Juan 2847, C1232AAB<br />
+							Barrio de San Cristóbal, Buenos Aires
+						</address>
+						<p class="contact-card__subtext">
+							<strong>Horarios:</strong><br />
+							Lun a Vie: 10:00 - 19:00 hs<br />
 							Sábados: 10:00 - 14:00 hs
 						</p>
-					</div>
+					</article>
 
-					<div class="footer__col">
-						<h3 class="footer__title">Contacto Digital</h3>
-						<p class="footer__text">
-							Email: <a href="mailto:info@hermanosjota.com.ar" class="footer__link">info@hermanosjota.com.ar</a><br/>
-							Ventas: <a href="mailto:ventas@hermanosjota.com.ar" class="footer__link">ventas@hermanosjota.com.ar</a><br/>
-							WhatsApp: <a href="https://wa.me/541145678900" class="footer__link">+54 11 4567-8900</a><br/>
-							Instagram: <a href="" class="footer__link">@hermanosjota_ba</a>
+					<article class="contact-card">
+						<div class="contact-card__icon" aria-hidden="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<rect width="20" height="16" x="2" y="4" rx="2" />
+								<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+							</svg>
+						</div>
+						<h2 class="contact-card__title">Atención Digital</h2>
+						<p class="contact-card__info">
+							<strong>General:</strong><a href="mailto:info@hermanosjota.com.ar"
+								class="contact-card__link">info@hermanosjota.com.ar</a>
+							<strong>Ventas:</strong> <a href="mailto:ventas@hermanosjota.com.ar"
+								class="contact-card__link">ventas@hermanosjota.com.ar</a>
 						</p>
-					</div>
-
-					<div class="footer__col">
-						<h3 class="footer__title">Compromiso Sustentable</h3>
-						<p class="footer__text">
-							Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje ecológico.
+						<p class="contact-card__subtext">
+							<strong>WhatsApp:</strong> <a href="https://wa.me/541145678900"
+								class="contact-card__link">+54 11 4567-8900</a>
 						</p>
-					</div>
-				</div>
+					</article>
 
-				<div class="footer__bottom">
-					<p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
-					<nav class="footer__social-nav" aria-label="Redes sociales">
-						<ul class="footer__social-list">
-							<li><a href="#twitter" class="footer__social-link">Twitter</a></li>
-							<li><a href="#facebook" class="footer__social-link">Facebook</a></li>
-							<li><a href="#instagram" class="footer__social-link">Instagram</a></li>
-							<li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
-						</ul>
-					</nav>
+					<article class="contact-card">
+						<div class="contact-card__icon" aria-hidden="true">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M12 20h9" />
+								<path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+							</svg>
+						</div>
+						<h2 class="contact-card__title">Proyectos A Medida</h2>
+						<p class="contact-card__info">¿Ya tenés un proyecto en mente?</p>
+						<p class="contact-card__subtext">
+							Coordiná una llamada con nuestro equipo de diseño para pensarlo juntos.
+						</p>
+					</article>
 				</div>
 			</div>
-		</footer>
+		</section>
 
-	</body>
+		<section class="contact-form-section" aria-labelledby="form-section-title">
+			<div class="container">
+				<div class="contact-form-container">
+
+					<header class="contact-form-container__header">
+						<h2 id="form-section-title" class="contact-form-container__title">Envianos un mensaje</h2>
+						<p class="contact-form-container__subtitle">Completa el formulario y nos pondremos en contacto a
+							la brevedad.</p>
+					</header>
+
+					<form action="#" method="POST" class="contact-form" novalidate>
+						<div class="contact-form__grid">
+
+							<div class="contact-form__field">
+								<label for="full-name" class="contact-form__label">
+									Nombre y Apellido <span class="contact-form__required" aria-hidden="true">*</span>
+								</label>
+								<input type="text" id="full-name" name="full-name" class="contact-form__input" required
+									placeholder="Ej: Lucía Gómez" autocomplete="name"
+									aria-describedby="full-name-error">
+								<p id="full-name-error" class="contact-form__error" data-error-of="full-name"></p>
+							</div>
+
+							<div class="contact-form__field">
+								<label for="email" class="contact-form__label">
+									Correo Electrónico <span class="contact-form__required" aria-hidden="true">*</span>
+								</label>
+								<input type="email" id="email" name="email" class="contact-form__input" required
+									placeholder="tu@email.com" autocomplete="email" aria-describedby="email-error">
+								<p id="email-error" class="contact-form__error" data-error-of="email"></p>
+							</div>
+
+							<div class="contact-form__field">
+								<label for="phone" class="contact-form__label">Teléfono / WhatsApp</label>
+								<input type="tel" id="phone" name="phone" class="contact-form__input"
+									placeholder="+54 11 2233-4455" autocomplete="tel" aria-describedby="phone-error">
+								<p id="phone-error" class="contact-form__error" data-error-of="phone"></p>
+							</div>
+
+							<div class="contact-form__field">
+								<label for="subject" class="contact-form__label">
+									Motivo de Consulta <span class="contact-form__required" aria-hidden="true">*</span>
+								</label>
+								<div class="contact-form__select-wrapper">
+									<select name="subject" id="subject" class="contact-form__select" required
+										aria-describedby="subject-error">
+										<option value="" disabled selected>Selecciona una opción</option>
+										<option value="catalogo">Consulta sobre un producto del catálogo</option>
+										<option value="pedido">Estado de mi pedido</option>
+										<option value="medida">Cotización para proyecto a medida</option>
+										<option value="showroom">Visita guiada al Showroom</option>
+										<option value="otro">Otro motivo</option>
+									</select>
+								</div>
+								<p id="subject-error" class="contact-form__error" data-error-of="subject"></p>
+							</div>
+
+							<div class="contact-form__field contact-form__field--full">
+								<label for="message" class="contact-form__label">
+									Mensaje <span class="contact-form__required" aria-hidden="true">*</span>
+								</label>
+								<textarea id="message" name="message" rows="5" class="contact-form__textarea" required
+									placeholder="Escribe aquí los detalles de tu consulta..."
+									aria-describedby="message-error"></textarea>
+								<p id="message-error" class="contact-form__error" data-error-of="message"></p>
+							</div>
+
+							<div class="contact-form__field contact-form__field--full">
+								<label for="privacy" class="contact-form__checkbox-label">
+									<input type="checkbox" id="privacy" name="privacy" class="contact-form__checkbox"
+										required aria-describedby="privacy-error">
+									<span>Acepto la <a href="#" class="contact-form__checkbox-link">política de
+											privacidad</a> y el tratamiento de mis datos de contacto.</span>
+								</label>
+								<p id="privacy-error" class="contact-form__error" data-error-of="privacy"></p>
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn--gold-pill contact-form__submit">Enviar Mensaje</button>
+
+						<div id="confirmacion-envio" class="contact-form__confirmation" role="status"
+							aria-live="polite">
+							<span class="contact-form__confirmation-icon" aria-hidden="true">✓</span>
+							<p>¡Gracias! Recibimos tu mensaje y te vamos a responder a la brevedad.</p>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</section>
+
+
+		<section class="contact-faq" aria-labelledby="faq-section-title">
+			<div class="container">
+				<h2 id="faq-section-title" class="contact-faq__title">Preguntas Frecuentes</h2>
+
+				<div class="contact-faq__grid">
+
+					<article class="faq-item">
+						<h3 class="faq-item__question">¿Realizan envíos a todo el país?</h3>
+						<p class="faq-item__answer">Sí, embalamos cuidadosamente nuestras piezas con protección
+							ecológica y coordinamos envíos a todo el territorio argentino con transporte especializado.
+						</p>
+					</article>
+
+					<article class="faq-item">
+						<h3 class="faq-item__question">¿Puedo solicitar muestras de maderas o cueros?</h3>
+						<p class="faq-item__answer">Ofrecemos el envío de un muestrario físico a tu domicilio o la
+							posibilidad de verlos y tocarlos directamente en nuestro Showroom.</p>
+					</article>
+
+					<article class="faq-item">
+						<h3 class="faq-item__question">¿Qué garantía tienen los muebles?</h3>
+						<p class="faq-item__answer">Todas nuestras piezas ingresan al Programa Herencia Viva, con hasta
+							10 años de garantía en estructura.</p>
+					</article>
+
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__brand">
+				<a href="../index.html" class="footer__logo-link">
+					<img src="../assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60"
+						aria-hidden="true" />
+					<span class="footer__brand-name">Hermanos Jota</span>
+				</a>
+			</div>
+
+			<div class="footer__grid">
+				<div class="footer__col">
+					<h3 class="footer__title">Hermanos Jota</h3>
+					<p class="footer__text">
+						Casa Taller & Showroom<br />
+						Av. San Juan 2847<br />
+						C1232AAB - Barrio de San Cristóbal<br />
+						Buenos Aires, Argentina
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Horarios Showroom</h3>
+					<p class="footer__text">
+						Lunes a Viernes: 10:00 - 19:00 hs<br />
+						Sábados: 10:00 - 14:00 hs
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Contacto Digital</h3>
+					<p class="footer__text">
+						Email: <a href="mailto:info@hermanosjota.com.ar"
+							class="footer__link">info@hermanosjota.com.ar</a><br />
+						Ventas: <a href="mailto:ventas@hermanosjota.com.ar"
+							class="footer__link">ventas@hermanosjota.com.ar</a><br />
+						WhatsApp: <a href="https://wa.me/541145678900" class="footer__link">+54 11 4567-8900</a><br />
+						Instagram: <a href="" class="footer__link">@hermanosjota_ba</a>
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Compromiso Sustentable</h3>
+					<p class="footer__text">
+						Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje
+						ecológico.
+					</p>
+				</div>
+			</div>
+
+			<div class="footer__bottom">
+				<p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+				<nav class="footer__social-nav" aria-label="Redes sociales">
+					<ul class="footer__social-list">
+						<li><a href="#twitter" class="footer__social-link">Twitter</a></li>
+						<li><a href="#facebook" class="footer__social-link">Facebook</a></li>
+						<li><a href="#instagram" class="footer__social-link">Instagram</a></li>
+						<li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</footer>
+	<script src="../scripts/contacto.js" defer></script>
+</body>
+
 </html>
