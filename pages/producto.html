@@ -3,44 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto - Mueblería Jota</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="../styles/general.css" />
-    <link rel="stylesheet" href="../styles/producto.css" />
-
-    <title>Producto</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"/>
+		
+		<link rel="stylesheet" href="../styles/general.css" />
+		<link rel="stylesheet" href="../styles/header.css">
+		<link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/producto.css">
   </head>
   <body>
     <header class="header">
-      <div class="header__container">
-        <a href="index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
-          <img src="../assets/logo.svg" alt="Hermanos Jota" width="60" />
-        </a>
+			<div class="header__container">
+				<a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
+					<img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
+				</a>
 
-        <nav class="header__nav" aria-label="Navegación principal">
-          <ul class="header__menu">
-            <li class="header__menu-item"><a href="../index.html" class="header__menu-link">Inicio</a></li>
-            <li class="header__menu-item"><a href="./productos.html" class="header__menu-link">Tienda</a></li>
-            <li class="header__menu-item"><a href="../index.html#colecciones" class="header__menu-link">Colecciones</a></li>
-            <li class="header__menu-item"><a href="#nosotros" class="header__menu-link">Nosotros</a></li>
-            <li class="header__menu-item"><a href="contacto.html" class="header__menu-link header__menu-link--active">Contacto</a></li>
-          </ul>
-        </nav>
+				<!-- Checkbox hamburguesa -->
+				<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
+				<label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación" role="button" tabindex="0">
+					<span class="header__toggle-bar"></span>
+					<span class="header__toggle-bar"></span>
+					<span class="header__toggle-bar"></span>
+				</label>
 
-        <div class="header__actions">
-          <button class="header__action-btn" aria-label="Buscar productos">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-            </svg>
-          </button>
-          <button class="header__action-btn" aria-label="Ver carrito, 0 productos">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+				<!-- nav desplegable -->
+				<nav class="header__nav" aria-label="Navegación principal">
+					
+					<ul class="header__menu">
+						<li class="header__menu-item">
+							<a href="../index.html" class="header__menu-link">Inicio</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="./catalogo.html" class="header__menu-link header__menu-link--active" aria-current="page">Tienda</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="../index.html#colecciones" class="header__menu-link">Colecciones</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#nosotros" class="header__menu-link">Nosotros</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="./contacto.html" class="header__menu-link">Contacto</a>
+						</li>
+					</ul>
+
+					<!-- sidebar actions -->
+					<div class="header__actions">
+						<button type="button" class="header__action-btn" aria-label="Buscar productos">
+							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+								<circle cx="11" cy="11" r="8" />
+								<path d="m21 21-4.3-4.3" />
+							</svg>
+						</button>
+
+						<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
+							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+								<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+							</svg>
+						</button>
+
+						<button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
+							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+								<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+								<line x1="3" y1="6" x2="21" y2="6" />
+								<path d="M16 10a4 4 0 0 1-8 0" />
+							</svg>
+							<span class="header__cart-count" aria-hidden="true">0</span>
+						</button>
+					</div>
+				</nav>
+			</div>
+		</header>
 
     <main class="product-detail container">
       <section class="product-gallery">
@@ -297,89 +332,63 @@
     </section>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer__brand">
-          <a href="../index.html" class="footer__logo-link">
-            <img
-              src="../assets/logo.svg"
-              alt="Hermanos Jota"
-              class="footer__logo-icon"
-              width="60"
-              aria-hidden="true"
-            />
-            <span class="footer__brand-name">Hermanos Jota</span>
-          </a>
-        </div>
+			<div class="container">
+				<div class="footer__brand">
+					<a href="../index.html" class="footer__logo-link">
+					<img src="../assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60" aria-hidden="true" />
+					<span class="footer__brand-name">Hermanos Jota</span>
+					</a>
+				</div>
 
-        <div class="footer__grid">
-          <div class="footer__col">
-            <h3 class="footer__title">Hermanos Jota</h3>
-            <p class="footer__text">
-              Casa Taller & Showroom<br />
-              Av. San Juan 2847<br />
-              C1232AAB - Barrio de San Cristóbal<br />
-              Buenos Aires, Argentina
-            </p>
-          </div>
+				<div class="footer__grid">
+					<div class="footer__col">
+						<h3 class="footer__title">Hermanos Jota</h3>
+						<p class="footer__text">
+							Casa Taller & Showroom<br/>
+							Av. San Juan 2847<br/>
+							C1232AAB - Barrio de San Cristóbal<br/>
+							Buenos Aires, Argentina
+						</p>
+					</div>
 
-          <div class="footer__col">
-            <h3 class="footer__title">Horarios Showroom</h3>
-            <p class="footer__text">
-              Lunes a Viernes: 10:00 - 19:00 hs<br />
-              Sábados: 10:00 - 14:00 hs
-            </p>
-          </div>
+					<div class="footer__col">
+						<h3 class="footer__title">Horarios Showroom</h3>
+						<p class="footer__text">
+							Lunes a Viernes: 10:00 - 19:00 hs<br/>
+							Sábados: 10:00 - 14:00 hs
+						</p>
+					</div>
 
-          <div class="footer__col">
-            <h3 class="footer__title">Contacto Digital</h3>
-            <p class="footer__text">
-              Email:
-              <a href="mailto:info@hermanosjota.com.ar" class="footer__link"
-                >info@hermanosjota.com.ar</a
-              ><br />
-              Ventas:
-              <a href="mailto:ventas@hermanosjota.com.ar" class="footer__link"
-                >ventas@hermanosjota.com.ar</a
-              ><br />
-              WhatsApp:
-              <a href="https://wa.me/541145678900" class="footer__link"
-                >+54 11 4567-8900</a
-              ><br />
-              Instagram: <a href="" class="footer__link">@hermanosjota_ba</a>
-            </p>
-          </div>
+					<div class="footer__col">
+						<h3 class="footer__title">Contacto Digital</h3>
+						<p class="footer__text">
+							Email: <a href="mailto:info@hermanosjota.com.ar" class="footer__link">info@hermanosjota.com.ar</a><br/>
+							Ventas: <a href="mailto:ventas@hermanosjota.com.ar" class="footer__link">ventas@hermanosjota.com.ar</a><br/>
+							WhatsApp: <a href="https://wa.me/541145678900" class="footer__link">+54 11 4567-8900</a><br/>
+							Instagram: <a href="" class="footer__link">@hermanosjota_ba</a>
+						</p>
+					</div>
 
-          <div class="footer__col">
-            <h3 class="footer__title">Compromiso Sustentable</h3>
-            <p class="footer__text">
-              Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados
-              biológicos sin VOCs y embalaje ecológico.
-            </p>
-          </div>
-        </div>
+					<div class="footer__col">
+						<h3 class="footer__title">Compromiso Sustentable</h3>
+						<p class="footer__text">
+							Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje ecológico.
+						</p>
+					</div>
+				</div>
 
-        <div class="footer__bottom">
-          <p class="footer__copy">
-            © 2026 Hermanos Jota. Todos los derechos reservados.
-          </p>
-          <nav class="footer__social-nav" aria-label="Redes sociales">
-            <ul class="footer__social-list">
-              <li>
-                <a href="#twitter" class="footer__social-link">Twitter</a>
-              </li>
-              <li>
-                <a href="#facebook" class="footer__social-link">Facebook</a>
-              </li>
-              <li>
-                <a href="#instagram" class="footer__social-link">Instagram</a>
-              </li>
-              <li>
-                <a href="#linkedin" class="footer__social-link">Linkedin</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </footer>
+				<div class="footer__bottom">
+					<p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+					<nav class="footer__social-nav" aria-label="Redes sociales">
+						<ul class="footer__social-list">
+							<li><a href="#twitter" class="footer__social-link">Twitter</a></li>
+							<li><a href="#facebook" class="footer__social-link">Facebook</a></li>
+							<li><a href="#instagram" class="footer__social-link">Instagram</a></li>
+							<li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</footer>
   </body>
 </html>
