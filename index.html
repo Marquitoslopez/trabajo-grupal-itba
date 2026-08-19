@@ -3,7 +3,192 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Mueblería Jota</title>
+		<meta
+			name="description"
+			content="Mueblería Hermanos Jota — Tres décadas de tradición artesanal en muebles de madera nativa. Descubrí nuestras piezas destacadas."
+		/>
+		<title>Inicio — Hermanos Jota</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="styles/general.css" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body></body>
+	<body>
+		<header class="header">
+			<div class="header__container">
+				<a href="index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
+					<img src="assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
+				</a>
+
+				<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
+				<label
+					for="header-menu-toggle"
+					class="header__toggle"
+					aria-label="Abrir o cerrar menú de navegación"
+					role="button"
+					tabindex="0"
+				>
+					<span class="header__toggle-bar"></span>
+					<span class="header__toggle-bar"></span>
+					<span class="header__toggle-bar"></span>
+				</label>
+
+				<nav class="header__nav" aria-label="Navegación principal">
+					<ul class="header__menu">
+						<li class="header__menu-item">
+							<a href="index.html" class="header__menu-link header__menu-link--active" aria-current="page">Inicio</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="pages/catalogo.html" class="header__menu-link">Tienda</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#colecciones" class="header__menu-link">Colecciones</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#nosotros" class="header__menu-link">Nosotros</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="pages/contacto.html" class="header__menu-link">Contacto</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main id="contenido-principal">
+			<section class="hero" aria-labelledby="hero-heading">
+				<div class="container hero__content">
+					<h1 id="hero-heading">Mueblería Hermanos Jota</h1>
+					<p>
+						Desde hace <strong>30 años</strong>, Hermanos Jota transforma maderas nativas argentinas en
+						muebles que acompañan el día a día de las familias. Cada pieza nace en nuestro taller de
+						Buenos Aires, donde el oficio se transmite de generación en generación: seleccionamos la
+						madera a mano, cuidamos cada unión y terminamos con acabados que envejecen con dignidad.
+						Nuestra tradición no es solo tiempo: es el compromiso de crear mobiliario duradero, cálido y
+						con identidad propia.
+					</p>
+					<a href="pages/catalogo.html" class="btn btn--primary">Ver catálogo completo</a>
+				</div>
+			</section>
+
+			<section class="featured" id="destacados" aria-labelledby="featured-heading">
+				<div class="container">
+					<header class="featured__header">
+						<h2 id="featured-heading">Productos destacados</h2>
+						<p>Selección de piezas emblemáticas de nuestro taller artesanal.</p>
+					</header>
+
+					<div class="featured__grid">
+						<article class="featured-card">
+							<figure class="featured-card__figure">
+								<img
+									src="assets/sofa-patagonia.png"
+									alt="Sofá Patagonia en madera nogal con tapizado natural"
+									class="featured-card__image"
+									width="300"
+									height="220"
+									loading="lazy"
+								/>
+								<figcaption class="sr-only">Sofá Patagonia — living</figcaption>
+							</figure>
+							<div class="featured-card__body">
+								<h3 class="featured-card__title">Sofá Patagonia</h3>
+								<p class="featured-card__description">
+									Líneas contemporáneas con estructura en nogal y tapizado en lino.
+								</p>
+								<ul class="featured-card__tags" aria-label="Etiquetas del producto">
+									<li><span class="product-tag">Living</span></li>
+									<li><span class="product-tag">Madera nativa</span></li>
+								</ul>
+							</div>
+						</article>
+
+						<article class="featured-card">
+							<figure class="featured-card__figure">
+								<img
+									src="assets/sillon-copacabana.png"
+									alt="Sillón Copacabana con respaldo alto y acabado artesanal"
+									class="featured-card__image"
+									width="300"
+									height="220"
+									loading="lazy"
+								/>
+								<figcaption class="sr-only">Sillón Copacabana — living</figcaption>
+							</figure>
+							<div class="featured-card__body">
+								<h3 class="featured-card__title">Sillón Copacabana</h3>
+								<p class="featured-card__description">
+									Respaldo generoso y cuero curtido a mano para espacios de lectura.
+								</p>
+								<ul class="featured-card__tags" aria-label="Etiquetas del producto">
+									<li><span class="product-tag">Living</span></li>
+									<li><span class="product-tag">Cuero</span></li>
+								</ul>
+							</div>
+						</article>
+
+						<article class="featured-card">
+							<figure class="featured-card__figure">
+								<img
+									src="assets/escritorio-costa.png"
+									alt="Escritorio Costa con cajonera integrada en roble"
+									class="featured-card__image"
+									width="300"
+									height="220"
+									loading="lazy"
+								/>
+								<figcaption class="sr-only">Escritorio Costa — oficina</figcaption>
+							</figure>
+							<div class="featured-card__body">
+								<h3 class="featured-card__title">Escritorio Costa</h3>
+								<p class="featured-card__description">
+									Superficie amplia en roble con canal para cables y cajonera oculta.
+								</p>
+								<ul class="featured-card__tags" aria-label="Etiquetas del producto">
+									<li><span class="product-tag">Oficina</span></li>
+									<li><span class="product-tag">Roble</span></li>
+								</ul>
+							</div>
+						</article>
+
+						<article class="featured-card">
+							<figure class="featured-card__figure">
+								<img
+									src="assets/mesa-comedor-pampa.png"
+									alt="Mesa de comedor Pampa en madera maciza para seis comensales"
+									class="featured-card__image"
+									width="300"
+									height="220"
+									loading="lazy"
+								/>
+								<figcaption class="sr-only">Mesa Pampa — comedor</figcaption>
+							</figure>
+							<div class="featured-card__body">
+								<h3 class="featured-card__title">Mesa Pampa</h3>
+								<p class="featured-card__description">
+									Tablero macizo con patas torneadas, pensada para reuniones familiares.
+								</p>
+								<ul class="featured-card__tags" aria-label="Etiquetas del producto">
+									<li><span class="product-tag">Comedor</span></li>
+									<li><span class="product-tag">Artesanal</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="container footer__content">
+				<p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</body>
 </html>
