@@ -233,3 +233,133 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// MODAL - POLÍTICA DE PRIVACIDAD
+const privacyLink = document.querySelector(".contact-form__checkbox-link");
+
+if (privacyLink) {
+
+    // Crear modal
+    const privacyModal = document.createElement("div");
+
+    privacyModal.className = "privacy-modal";
+    privacyModal.setAttribute("role", "dialog");
+    privacyModal.setAttribute("aria-modal", "true");
+    privacyModal.setAttribute("aria-labelledby", "privacy-modal-title");
+    privacyModal.setAttribute("aria-hidden", "true");
+
+    privacyModal.innerHTML = `
+        <div class="privacy-modal__content">
+            <button 
+                type="button" 
+                class="privacy-modal__close" 
+                aria-label="Cerrar política de privacidad">
+                &times;
+            </button>
+
+            <h2 id="privacy-modal-title">
+                Política de Privacidad
+            </h2>
+
+            <div class="privacy-modal__body">
+                <p>
+                    En Hermanos Jota nos comprometemos a proteger la privacidad
+                    de nuestros usuarios y a tratar sus datos personales de
+                    manera responsable.
+                </p>
+
+                <h3>¿Qué datos recopilamos?</h3>
+
+                <p>
+                    Podemos recopilar los datos que ingreses voluntariamente
+                    mediante nuestro formulario de contacto, como nombre,
+                    correo electrónico, teléfono y el contenido de tu consulta.
+                </p>
+
+                <h3>¿Para qué utilizamos tus datos?</h3>
+
+                <p>
+                    Utilizamos esta información únicamente para responder
+                    consultas, brindar atención personalizada y comunicarnos
+                    con vos en relación con nuestros productos y servicios.
+                </p>
+
+                <h3>Protección de la información</h3>
+
+                <p>
+                    Nos comprometemos a mantener tus datos protegidos y a no
+                    vender, alquilar ni compartir tu información personal con
+                    terceros con fines comerciales.
+                </p>
+
+                <h3>Aceptación</h3>
+
+                <p>
+                    Al aceptar la política de privacidad, confirmás que leíste
+                    y comprendiste el tratamiento de tus datos personales
+                    descrito anteriormente.
+                </p>
+            </div>
+
+            <button 
+                type="button" 
+                class="privacy-modal__button">
+                Entendido
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(privacyModal);
+
+    const closeButton = privacyModal.querySelector(
+        ".privacy-modal__close"
+    );
+
+    const understoodButton = privacyModal.querySelector(
+        ".privacy-modal__button"
+    );
+
+    // Abrir modal
+    function openPrivacyModal(event) {
+        event.preventDefault();
+
+        privacyModal.classList.add("privacy-modal--open");
+        privacyModal.setAttribute("aria-hidden", "false");
+
+        closeButton.focus();
+    }
+
+    // Cerrar modal
+    function closePrivacyModal() {
+        privacyModal.classList.remove("privacy-modal--open");
+        privacyModal.setAttribute("aria-hidden", "true");
+
+        privacyLink.focus();
+    }
+
+    // Click en el enlace
+    privacyLink.addEventListener("click", openPrivacyModal);
+
+    // Botón X
+    closeButton.addEventListener("click", closePrivacyModal);
+
+    // Botón "Entendido"
+    understoodButton.addEventListener("click", closePrivacyModal);
+
+    // Cerrar haciendo click fuera de la ventana
+    privacyModal.addEventListener("click", (event) => {
+        if (event.target === privacyModal) {
+            closePrivacyModal();
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", (event) => {
+        if (
+            event.key === "Escape" &&
+            privacyModal.classList.contains("privacy-modal--open")
+        ) {
+            closePrivacyModal();
+        }
+    });
+}
