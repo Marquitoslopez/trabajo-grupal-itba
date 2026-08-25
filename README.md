@@ -13,11 +13,11 @@ Desarrollado como proyecto en equipo para el **ITBA** (Instituto Tecnológico de
 
 ## 👥 Equipo
 
-| _Marcos Lopez_ |
-| _Nehuén Peyrano_ |
-| _Gastón Davalos_ |
-| _Villarroel Giuliana_ |
-| _Alegre Gonzalo_ |
+- _Marcos Lopez_
+- _Nehuén Peyrano_
+- _Gastón Davalos_
+- _Villarroel Giuliana_
+- _Alegre Gonzalo_
 
 ---
 
