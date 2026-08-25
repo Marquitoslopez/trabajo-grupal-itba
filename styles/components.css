@@ -1,16 +1,3 @@
-/* =========================================================
-   HERMANOS JOTA — components.css
-   Componentes compartidos por más de una página.
-   Cargar SIEMPRE después de general.css/header.css/footer.css
-   y ANTES del CSS específico de cada página (index.css,
-   catalogo.css, producto.css).
-
-   Reemplaza los bloques idénticos que estaban repetidos en:
-   - catalogo.css   (.catalog__grid .product-card)
-   - index.css      (.products-grid .product-card)
-   - producto.css   (.related-products__grid .product-card)
-   ========================================================= */
-
 /* --- tarjeta de producto --- */
 .product-card {
 	display: flex;
