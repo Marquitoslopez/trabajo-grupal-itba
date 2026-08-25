@@ -3,7 +3,7 @@
 ![Estado](https://img.shields.io/badge/Estado-En%20Curso-yellow?style=for-the-badge)
 ![Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)
 
-Fachada e-commerce para **Hermanos Jota**, mueblería argentina de piezas artesanales en maderas nativas (algarrobo, quebracho, caldén) y cueros. El proyecto simula una experiencia de compra completa —catálogo, detalle de producto, carrito y contacto— **sin conexión a backend**: todo el catálogo se gestiona en el cliente con JavaScript.
+Fachada e-commerce para **Hermanos Jota**, mueblería argentina de piezas artesanales en maderas nativas (algarrobo, quebracho, caldén) y cueros. El proyecto simula una experiencia de compra completa, catálogo, detalle de producto, carrito y contacto, **sin conexión a backend**: todo el catálogo se gestiona en el cliente con JavaScript.
 
 Desarrollado como proyecto en equipo para el **ITBA** (Instituto Tecnológico de Buenos Aires).
 
@@ -13,8 +13,6 @@ Desarrollado como proyecto en equipo para el **ITBA** (Instituto Tecnológico de
 
 ## 👥 Equipo
 
-| Integrante |
-|---|---|
 | _Marcos Lopez_ |
 | _Nehuén Peyrano_ |
 | _Gastón Davalos_ |
@@ -65,7 +63,6 @@ hermanos-jota/
 │
 └── assets/
     ├── logo.svg
-    └── *.png                   # Fotos de producto y banners
 ```
 
 ---
@@ -105,4 +102,4 @@ No requiere instalación ni build: es HTML/CSS/JS puro.
 
 ## 📄 Licencia / uso
 
-Proyecto académico desarrollado en el marco de la carrera en el **ITBA**. Todo el contenido de marca (nombre, logo, textos) es ficticio y pertenece al ejercicio del curso.
+Proyecto académico desarrollado en el marco de la carrera en el **ITBA**.
