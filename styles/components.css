@@ -1,0 +1,163 @@
+/* =========================================================
+   HERMANOS JOTA — components.css
+   Componentes compartidos por más de una página.
+   Cargar SIEMPRE después de general.css/header.css/footer.css
+   y ANTES del CSS específico de cada página (index.css,
+   catalogo.css, producto.css).
+
+   Reemplaza los bloques idénticos que estaban repetidos en:
+   - catalogo.css   (.catalog__grid .product-card)
+   - index.css      (.products-grid .product-card)
+   - producto.css   (.related-products__grid .product-card)
+   ========================================================= */
+
+/* --- tarjeta de producto --- */
+.product-card {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-bg-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	padding: var(--space-md);
+	box-shadow: var(--shadow-sm);
+	transition: all var(--transition-normal);
+}
+
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-md);
+	border-color: var(--color-border-hover);
+}
+
+.product-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: var(--space-sm);
+}
+
+.product-card__title {
+	font-family: var(--font-secondary);
+	font-size: 1.15rem;
+	font-weight: var(--font-weight-bold);
+	color: var(--color-brand-primary);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 0.2rem;
+}
+
+.product-card__price {
+	font-family: var(--font-primary);
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-main);
+}
+
+.product-card__swatches {
+	display: flex;
+	gap: 6px;
+	padding-top: 4px;
+}
+
+.product-card__swatch {
+	width: 14px;
+	height: 14px;
+	border-radius: var(--radius-pill);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: var(--shadow-sm);
+	display: inline-block;
+}
+
+.product-card__swatch--dark {
+	background-color: var(--color-brand-primary);
+	margin-left: 0;
+}
+
+.product-card__swatch--gold {
+	background-color: var(--color-brand-gold);
+}
+
+.product-card__swatch--wood {
+	background-color: var(--color-brand-accent-soft);
+}
+
+.product-card__image-wrapper {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	background-color: var(--color-bg-soft);
+	border-radius: var(--radius-sm);
+	overflow: hidden;
+	margin-bottom: var(--space-md);
+}
+
+.product-card__image-wrapper a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.product-card__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transition: transform var(--transition-normal);
+}
+
+.product-card:hover .product-card__image {
+	transform: scale(1.05);
+}
+
+.product-card__actions {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
+}
+
+.product-card__primary-actions {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: 50px;
+	gap: var(--space-xs);
+}
+
+.product-card__secondary-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: var(--space-xs);
+	border-top: 1px solid var(--color-bg-soft);
+}
+
+.product-card__link-detail {
+	font-size: var(--font-size-caption);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: color var(--transition-fast);
+}
+
+.product-card__link-detail:hover {
+	color: var(--color-brand-primary);
+	text-decoration: underline;
+}
+
+/* --- botón ícono (favoritos, dentro de product-card) --- */
+.btn--icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	color: var(--color-text-muted);
+	border-radius: var(--radius-pill);
+	transition: var(--transition-fast);
+}
+
+.btn--icon:hover,
+.btn--icon[aria-pressed="true"] {
+	color: var(--color-error);
+	background-color: rgba(196, 122, 109, 0.1);
+}

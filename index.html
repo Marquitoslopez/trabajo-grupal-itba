@@ -1,663 +1,759 @@
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Hermanos Jota — Muebles de autor, maderas nativas y diseño atemporal." />
-		<title>Hermanos Jota</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Hermanos Jota — Muebles de autor, maderas nativas y diseño atemporal." />
+	<title>Hermanos Jota</title>
 
-		<link rel="stylesheet" href="./styles/general.css">
-		<link rel="stylesheet" href="./styles/header.css">
-		<link rel="stylesheet" href="./styles/footer.css">
-		<link rel="stylesheet" href="index.css" />
-	</head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet" />
 
-	<body>
-		
-		<header class="header">
-			<div class="header__container">
-				<a href="/" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
-					<img src="./assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
-				</a>
+	<link rel="stylesheet" href="./styles/general.css">
+	<link rel="stylesheet" href="./styles/header.css">
+	<link rel="stylesheet" href="./styles/footer.css">
+	<link rel="stylesheet" href="./styles/components.css">
+	<link rel="stylesheet" href="index.css" />
+</head>
 
-				<!-- Checkbox hamburguesa -->
-				<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
-				<label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación" role="button" tabindex="0">
-					<span class="header__toggle-bar"></span>
-					<span class="header__toggle-bar"></span>
-					<span class="header__toggle-bar"></span>
-				</label>
+<body>
 
-				<!-- nav desplegable -->
-				<nav class="header__nav" aria-label="Navegación principal">
-					
-					<ul class="header__menu">
-						<li class="header__menu-item">
-							<a href="/" class="header__menu-link  header__menu-link--active" aria-current="page">Inicio</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="./pages/catalogo.html" class="header__menu-link">Tienda</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="#colecciones" class="header__menu-link">Colecciones</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="#nosotros" class="header__menu-link">Nosotros</a>
-						</li>
-						<li class="header__menu-item">
-							<a href="./pages/contacto.html" class="header__menu-link">Contacto</a>
-						</li>
-					</ul>
+	<header class="header">
+		<div class="header__container">
+			<a href="/" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
+				<img src="./assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
+			</a>
 
-					<!-- sidebar actions -->
-					<div class="header__actions">
-						<button type="button" class="header__action-btn" aria-label="Buscar productos">
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<circle cx="11" cy="11" r="8" />
-								<path d="m21 21-4.3-4.3" />
-							</svg>
-						</button>
+			<!-- Checkbox hamburguesa -->
+			<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
+			<label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación"
+				role="button" tabindex="0">
+				<span class="header__toggle-bar"></span>
+				<span class="header__toggle-bar"></span>
+				<span class="header__toggle-bar"></span>
+			</label>
 
-						<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-							</svg>
-						</button>
+			<!-- nav desplegable -->
+			<nav class="header__nav" aria-label="Navegación principal">
 
-						<button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-								<line x1="3" y1="6" x2="21" y2="6" />
-								<path d="M16 10a4 4 0 0 1-8 0" />
-							</svg>
-							<span class="header__cart-count" aria-hidden="true">0</span>
-						</button>
+				<ul class="header__menu">
+					<li class="header__menu-item">
+						<a href="index.html" class="header__menu-link  header__menu-link--active" aria-current="page">Inicio</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="./pages/catalogo.html" class="header__menu-link">Tienda</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#colecciones" class="header__menu-link">Colecciones</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#nosotros" class="header__menu-link">Nosotros</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="./pages/contacto.html" class="header__menu-link">Contacto</a>
+					</li>
+				</ul>
+
+				<!-- sidebar actions -->
+				<div class="header__actions">
+					<button type="button" class="header__action-btn" aria-label="Buscar productos">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<circle cx="11" cy="11" r="8" />
+							<path d="m21 21-4.3-4.3" />
+						</svg>
+					</button>
+
+					<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path
+								d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+						</svg>
+					</button>
+
+					<button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+							<line x1="3" y1="6" x2="21" y2="6" />
+							<path d="M16 10a4 4 0 0 1-8 0" />
+						</svg>
+						<span class="header__cart-count" aria-hidden="true">0</span>
+					</button>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main id="main-content">
+		<!-- hero -->
+		<section class="hero" id="inicio" aria-labelledby="hero-title">
+			<div class="hero__overlay" aria-hidden="true"></div>
+
+			<img class="hero__bg-image" src="./assets/bg-inicio.png"
+				alt="Salón decorado con sofá de lino, mesas de centro de madera maciza y sillón de autor" width="1920"
+				height="1080" fetchpriority="high" />
+
+			<div class="container hero__container">
+				<div class="hero__content">
+					<h1 id="hero-title" class="hero__title">El <span class="hero__title--highlight">alma</span> del
+						bosque en el corazón de tu <span class="hero__title--highlight">hogar</span></h1>
+					<p class="hero__subtitle"> Nos especializamos en piezas de alta calidad con una estética distintiva,
+						curadas y diseñadas para habitar tu espacio con distinción.</p>
+					<div class="hero__actions">
+						<a href="./pages/catalogo.html" class="btn btn--primary">Explorar Colección</a>
 					</div>
+				</div>
+			</div>
+
+			<a href="#destacados" class="hero__scroll-indicator" aria-label="Desplazarse a productos destacados">
+				<span class="hero__scroll-ring" aria-hidden="true"></span>
+			</a>
+		</section>
+
+		<!-- PRODUCTOS -->
+		<section class="products-section" id="tienda" aria-labelledby="collections-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 id="collections-title" class="section-header__title">Nuestras Nuevas Colecciones</h2>
+					<p class="section-header__subtitle">Piezas únicas esculpidas en maderas nativas argentinas. Acabados
+						100% naturales en aceite de lino y cera de abejas que cuidan el planeta y tu espacio.</p>
+				</div>
+
+				<div class="products-grid">
+
+					<article class="product-card" data-id="p1" data-category="living casa">
+						<header class="product-card__header">
+							<div class="product-card__info">
+								<h3 class="product-card__title">Sofá Patagonia</h3>
+								<p class="product-card__price">$155.000</p>
+							</div>
+							<div class="product-card__swatches" aria-label="Variantes de color disponibles">
+								<span class="product-card__swatch product-card__swatch--dark"
+									title="Nogal Oscuro"></span>
+								<span class="product-card__swatch product-card__swatch--gold" title="Cera Roble"></span>
+								<span class="product-card__swatch product-card__swatch--wood"
+									title="Madera Natural"></span>
+							</div>
+						</header>
+
+						<div class="product-card__image-wrapper">
+							<a href="./pages/producto.html" aria-label="Ver detalle de Sofá Patagonia">
+								<img src="./assets/sofa-patagonia.png"
+									alt="Sofá Patagonia de diseño moderno y acabado artesanal"
+									class="product-card__image" loading="lazy" width="300" height="220" />
+							</a>
+						</div>
+
+						<div class="product-card__actions">
+							<div class="product-card__primary-actions">
+								<button type="button" class="btn btn--primary" data-action="buy-now"
+									data-id="p1">Comprar</button>
+								<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p1"
+									aria-label="Agregar Sofá Patagonia al carrito">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+										<line x1="3" y1="6" x2="21" y2="6" />
+										<path d="M16 10a4 4 0 0 1-8 0" />
+									</svg>
+								</button>
+							</div>
+
+							<div class="product-card__secondary-actions">
+								<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
+								<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p1"
+									aria-label="Añadir Sofá Patagonia a favoritos" aria-pressed="false">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path
+											d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card" data-id="p2" data-category="living">
+						<header class="product-card__header">
+							<div class="product-card__info">
+								<h3 class="product-card__title">Sillón Copacabana</h3>
+								<p class="product-card__price">$190.000</p>
+							</div>
+							<div class="product-card__swatches" aria-label="Variantes de color disponibles">
+								<span class="product-card__swatch product-card__swatch--dark"></span>
+								<span class="product-card__swatch product-card__swatch--gold"></span>
+								<span class="product-card__swatch product-card__swatch--wood"></span>
+							</div>
+						</header>
+
+						<div class="product-card__image-wrapper">
+							<a href="./pages/producto.html" aria-label="Ver detalle de Sillón Copacabana">
+								<img src="./assets/sillon-copacabana.png" alt="Sillón Copacabana en madera nativa"
+									class="product-card__image" loading="lazy" width="300" height="220" />
+							</a>
+						</div>
+
+						<div class="product-card__actions">
+							<div class="product-card__primary-actions">
+								<button type="button" class="btn btn--primary" data-action="buy-now"
+									data-id="p2">Comprar</button>
+								<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p2"
+									aria-label="Agregar Sillón Copacabana al carrito">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+										<line x1="3" y1="6" x2="21" y2="6" />
+										<path d="M16 10a4 4 0 0 1-8 0" />
+									</svg>
+								</button>
+							</div>
+
+							<div class="product-card__secondary-actions">
+								<a href="#" class="product-card__link-detail">Ver detalle</a>
+								<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p2"
+									aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path
+											d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card" data-id="p3" data-category="living">
+						<header class="product-card__header">
+							<div class="product-card__info">
+								<h3 class="product-card__title">Butaca Mendoza</h3>
+								<p class="product-card__price">$110.000</p>
+							</div>
+							<div class="product-card__swatches" aria-label="Variantes de color disponibles">
+								<span class="product-card__swatch product-card__swatch--dark"></span>
+								<span class="product-card__swatch product-card__swatch--gold"></span>
+								<span class="product-card__swatch product-card__swatch--wood"></span>
+							</div>
+						</header>
+
+						<div class="product-card__image-wrapper">
+							<a href="./pages/producto.html" aria-label="Ver detalle de Butaca Mendoza">
+								<img src="./assets/butaca-mendoza.png"
+									alt="Butaca Mendoza tapizada con estructura de madera" class="product-card__image"
+									loading="lazy" width="300" height="220" />
+							</a>
+						</div>
+
+						<div class="product-card__actions">
+							<div class="product-card__primary-actions">
+								<button type="button" class="btn btn--primary" data-action="buy-now"
+									data-id="p3">Comprar</button>
+								<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p3"
+									aria-label="Agregar Butaca Mendoza al carrito">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+										<line x1="3" y1="6" x2="21" y2="6" />
+										<path d="M16 10a4 4 0 0 1-8 0" />
+									</svg>
+								</button>
+							</div>
+
+							<div class="product-card__secondary-actions">
+								<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
+								<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p3"
+									aria-label="Añadir Butaca Mendoza a favoritos" aria-pressed="false">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path
+											d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card" data-id="p4" data-category="living casa">
+						<header class="product-card__header">
+							<div class="product-card__info">
+								<h3 class="product-card__title">Mesa de Centro Araucaria</h3>
+								<p class="product-card__price">$159.000</p>
+							</div>
+							<div class="product-card__swatches" aria-label="Variantes de color disponibles">
+								<span class="product-card__swatch product-card__swatch--dark"></span>
+								<span class="product-card__swatch product-card__swatch--gold"></span>
+								<span class="product-card__swatch product-card__swatch--wood"></span>
+							</div>
+						</header>
+
+						<div class="product-card__image-wrapper">
+							<a href="./pages/producto.html" aria-label="Ver detalle de Mesa de Centro Araucaria">
+								<img src="./assets/mesa-de-centro-araucaria.png"
+									alt="Mesa de centro Araucaria en madera maciza" class="product-card__image"
+									loading="lazy" width="300" height="220" />
+							</a>
+						</div>
+
+						<div class="product-card__actions">
+							<div class="product-card__primary-actions">
+								<button type="button" class="btn btn--primary" data-action="buy-now"
+									data-id="p4">Comprar</button>
+								<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p4"
+									aria-label="Agregar Mesa de Centro Araucaria al carrito">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+										<line x1="3" y1="6" x2="21" y2="6" />
+										<path d="M16 10a4 4 0 0 1-8 0" />
+									</svg>
+								</button>
+							</div>
+
+							<div class="product-card__secondary-actions">
+								<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
+								<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p4"
+									aria-label="Añadir Mesa de Centro Araucaria a favoritos" aria-pressed="false">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path
+											d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card" data-id="p5" data-category="habitacion casa">
+						<header class="product-card__header">
+							<div class="product-card__info">
+								<h3 class="product-card__title">Mesa de Noche Aconcagua</h3>
+								<p class="product-card__price">$146.000</p>
+							</div>
+							<div class="product-card__swatches" aria-label="Variantes de color disponibles">
+								<span class="product-card__swatch product-card__swatch--dark"></span>
+								<span class="product-card__swatch product-card__swatch--gold"></span>
+								<span class="product-card__swatch product-card__swatch--wood"></span>
+							</div>
+						</header>
+
+						<div class="product-card__image-wrapper">
+							<a href="./pages/producto.html" aria-label="Ver detalle de Mesa de Noche Aconcagua">
+								<img src="./assets/mesa-de-noche-aconcagua.png"
+									alt="Mesa de Noche Aconcagua para dormitorio" class="product-card__image"
+									loading="lazy" width="300" height="220" />
+							</a>
+						</div>
+
+						<div class="product-card__actions">
+							<div class="product-card__primary-actions">
+								<button type="button" class="btn btn--primary" data-action="buy-now"
+									data-id="p5">Comprar</button>
+								<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p5"
+									aria-label="Agregar Mesa de Noche Aconcagua al carrito">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+										<line x1="3" y1="6" x2="21" y2="6" />
+										<path d="M16 10a4 4 0 0 1-8 0" />
+									</svg>
+								</button>
+							</div>
+
+							<div class="product-card__secondary-actions">
+								<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
+								<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p5"
+									aria-label="Añadir Mesa de Noche Aconcagua a favoritos" aria-pressed="false">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path
+											d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</article>
+
+					<article class="product-card" data-id="p6" data-category="habitacion casa">
+						<header class="product-card__header">
+							<div class="product-card__info">
+								<h3 class="product-card__title">Biblioteca Recoleta</h3>
+								<p class="product-card__price">$125.000</p>
+							</div>
+							<div class="product-card__swatches" aria-label="Variantes de color disponibles">
+								<span class="product-card__swatch product-card__swatch--dark"></span>
+								<span class="product-card__swatch product-card__swatch--gold"></span>
+								<span class="product-card__swatch product-card__swatch--wood"></span>
+							</div>
+						</header>
+
+						<div class="product-card__image-wrapper">
+							<a href="./pages/producto.html" aria-label="Ver detalle de Biblioteca Recoleta">
+								<img src="./assets/biblioteca-recoleta.png" alt="Biblioteca Recoleta estilo mid-century"
+									class="product-card__image" loading="lazy" width="300" height="220" />
+							</a>
+						</div>
+
+						<div class="product-card__actions">
+							<div class="product-card__primary-actions">
+								<button type="button" class="btn btn--primary" data-action="buy-now"
+									data-id="p6">Comprar</button>
+								<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p6"
+									aria-label="Agregar Biblioteca Recoleta al carrito">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+										<line x1="3" y1="6" x2="21" y2="6" />
+										<path d="M16 10a4 4 0 0 1-8 0" />
+									</svg>
+								</button>
+							</div>
+
+							<div class="product-card__secondary-actions">
+								<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
+								<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p6"
+									aria-label="Añadir Biblioteca Recoleta a favoritos" aria-pressed="false">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2" aria-hidden="true" focusable="false">
+										<path
+											d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<div class="products-section__action">
+					<a href="./pages/catalogo.html" class="btn btn--outline">Ver Todos Los Productos</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- CATEGORÍAS -->
+		<section class="categories-section" id="colecciones" aria-labelledby="recommended-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 id="recommended-title" class="section-header__title">Productos Recomendados Para Ti</h2>
+					<p class="section-header__subtitle">Pensamos cada detalle para que no tengas que hacerlo tú. Una
+						selección donde la innovación en el diseño se une a nuestra tradición maderera para acompañar tu
+						espacio.</p>
+				</div>
+
+				<div class="categories-mosaic">
+					<article class="category-card category-card--kitchen">
+						<img class="category-card__bg" src="./assets/cocina.png" alt="Muebles para cocina"
+							loading="lazy" width="600" height="400" />
+						<div class="category-card__content">
+							<h3 class="category-card__title">Muebles de Cocina</h3>
+							<a href="#cocina" class="btn btn--small">EXPLORAR COLECCIÓN</a>
+						</div>
+					</article>
+
+					<article class="category-card category-card--living">
+						<img class="category-card__bg" src="./assets/living.png" alt="Muebles para sala de estar"
+							loading="lazy" width="600" height="400" />
+						<div class="category-card__content">
+							<h3 class="category-card__title">Muebles de Sala de Estar</h3>
+							<a href="#living" class="btn btn--small">EXPLORAR COLECCIÓN</a>
+						</div>
+					</article>
+
+					<article class="category-card category-card--office">
+						<img class="category-card__bg" src="./assets/oficina.png" alt="Muebles para oficina"
+							loading="lazy" width="600" height="400" />
+						<div class="category-card__content">
+							<h3 class="category-card__title">Muebles de Oficina</h3>
+							<a href="#oficina" class="btn btn--small">EXPLORAR COLECCIÓN</a>
+						</div>
+					</article>
+
+					<article class="category-card category-card--bedroom">
+						<img class="category-card__bg" src="./assets/habitacion.png" alt="Muebles para habitación"
+							loading="lazy" width="600" height="400" />
+						<div class="category-card__content">
+							<h3 class="category-card__title">Muebles de Habitación</h3>
+							<a href="#habitacion" class="btn btn--small">EXPLORAR COLECCIÓN</a>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- LO QUE OFRECEMOS / NOSOTROS -->
+		<section class="offers-section" id="nosotros" aria-labelledby="offers-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 id="offers-title" class="section-header__title">Nosotros Te Ofrecemos</h2>
+					<p class="section-header__subtitle">Diseños de alta calidad, funcionales y atemporales, creados para
+						transformar tu hogar con confort y distinguida simplicidad.</p>
+				</div>
+
+				<div class="offers-flower">
+
+					<aside class="offers-flower__side-card offers-flower__side-card--left">
+						<div class="offers-flower__side-icon" aria-hidden="true"></div>
+						<h3 class="offers-flower__side-title">Haz Tu Orden</h3>
+						<p class="offers-flower__side-text">Todas las piezas realizadas bajo pedido por usted.</p>
+					</aside>
+
+					<!-- inicio de flor -->
+					<div class="offers-flower__center">
+
+						<!-- hoja 1 >>> top-left -->
+						<article class="offers-flower__petal offers-flower__petal--tl">
+							<span class="offers-flower__badge offers-flower__badge--tl">Herencia Viva</span>
+							<p class="offers-flower__petal-text">Garantía de 10 años en estructura y programa de
+								recompra hasta el 40% de su valor.</p>
+						</article>
+
+						<!-- hoja 2 >>> top-right -->
+						<article class="offers-flower__petal offers-flower__petal--tr">
+							<span class="offers-flower__badge offers-flower__badge--tr">Maderas FSC</span>
+							<p class="offers-flower__petal-text">Procedencia transparente de bosques responsables
+								argentinos (Algarrobo, Quebracho, Caldén).</p>
+						</article>
+
+						<!-- hoja 3 >>> bottom-left -->
+						<article class="offers-flower__petal offers-flower__petal--bl">
+							<span class="offers-flower__badge offers-flower__badge--bl">Cero Plástico</span>
+							<p class="offers-flower__petal-text">Embalajes 100% reciclables y libre de plásticos de un
+								solo uso en todas nuestras entregas.</p>
+						</article>
+
+						<!-- hoja 4 >>> bottom-right -->
+						<article class="offers-flower__petal offers-flower__petal--br">
+							<span class="offers-flower__badge offers-flower__badge--br">Acabados BIO</span>
+							<p class="offers-flower__petal-text">Protección natural con aceite de lino prensado en frío
+								y tintes vegetales sin COV.</p>
+						</article>
+					</div>
+
+					<aside class="offers-flower__side-card offers-flower__side-card--right">
+						<div class="offers-flower__side-icon" aria-hidden="true"></div>
+						<h3 class="offers-flower__side-title">Free Delivery</h3>
+						<p class="offers-flower__side-text">Entrega gratuita para pedidos en todo el mundo.</p>
+					</aside>
+				</div>
+			</div>
+		</section>
+
+		<!-- RESEÑAS -->
+		<section class="reviews-section" aria-labelledby="reviews-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 id="reviews-title" class="section-header__title">Lo Que Dicen Quienes Conviven Con Hermanos Jota
+					</h2>
+					<p class="section-header__subtitle">Descubre cómo nuestras piezas cobran vida en el día a día y
+						moldean no solo sus ambientes, sino la manera de habitarlos.</p>
+				</div>
+
+				<div class="reviews-grid">
+					<article class="review-card">
+						<header class="review-card__header">
+							<div class="review-card__user">
+								<div class="review-card__avatar" aria-hidden="true">M</div>
+								<div>
+									<h3 class="review-card__name">Mike Wazowski</h3>
+									<span class="review-card__source">Monsters University</span>
+								</div>
+							</div>
+							<div class="review-card__rating" aria-label="Calificación 5.0 de 5 estrellas">
+								<span aria-hidden="true">★ 5.0</span>
+							</div>
+						</header>
+						<p class="review-card__text">"Compramos la mesa de quebracho hace 2 años. El aroma de los
+							aceites naturales y el tacto de la madera no tienen comparación. Inversión para toda la
+							vida."</p>
+					</article>
+
+					<article class="review-card">
+						<header class="review-card__header">
+							<div class="review-card__user">
+								<div class="review-card__avatar" aria-hidden="true">C</div>
+								<div>
+									<h3 class="review-card__name">Clarence</h3>
+									<span class="review-card__source">Escuela Primaria de Aberdale</span>
+								</div>
+							</div>
+							<div class="review-card__rating" aria-label="Calificación 4.5 de 5 estrellas">
+								<span aria-hidden="true">★ 4.5</span>
+							</div>
+						</header>
+						<p class="review-card__text">"El diseño es precioso y los materiales se sienten de excelente
+							calidad. Una pieza que realmente acompaña el espacio."</p>
+					</article>
+
+					<article class="review-card">
+						<header class="review-card__header">
+							<div class="review-card__user">
+								<div class="review-card__avatar" aria-hidden="true">H</div>
+								<div>
+									<h3 class="review-card__name">Homero Simpson</h3>
+									<span class="review-card__source">Springfield High School</span>
+								</div>
+							</div>
+							<div class="review-card__rating" aria-label="Calificación 5.0 de 5 estrellas">
+								<span aria-hidden="true">★ 5.0</span>
+							</div>
+						</header>
+						<p class="review-card__text">"Visitar la Casa Taller en San Cristóbal te hace entender el amor
+							que le ponen a cada ensamble. Muy atentos en todo el proceso de entrega."</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section class="faq-section" id="faq" aria-labelledby="faq-title">
+			<div class="container container--narrow">
+				<div class="section-header">
+					<h2 id="faq-title" class="section-header__title">Preguntas Frecuentes</h2>
+					<p class="section-header__subtitle">Resolvemos tus dudas sobre nuestro proceso artesanal, garantías
+						y envíos.</p>
+				</div>
+
+				<ul class="accordion" role="list">
+
+					<li class="accordion__item">
+						<h3>
+							<button type="button" class="accordion__trigger" aria-expanded="false"
+								aria-controls="faq-ans-1" id="faq-btn-1">
+								¿Cómo funcionan los envíos a todo el país sin plásticos?
+								<svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+									<path d="m6 9 6 6 6-6" />
+								</svg>
+							</button>
+						</h3>
+						<div id="faq-ans-1" class="accordion__panel" role="region" aria-labelledby="faq-btn-1" hidden>
+							<p>Coordinamos envíos protegidos utilizando fundas reutilizables de tela y cartón comprimido
+								reciclado, eliminando completamente el uso de plásticos de un solo uso.</p>
+						</div>
+					</li>
+
+					<li class="accordion__item">
+						<h3>
+							<button type="button" class="accordion__trigger" aria-expanded="false"
+								aria-controls="faq-ans-2" id="faq-btn-2">
+								¿Qué garantía tienen los muebles de Hermanos Jota?
+								<svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+									<path d="m6 9 6 6 6-6" />
+								</svg>
+							</button>
+						</h3>
+						<div id="faq-ans-2" class="accordion__panel" role="region" aria-labelledby="faq-btn-2" hidden>
+							<p>Ofrecemos nuestro programa Herencia Viva: 10 años de garantía estructural sobre ensambles
+								y maderas nativas.</p>
+						</div>
+					</li>
+
+					<li class="accordion__item">
+						<h3>
+							<button type="button" class="accordion__trigger" aria-expanded="false"
+								aria-controls="faq-ans-3" id="faq-btn-3">
+								¿Puedo visitar la Casa Taller antes de encargar una pieza?
+								<svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+									<path d="m6 9 6 6 6-6" />
+								</svg>
+							</button>
+						</h3>
+						<div id="faq-ans-3" class="accordion__panel" role="region" aria-labelledby="faq-btn-3" hidden>
+							<p>¡Por supuesto! Te esperamos en San Cristóbal, CABA, de Lunes a Viernes de 10 a 19 hs y
+								Sábados de 10 a 14 hs.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- BANNER CTA -->
+		<section class="cta-banner" aria-labelledby="cta-banner-title">
+			<div class="cta-banner__container">
+				<img class="cta-banner__bg" src="./assets/living.png" alt="" loading="lazy" width="1600" height="600" />
+				<div class="cta-banner__overlay" aria-hidden="true"></div>
+				<div class="cta-banner__content">
+					<h2 id="cta-banner-title" class="cta-banner__title">Construye tu hogar <span
+							class="cta-banner__title--highlight">pieza a pieza</span></h2>
+					<p class="cta-banner__subtitle">Más que decorar un ambiente, se trata de crear el lugar donde
+						siempre quieres volver.</p>
+					<a href="./pages/catalogo.html" class="btn btn--primary">EXPLORAR COLECCIÓN</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__brand">
+				<a href="/" class="footer__logo-link">
+					<img src="./assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60"
+						aria-hidden="true" />
+					<span class="footer__brand-name">Hermanos Jota</span>
+				</a>
+			</div>
+
+			<div class="footer__grid">
+				<div class="footer__col">
+					<h3 class="footer__title">Hermanos Jota</h3>
+					<p class="footer__text">
+						Casa Taller & Showroom<br />
+						Av. San Juan 2847<br />
+						C1232AAB - Barrio de San Cristóbal<br />
+						Buenos Aires, Argentina
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Horarios Showroom</h3>
+					<p class="footer__text">
+						Lunes a Viernes: 10:00 - 19:00 hs<br />
+						Sábados: 10:00 - 14:00 hs
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Contacto Digital</h3>
+					<p class="footer__text">
+						Email: <a href="mailto:info@hermanosjota.com.ar"
+							class="footer__link">info@hermanosjota.com.ar</a><br />
+						Ventas: <a href="mailto:ventas@hermanosjota.com.ar"
+							class="footer__link">ventas@hermanosjota.com.ar</a><br />
+						WhatsApp: <a href="https://wa.me/541145678900" class="footer__link">+54 11 4567-8900</a><br />
+						Instagram: <a href="" class="footer__link">@hermanosjota_ba</a>
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Compromiso Sustentable</h3>
+					<p class="footer__text">
+						Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje
+						ecológico.
+					</p>
+				</div>
+			</div>
+
+			<div class="footer__bottom">
+				<p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+				<nav class="footer__social-nav" aria-label="Redes sociales">
+					<ul class="footer__social-list">
+						<li><a href="#twitter" class="footer__social-link">Twitter</a></li>
+						<li><a href="#facebook" class="footer__social-link">Facebook</a></li>
+						<li><a href="#instagram" class="footer__social-link">Instagram</a></li>
+						<li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
+					</ul>
 				</nav>
 			</div>
-		</header>
+		</div>
+	</footer>
 
-		<main id="main-content">
-			<!-- hero -->
-			<section class="hero" id="inicio" aria-labelledby="hero-title">
-				<div class="hero__overlay" aria-hidden="true"></div>
-				
-				<img class="hero__bg-image" src="./assets/bg-inicio.png" alt="Salón decorado con sofá de lino, mesas de centro de madera maciza y sillón de autor" width="1920" height="1080" fetchpriority="high" />
+</body>
 
-				<div class="container hero__container">
-					<div class="hero__content">
-						<h1 id="hero-title" class="hero__title">El <span class="hero__title--highlight">alma</span> del bosque en el corazón de tu <span class="hero__title--highlight">hogar</span></h1>
-						<p class="hero__subtitle"> Nos especializamos en piezas de alta calidad con una estética distintiva, curadas y diseñadas para habitar tu espacio con distinción.</p>
-						<div class="hero__actions">
-							<a href="./pages/catalogo.html" class="btn btn--primary">Explorar Colección</a>
-						</div>
-					</div>
-				</div>
-
-				<a href="#destacados" class="hero__scroll-indicator" aria-label="Desplazarse a productos destacados">
-					<span class="hero__scroll-ring" aria-hidden="true"></span>
-				</a>
-			</section>
-
-			<!-- PRODUCTOS -->
-			<section class="products-section" id="tienda" aria-labelledby="collections-title">
-				<div class="container">
-					<div class="section-header">
-						<h2 id="collections-title" class="section-header__title">Nuestras Nuevas Colecciones</h2>
-						<p class="section-header__subtitle">Piezas únicas esculpidas en maderas nativas argentinas. Acabados 100% naturales en aceite de lino y cera de abejas que cuidan el planeta y tu espacio.</p>
-					</div>
-
-					<div class="products-grid">
-						
-						<article class="product-card" data-id="p1" data-category="living casa">
-							<header class="product-card__header">
-								<div class="product-card__info">
-									<h3 class="product-card__title">Sofá Patagonia</h3>
-									<p class="product-card__price">$155.000</p>
-								</div>
-								<div class="product-card__swatches" aria-label="Variantes de color disponibles">
-									<span class="product-card__swatch product-card__swatch--dark" title="Nogal Oscuro"></span>
-									<span class="product-card__swatch product-card__swatch--gold" title="Cera Roble" ></span>
-									<span class="product-card__swatch product-card__swatch--wood" title="Madera Natural"></span>
-								</div>
-							</header>
-
-							<div class="product-card__image-wrapper">
-								<a href="./pages/producto.html" aria-label="Ver detalle de Sofá Patagonia">
-									<img src="./assets/sofa-patagonia.png" alt="Sofá Patagonia de diseño moderno y acabado artesanal" class="product-card__image" loading="lazy" width="300" height="220" />
-								</a>
-							</div>
-
-							<div class="product-card__actions">
-								<div class="product-card__primary-actions">
-									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p1">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p1" aria-label="Agregar Sofá Patagonia al carrito">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-											<line x1="3" y1="6" x2="21" y2="6"/>
-											<path d="M16 10a4 4 0 0 1-8 0" />
-										</svg>
-									</button>
-								</div>
-
-								<div class="product-card__secondary-actions">
-									<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
-									<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p1" aria-label="Añadir Sofá Patagonia a favoritos" aria-pressed="false">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-										</svg>
-									</button>
-								</div>
-							</div>
-						</article>
-
-						<article class="product-card" data-id="p2" data-category="living">
-							<header class="product-card__header">
-								<div class="product-card__info">
-									<h3 class="product-card__title">Sillón Copacabana</h3>
-									<p class="product-card__price">$190.000</p>
-								</div>
-								<div class="product-card__swatches" aria-label="Variantes de color disponibles">
-									<span class="product-card__swatch product-card__swatch--dark"></span>
-									<span class="product-card__swatch product-card__swatch--gold"></span>
-									<span class="product-card__swatch product-card__swatch--wood"></span>
-								</div>
-							</header>
-
-							<div class="product-card__image-wrapper">
-								<a href="./pages/producto.html" aria-label="Ver detalle de Sillón Copacabana">
-									<img src="./assets/sillon-copacabana.png" alt="Sillón Copacabana en madera nativa" class="product-card__image" loading="lazy" width="300" height="220" />
-								</a>
-							</div>
-
-							<div class="product-card__actions">
-								<div class="product-card__primary-actions">
-									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p2">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p2" aria-label="Agregar Sillón Copacabana al carrito">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-											<line x1="3" y1="6" x2="21" y2="6"/>
-											<path d="M16 10a4 4 0 0 1-8 0" />
-										</svg>
-									</button>
-								</div>
-
-								<div class="product-card__secondary-actions">
-									<a href="#" class="product-card__link-detail" >Ver detalle</a>
-									<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p2" aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-										</svg>
-									</button>
-								</div>
-							</div>
-						</article>
-
-						<article class="product-card" data-id="p3" data-category="living">
-							<header class="product-card__header">
-								<div class="product-card__info">
-									<h3 class="product-card__title">Butaca Mendoza</h3>
-									<p class="product-card__price">$110.000</p>
-								</div>
-								<div class="product-card__swatches" aria-label="Variantes de color disponibles">
-									<span class="product-card__swatch product-card__swatch--dark"></span>
-									<span class="product-card__swatch product-card__swatch--gold"></span>
-									<span class="product-card__swatch product-card__swatch--wood"></span>
-								</div>
-							</header>
-
-							<div class="product-card__image-wrapper">
-								<a href="./pages/producto.html" aria-label="Ver detalle de Butaca Mendoza">
-									<img src="./assets/butaca-mendoza.png" alt="Butaca Mendoza tapizada con estructura de madera" class="product-card__image" loading="lazy" width="300" height="220"/>
-								</a>
-							</div>
-
-							<div class="product-card__actions">
-								<div class="product-card__primary-actions">
-									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p3">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p3" aria-label="Agregar Butaca Mendoza al carrito">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-											<line x1="3" y1="6" x2="21" y2="6"/>
-											<path d="M16 10a4 4 0 0 1-8 0" />
-										</svg>
-									</button>
-								</div>
-
-								<div class="product-card__secondary-actions">
-									<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
-									<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p3" aria-label="Añadir Butaca Mendoza a favoritos" aria-pressed="false">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-						</article>
-
-						<article class="product-card" data-id="p4" data-category="living casa">
-							<header class="product-card__header">
-								<div class="product-card__info">
-									<h3 class="product-card__title">Mesa de Centro Araucaria</h3>
-									<p class="product-card__price">$159.000</p>
-								</div>
-								<div class="product-card__swatches" aria-label="Variantes de color disponibles">
-									<span class="product-card__swatch product-card__swatch--dark"></span>
-									<span class="product-card__swatch product-card__swatch--gold"></span>
-									<span class="product-card__swatch product-card__swatch--wood"></span>
-								</div>
-							</header>
-
-							<div class="product-card__image-wrapper">
-								<a href="./pages/producto.html" aria-label="Ver detalle de Mesa de Centro Araucaria">
-									<img src="./assets/mesa-de-centro-araucaria.png" alt="Mesa de centro Araucaria en madera maciza" class="product-card__image" loading="lazy" width="300" height="220" />
-								</a>
-							</div>
-
-							<div class="product-card__actions">
-								<div class="product-card__primary-actions">
-									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p4">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p4"aria-label="Agregar Mesa de Centro Araucaria al carrito">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-											<line x1="3" y1="6" x2="21" y2="6" />
-											<path d="M16 10a4 4 0 0 1-8 0" />
-										</svg>
-									</button>
-								</div>
-
-								<div class="product-card__secondary-actions">
-									<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
-									<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p4" aria-label="Añadir Mesa de Centro Araucaria a favoritos" aria-pressed="false">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-						</article>
-
-						<article class="product-card" data-id="p5" data-category="habitacion casa">
-							<header class="product-card__header">
-								<div class="product-card__info">
-									<h3 class="product-card__title">Mesa de Noche Aconcagua</h3>
-									<p class="product-card__price">$146.000</p>
-								</div>
-								<div class="product-card__swatches" aria-label="Variantes de color disponibles">
-									<span class="product-card__swatch product-card__swatch--dark"></span>
-									<span class="product-card__swatch product-card__swatch--gold"></span>
-									<span class="product-card__swatch product-card__swatch--wood"></span>
-								</div>
-							</header>
-
-							<div class="product-card__image-wrapper">
-								<a href="./pages/producto.html" aria-label="Ver detalle de Mesa de Noche Aconcagua">
-									<img src="./assets/mesa-de-noche-aconcagua.png" alt="Mesa de Noche Aconcagua para dormitorio" class="product-card__image" loading="lazy" width="300" height="220" />
-								</a>
-							</div>
-
-							<div class="product-card__actions">
-								<div class="product-card__primary-actions">
-									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p5">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p5" aria-label="Agregar Mesa de Noche Aconcagua al carrito">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-											<line x1="3" y1="6" x2="21" y2="6" />
-											<path d="M16 10a4 4 0 0 1-8 0" />
-										</svg>
-									</button>
-								</div>
-
-								<div class="product-card__secondary-actions">
-									<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
-									<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p5" aria-label="Añadir Mesa de Noche Aconcagua a favoritos" aria-pressed="false">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-						</article>
-
-						<article class="product-card" data-id="p6" data-category="habitacion casa">
-							<header class="product-card__header">
-								<div class="product-card__info">
-									<h3 class="product-card__title">Biblioteca Recoleta</h3>
-									<p class="product-card__price">$125.000</p>
-								</div>
-								<div class="product-card__swatches" aria-label="Variantes de color disponibles">
-									<span class="product-card__swatch product-card__swatch--dark"></span>
-									<span class="product-card__swatch product-card__swatch--gold"></span>
-									<span class="product-card__swatch product-card__swatch--wood"></span>
-								</div>
-							</header>
-
-							<div class="product-card__image-wrapper">
-								<a href="./pages/producto.html" aria-label="Ver detalle de Biblioteca Recoleta">
-									<img src="./assets/biblioteca-recoleta.png" alt="Biblioteca Recoleta estilo mid-century" class="product-card__image" loading="lazy" width="300" height="220" />
-								</a>
-							</div>
-
-							<div class="product-card__actions">
-								<div class="product-card__primary-actions">
-									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p6">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p6" aria-label="Agregar Biblioteca Recoleta al carrito">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-											<line x1="3" y1="6" x2="21" y2="6" />
-											<path d="M16 10a4 4 0 0 1-8 0" />
-										</svg>
-									</button>
-								</div>
-
-								<div class="product-card__secondary-actions">
-									<a href="./pages/producto.html" class="product-card__link-detail">Ver detalle</a>
-									<button type="button" class="btn--icon" data-action="toggle-fav" data-id="p6" aria-label="Añadir Biblioteca Recoleta a favoritos" aria-pressed="false">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-											<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-										</svg>
-									</button>
-								</div>
-							</div>
-						</article>
-					</div>
-
-					<div class="products-section__action">
-						<a href="./pages/catalogo.html" class="btn btn--outline">Ver Todos Los Productos</a>
-					</div>
-				</div>
-			</section>
-
-			<!-- CATEGORÍAS -->
-			<section class="categories-section" id="colecciones" aria-labelledby="recommended-title">
-				<div class="container">
-					<div class="section-header">
-						<h2 id="recommended-title" class="section-header__title">Productos Recomendados Para Ti</h2>
-						<p class="section-header__subtitle">Pensamos cada detalle para que no tengas que hacerlo tú. Una selección donde la innovación en el diseño se une a nuestra tradición maderera para acompañar tu espacio.</p>
-					</div>
-
-					<div class="categories-mosaic">
-						<article class="category-card category-card--kitchen">
-							<img class="category-card__bg" src="./assets/cocina.png" alt="Muebles para cocina" loading="lazy" width="600" height="400" />
-							<div class="category-card__content">
-								<h3 class="category-card__title">Muebles de Cocina</h3>
-								<a href="#cocina" class="btn btn--small">EXPLORAR COLECCIÓN</a>
-							</div>
-						</article>
-
-						<article class="category-card category-card--living">
-							<img class="category-card__bg" src="./assets/living.png" alt="Muebles para sala de estar" loading="lazy" width="600" height="400" />
-							<div class="category-card__content">
-								<h3 class="category-card__title">Muebles de Sala de Estar</h3>
-								<a href="#living" class="btn btn--small">EXPLORAR COLECCIÓN</a>
-							</div>
-						</article>
-
-						<article class="category-card category-card--office">
-							<img class="category-card__bg" src="./assets/oficina.png" alt="Muebles para oficina" loading="lazy" width="600" height="400" />
-							<div class="category-card__content">
-								<h3 class="category-card__title">Muebles de Oficina</h3>
-								<a href="#oficina" class="btn btn--small">EXPLORAR COLECCIÓN</a>
-							</div>
-						</article>
-
-						<article class="category-card category-card--bedroom">
-							<img class="category-card__bg" src="./assets/habitacion.png" alt="Muebles para habitación" loading="lazy" width="600" height="400" />
-							<div class="category-card__content">
-								<h3 class="category-card__title">Muebles de Habitación</h3>
-								<a href="#habitacion" class="btn btn--small">EXPLORAR COLECCIÓN</a>
-							</div>
-						</article>
-					</div>
-				</div>
-			</section>
-
-			<!-- LO QUE OFRECEMOS / NOSOTROS -->
-			<section class="offers-section" id="nosotros" aria-labelledby="offers-title">
-				<div class="container">
-					<div class="section-header">
-						<h2 id="offers-title" class="section-header__title">Nosotros Te Ofrecemos</h2>
-						<p class="section-header__subtitle">Diseños de alta calidad, funcionales y atemporales, creados para transformar tu hogar con confort y distinguida simplicidad.</p>
-					</div>
-
-					<div class="offers-flower">
-
-						<aside class="offers-flower__side-card offers-flower__side-card--left">
-							<div class="offers-flower__side-icon" aria-hidden="true"></div>
-							<h3 class="offers-flower__side-title">Haz Tu Orden</h3>
-							<p class="offers-flower__side-text">Todas las piezas realizadas bajo pedido por usted.</p>
-						</aside>
-
-						<!-- inicio de flor -->
-						<div class="offers-flower__center">
-							
-							<!-- hoja 1 >>> top-left -->
-							<article class="offers-flower__petal offers-flower__petal--tl">
-								<span class="offers-flower__badge offers-flower__badge--tl">Herencia Viva</span>
-								<p class="offers-flower__petal-text">Garantía de 10 años en estructura y programa de recompra hasta el 40% de su valor.</p>
-							</article>
-
-							<!-- hoja 2 >>> top-right -->
-							<article class="offers-flower__petal offers-flower__petal--tr">
-								<span class="offers-flower__badge offers-flower__badge--tr">Maderas FSC</span>
-								<p class="offers-flower__petal-text">Procedencia transparente de bosques responsables argentinos (Algarrobo, Quebracho, Caldén).</p>
-							</article>
-
-							<!-- hoja 3 >>> bottom-left -->
-							<article class="offers-flower__petal offers-flower__petal--bl">
-								<span class="offers-flower__badge offers-flower__badge--bl">Cero Plástico</span>
-								<p class="offers-flower__petal-text">Embalajes 100% reciclables y libre de plásticos de un solo uso en todas nuestras entregas.</p>
-							</article>
-
-							<!-- hoja 4 >>> bottom-right -->
-							<article class="offers-flower__petal offers-flower__petal--br">
-								<span class="offers-flower__badge offers-flower__badge--br">Acabados BIO</span>
-								<p class="offers-flower__petal-text">Protección natural con aceite de lino prensado en frío y tintes vegetales sin COV.</p>
-							</article>
-						</div>
-
-						<aside class="offers-flower__side-card offers-flower__side-card--right">
-							<div class="offers-flower__side-icon" aria-hidden="true"></div>
-							<h3 class="offers-flower__side-title">Free Delivery</h3>
-							<p class="offers-flower__side-text">Entrega gratuita para pedidos en todo el mundo.</p>
-						</aside>
-					</div>
-				</div>
-			</section>
-
-			<!-- RESEÑAS -->
-			 <section class="reviews-section" aria-labelledby="reviews-title">
-				<div class="container">
-					<div class="section-header">
-						<h2 id="reviews-title" class="section-header__title">Lo Que Dicen Quienes Conviven Con Hermanos Jota</h2>
-						<p class="section-header__subtitle">Descubre cómo nuestras piezas cobran vida en el día a día y moldean no solo sus ambientes, sino la manera de habitarlos.</p>
-					</div>
-
-					<div class="reviews-grid">
-						<article class="review-card">
-							<header class="review-card__header">
-								<div class="review-card__user">
-									<div class="review-card__avatar" aria-hidden="true">M</div>
-									<div>
-										<h3 class="review-card__name">Mike Wazowski</h3>
-										<span class="review-card__source">Monsters University</span>
-									</div>
-								</div>
-								<div class="review-card__rating" aria-label="Calificación 5.0 de 5 estrellas">
-									<span aria-hidden="true">★ 5.0</span>
-								</div>
-							</header>
-							<p class="review-card__text">"Compramos la mesa de quebracho hace 2 años. El aroma de los aceites naturales y el tacto de la madera no tienen comparación. Inversión para toda la vida."</p>
-						</article>
-
-						<article class="review-card">
-							<header class="review-card__header">
-								<div class="review-card__user">
-									<div class="review-card__avatar" aria-hidden="true">C</div>
-									<div>
-										<h3 class="review-card__name">Clarence</h3>
-										<span class="review-card__source">Escuela Primaria de Aberdale</span>
-									</div>
-								</div>
-								<div class="review-card__rating" aria-label="Calificación 4.5 de 5 estrellas">
-									<span aria-hidden="true">★ 4.5</span>
-								</div>
-							</header>
-							<p class="review-card__text">"El diseño es precioso y los materiales se sienten de excelente calidad. Una pieza que realmente acompaña el espacio."</p>
-						</article>
-
-						<article class="review-card">
-							<header class="review-card__header">
-								<div class="review-card__user">
-									<div class="review-card__avatar" aria-hidden="true">H</div>
-									<div>
-										<h3 class="review-card__name">Homero Simpson</h3>
-										<span class="review-card__source">Springfield High School</span>
-									</div>
-								</div>
-								<div class="review-card__rating" aria-label="Calificación 5.0 de 5 estrellas">
-									<span aria-hidden="true">★ 5.0</span>
-								</div>
-							</header>
-							<p class="review-card__text">"Visitar la Casa Taller en San Cristóbal te hace entender el amor que le ponen a cada ensamble. Muy atentos en todo el proceso de entrega."</p>
-						</article>
-					</div>
-				</div>
-			</section>
-
-			<!-- FAQ -->
-			<section class="faq-section" id="faq" aria-labelledby="faq-title">
-				<div class="container container--narrow">
-					<div class="section-header">
-						<h2 id="faq-title" class="section-header__title">Preguntas Frecuentes</h2>
-						<p class="section-header__subtitle">Resolvemos tus dudas sobre nuestro proceso artesanal, garantías y envíos.</p>
-					</div>
-
-					<ul class="accordion" role="list">
-						
-						<li class="accordion__item">
-							<h3>
-								<button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1">
-									¿Cómo funcionan los envíos a todo el país sin plásticos?
-									<svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-										<path d="m6 9 6 6 6-6" />
-									</svg>
-								</button>
-							</h3>
-							<div id="faq-ans-1" class="accordion__panel" role="region" aria-labelledby="faq-btn-1" hidden>
-								<p>Coordinamos envíos protegidos utilizando fundas reutilizables de tela y cartón comprimido reciclado, eliminando completamente el uso de plásticos de un solo uso.</p>
-							</div>
-						</li>
-
-						<li class="accordion__item">
-							<h3>
-								<button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
-									¿Qué garantía tienen los muebles de Hermanos Jota?
-									<svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-										<path d="m6 9 6 6 6-6" />
-									</svg>
-								</button>
-							</h3>
-							<div id="faq-ans-2" class="accordion__panel" role="region" aria-labelledby="faq-btn-2" hidden>
-								<p>Ofrecemos nuestro programa Herencia Viva: 10 años de garantía estructural sobre ensambles y maderas nativas.</p>
-							</div>
-						</li>
-
-						<li class="accordion__item">
-							<h3>
-								<button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
-									¿Puedo visitar la Casa Taller antes de encargar una pieza?
-									<svg class="accordion__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-										<path d="m6 9 6 6 6-6" />
-									</svg>
-								</button>
-							</h3>
-							<div id="faq-ans-3" class="accordion__panel" role="region" aria-labelledby="faq-btn-3" hidden>
-								<p>¡Por supuesto! Te esperamos en San Cristóbal, CABA, de Lunes a Viernes de 10 a 19 hs y Sábados de 10 a 14 hs.</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</section>
-
-			<!-- BANNER CTA -->
-			<section class="cta-banner" aria-labelledby="cta-banner-title">
-				<div class="cta-banner__container">
-					<img class="cta-banner__bg" src="./assets/living.png" alt="" loading="lazy" width="1600" height="600" />
-					<div class="cta-banner__overlay" aria-hidden="true"></div>
-					<div class="cta-banner__content">
-						<h2 id="cta-banner-title" class="cta-banner__title">Construye tu hogar <span class="cta-banner__title--highlight">pieza a pieza</span></h2>
-						<p class="cta-banner__subtitle">Más que decorar un ambiente, se trata de crear el lugar donde siempre quieres volver.</p>
-						<a href="./pages/catalogo.html" class="btn btn--primary">EXPLORAR COLECCIÓN</a>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<!-- FOOTER -->
-		<footer class="footer">
-			<div class="container">
-				<div class="footer__brand">
-					<a href="/" class="footer__logo-link">
-					<img src="./assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60" aria-hidden="true" />
-					<span class="footer__brand-name">Hermanos Jota</span>
-					</a>
-				</div>
-
-				<div class="footer__grid">
-					<div class="footer__col">
-						<h3 class="footer__title">Hermanos Jota</h3>
-						<p class="footer__text">
-							Casa Taller & Showroom<br/>
-							Av. San Juan 2847<br/>
-							C1232AAB - Barrio de San Cristóbal<br/>
-							Buenos Aires, Argentina
-						</p>
-					</div>
-
-					<div class="footer__col">
-						<h3 class="footer__title">Horarios Showroom</h3>
-						<p class="footer__text">
-							Lunes a Viernes: 10:00 - 19:00 hs<br/>
-							Sábados: 10:00 - 14:00 hs
-						</p>
-					</div>
-
-					<div class="footer__col">
-						<h3 class="footer__title">Contacto Digital</h3>
-						<p class="footer__text">
-							Email: <a href="mailto:info@hermanosjota.com.ar" class="footer__link">info@hermanosjota.com.ar</a><br/>
-							Ventas: <a href="mailto:ventas@hermanosjota.com.ar" class="footer__link">ventas@hermanosjota.com.ar</a><br/>
-							WhatsApp: <a href="https://wa.me/541145678900" class="footer__link">+54 11 4567-8900</a><br/>
-							Instagram: <a href="" class="footer__link">@hermanosjota_ba</a>
-						</p>
-					</div>
-
-					<div class="footer__col">
-						<h3 class="footer__title">Compromiso Sustentable</h3>
-						<p class="footer__text">
-							Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje ecológico.
-						</p>
-					</div>
-				</div>
-
-				<div class="footer__bottom">
-					<p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
-					<nav class="footer__social-nav" aria-label="Redes sociales">
-						<ul class="footer__social-list">
-							<li><a href="#twitter" class="footer__social-link">Twitter</a></li>
-							<li><a href="#facebook" class="footer__social-link">Facebook</a></li>
-							<li><a href="#instagram" class="footer__social-link">Instagram</a></li>
-							<li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</footer>
-
-	</body>
 </html>
