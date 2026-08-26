@@ -92,6 +92,15 @@
 	text-align: center;
 }
 
+.products-grid .btn--icon.is-active {
+	background-color: var(--color-brand-gold);
+	color: var(--color-bg-surface);
+}
+
+.products-grid .btn--icon.is-active svg {
+	fill: currentColor;
+}
+
 /* ----- categorías ------- */
 .categories-section {
 	padding: var(--space-xl) 0;
