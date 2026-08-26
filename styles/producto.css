@@ -86,6 +86,11 @@
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
+.product-gallery__thumb--active {
+	border-color: var(--color-brand-gold);
+	box-shadow: 0 0 0 2px rgba(212, 164, 55, 0.18);
+}
+
 .product-gallery__thumb-img {
 	width: 100%;
 	height: 100%;
@@ -115,6 +120,16 @@
 .product-gallery__thumb:hover .product-gallery__thumb-img--detail-top,
 .product-gallery__thumb:hover .product-gallery__thumb-img--detail-bottom {
 	transform: scale(1.8);
+}
+
+.product-gallery__main-img--detail-top {
+	object-position: 50% 25%;
+	transform: scale(1.35);
+}
+
+.product-gallery__main-img--detail-bottom {
+	object-position: 50% 85%;
+	transform: scale(1.35);
 }
 
 /* ---- info ----- */
@@ -270,6 +285,17 @@
 .product-info__fav-btn:focus-visible {
 	background-color: var(--color-brand-gold);
 	color: var(--color-bg-surface);
+}
+
+.product-info__fav-btn.is-active,
+.btn--icon.is-active {
+	background-color: var(--color-brand-gold);
+	color: var(--color-bg-surface);
+}
+
+.product-info__fav-btn.is-active svg,
+.btn--icon.is-active svg {
+	fill: currentColor;
 }
 
 /* --- reseñas ---- */
