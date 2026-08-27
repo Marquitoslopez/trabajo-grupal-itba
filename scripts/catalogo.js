@@ -131,8 +131,7 @@
 					}
 				});
 			})();
-		</script>
-		<script>
+
 			(() => {
 				const searchPanel = document.querySelector('#catalog-search-panel');
 				const searchInput = document.querySelector('#catalog-search-input');
