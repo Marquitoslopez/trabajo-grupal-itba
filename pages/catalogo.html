@@ -4,17 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Catálogo de Hermanos Jota — Explora nuestros muebles de autor en maderas nativas: sillas, sillones, mesas, escritorios y almacenamiento." />
-		<title>Tienda — Hermanos Jota</title>
+		<title>Tienda</title>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-
 		<link rel="stylesheet" href="../styles/general.css">
 		<link rel="stylesheet" href="../styles/header.css">
 		<link rel="stylesheet" href="../styles/footer.css">
-		<link rel="stylesheet" href="./styles/components.css" />
+		<link rel="stylesheet" href="../styles/components.css" />
 		<link rel="stylesheet" href="../styles/catalogo.css" />
+		<link rel="stylesheet" href="../styles/carrito.css" />
 	</head>
 	<body>
 		
@@ -23,6 +24,20 @@
 				<a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
 					<img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
 				</a>
+
+				<button
+					type="button"
+					class="header__action-btn header__mobile-search-button"
+					data-search-trigger
+					aria-label="Buscar productos"
+					aria-controls="catalog-search-panel"
+					aria-expanded="false"
+				>
+					<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+						<circle cx="11" cy="11" r="8" />
+						<path d="m21 21-4.3-4.3" />
+					</svg>
+				</button>
 
 				<!-- Checkbox hamburguesa -->
 				<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
@@ -55,7 +70,14 @@
 
 					<!-- sidebar actions -->
 					<div class="header__actions">
-						<button type="button" class="header__action-btn" aria-label="Buscar productos">
+						<button
+							type="button"
+							class="header__action-btn header__desktop-search-button"
+							data-search-trigger
+							aria-label="Buscar productos"
+							aria-controls="catalog-search-panel"
+							aria-expanded="false"
+						>
 							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
 								<circle cx="11" cy="11" r="8" />
 								<path d="m21 21-4.3-4.3" />
@@ -78,6 +100,71 @@
 						</button>
 					</div>
 				</nav>
+			</div>
+
+			<div class="catalog-search-panel" id="catalog-search-panel" aria-hidden="true">
+				<div class="container">
+					<div class="catalog-search-panel__content" role="dialog" aria-label="Buscador de productos">
+						<div class="catalog-search-panel__heading">
+							<div>
+								<span class="catalog-search-panel__eyebrow">BÚSQUEDA INTELIGENTE</span>
+								<p>Encontrá tu próxima pieza</p>
+								<small>Buscá por nombre, ambiente o tipo de mueble.</small>
+							</div>
+
+							<button type="button" class="catalog-search-panel__close" id="catalog-search-close" aria-label="Cerrar búsqueda">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+									<path d="M18 6 6 18" />
+									<path d="m6 6 12 12" />
+								</svg>
+							</button>
+						</div>
+
+						<form class="catalog-search" id="catalog-search" role="search">
+							<label class="sr-only" for="catalog-search-input">Buscar productos en el catálogo</label>
+							<div class="catalog-search__field">
+								<svg class="catalog-search__icon" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+									<circle cx="11" cy="11" r="8" />
+									<path d="m21 21-4.3-4.3" />
+								</svg>
+								<input
+									type="search"
+									class="catalog-search__input"
+									id="catalog-search-input"
+									placeholder="Probá con “mesa”, “living” o “madera”..."
+									autocomplete="off"
+									role="combobox"
+									aria-autocomplete="list"
+									aria-controls="catalog-search-results"
+									aria-expanded="false"
+								/>
+								<kbd class="catalog-search__shortcut" aria-hidden="true">Ctrl K</kbd>
+								<button type="button" class="catalog-search__clear" id="catalog-search-clear" aria-label="Limpiar búsqueda" hidden>×</button>
+							</div>
+						</form>
+
+						<div class="catalog-search-discover" id="catalog-search-discover">
+							<span>Descubrí rápido</span>
+							<div class="catalog-search-discover__list">
+								<button type="button" data-search-suggestion="sofá">Sofás</button>
+								<button type="button" data-search-suggestion="mesa">Mesas</button>
+								<button type="button" data-search-suggestion="living">Living</button>
+								<button type="button" data-search-suggestion="oficina">Oficina</button>
+							</div>
+						</div>
+
+						<div class="catalog-search-results" id="catalog-search-results" role="listbox" aria-label="Productos encontrados" hidden></div>
+
+						<div class="catalog-search-panel__footer">
+							<p class="catalog-search-panel__feedback" id="catalog-result-status" role="status" aria-live="polite">
+								Escribí para ver resultados al instante.
+							</p>
+							<button type="button" class="catalog-search-panel__show-all" id="catalog-search-show-all" hidden>
+								Ver todos <span aria-hidden="true">→</span>
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
 
@@ -275,7 +362,7 @@
 							<div class="product-card__actions">
 								<div class="product-card__primary-actions">
 									<button type="button" class="btn btn--primary" data-action="buy-now" data-id="p4">Comprar</button>
-									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p4"aria-label="Agregar Mesa de Centro Araucaria al carrito">
+									<button type="button" class="btn btn--gold" data-action="add-cart" data-id="p4" aria-label="Agregar Mesa de Centro Araucaria al carrito">
 										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
 											<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
 											<line x1="3" y1="6" x2="21" y2="6" />
@@ -589,6 +676,14 @@
 							</div>
 						</article>
 					</div>
+
+					<div class="catalog__empty" id="catalog-empty" hidden>
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true" focusable="false">
+							<circle cx="11" cy="11" r="8" />
+							<path d="m21 21-4.3-4.3" />
+						</svg>
+						<p>No encontramos productos con esa búsqueda.</p>
+					</div>
 				</div>
 			</section>
 
@@ -725,5 +820,9 @@
 			</div>
 		</footer>
 
+		<script>
+			
+		</script>
+		<script src="../scripts/carrito.js"></script>
 	</body>
 </html>
