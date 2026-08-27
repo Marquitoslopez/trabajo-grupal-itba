@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sillón Copacabana en cuero cognac con base giratoria. Conoce sus medidas, materiales y garantía en Hermanos Jota Muebles." />
+    <meta id="product-meta-description" name="description" content="Muebles de autor Hermanos Jota: diseño, materiales nobles y fabricación artesanal." />
     <title>Sillón Copacabana — Hermanos Jota Muebles</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-
     <link rel="stylesheet" href="../styles/general.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
     <link rel="stylesheet" href="../styles/producto.css" />
+    <link rel="stylesheet" href="../styles/carrito.css" />
   </head>
 
   <body>
@@ -93,7 +94,7 @@
                 <img src="../assets/sillon-copacabana.png" alt="Sillón Copacabana en cuero cognac visto de frente" class="product-gallery__main-img" id="main-product-image" fetchpriority="high" />
               </div>
 
-              <div class="product-gallery__thumbnails" role="region" aria-label="Detalles y acabados del producto">
+              <div class="product-gallery__thumbnails" id="product-thumbnails" role="region" aria-label="Detalles y acabados del producto">
                 <!-- enfoque 1 -->
                 <button type="button" class="product-gallery__thumb" aria-label="Detalle del cuerpo">
                   <img src="../assets/sillon-copacabana.png" alt="Sillón Copacabana vista completa" class="product-gallery__thumb-img product-gallery__thumb-img--full" />
@@ -113,9 +114,9 @@
 
             <!-- descripción del producto -->
             <div class="product-info">
-              <span class="product-info__badge">Living Room</span>
+              <span class="product-info__badge" id="product-category">Living Room</span>
               <h1 id="product-title" class="product-info__title">Sillón Copacabana</h1>
-              <p class="product-info__price">$189.00</p>
+              <p class="product-info__price" id="product-price">$190.000</p>
 
               <div class="product-info__shipping-alert">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -127,10 +128,10 @@
 
               <div class="product-info__description">
                 <h2 class="product-info__subheading">Descripción</h2>
-                <p>Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera moderna de los 60, combina comodidad excepcional con un diseño icónico que trasciende tendencias y épocas.</p>
+                <p id="product-description">Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera moderna de los 60, combina comodidad excepcional con un diseño icónico que trasciende tendencias y épocas.</p>
               </div>
 
-              <dl class="product-specs">
+              <dl class="product-specs" id="product-specs">
                 <div class="product-specs__row">
                   <dt class="product-specs__term">Medidas</dt>
                   <dd class="product-specs__detail">90 × 85 × 95 cm</dd>
@@ -154,8 +155,8 @@
               </dl>
 
               <div class="product-info__actions">
-                <button type="button" class="btn btn--gold-pill btn--add-to-cart">Añadir al Carro</button>
-                <button type="button" class="product-info__fav-btn" aria-label="Añadir Sillón Copacabana a favoritos">
+                <button type="button" class="btn btn--gold-pill btn--add-to-cart" id="add-current-product" data-action="add-cart">Añadir al Carro</button>
+                <button type="button" class="product-info__fav-btn" id="favorite-current-product" aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                   </svg>
@@ -177,10 +178,10 @@
             <!-- columna izquierda -->
             <aside class="reviews-summary">
               <div class="reviews-summary__score-container">
-                <span class="reviews-summary__score">4.8</span>
+                <span class="reviews-summary__score" id="product-rating">4.8</span>
                 <div class="reviews-summary__stars-wrapper">
                   <div class="reviews-summary__stars" aria-label="4.8 de 5 estrellas">★★★★★</div>
-                  <span class="reviews-summary__count">529 calificaciones</span>
+                  <span class="reviews-summary__count" id="product-rating-count">529 calificaciones</span>
                 </div>
               </div>
 
@@ -213,7 +214,7 @@
             <div class="reviews-feed">
               <h3 class="reviews-feed__title">Opiniones destacadas</h3>
 
-              <div class="reviews-grid">
+              <div class="reviews-grid" id="product-reviews-grid">
                 
                 <article class="review-card">
                   <header class="review-card__header">
@@ -281,7 +282,7 @@
           <div class="container">
               <h2 id="related-title" class="related-products__title">Productos recomendados</h2>
 
-              <div class="related-products__grid">
+              <div class="related-products__grid" id="related-products-grid">
                   
                   <article class="product-card" data-id="p1" data-category="living casa">
                       <header class="product-card__header">
@@ -471,6 +472,9 @@
         </div>
       </div>
     </footer>
+
+    <script src="../scripts/producto.js" defer></script>
+	<script src="../scripts/carrito.js"></script>
 
   </body>
 </html>
