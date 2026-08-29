@@ -1,480 +1,538 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta id="product-meta-description" name="description" content="Muebles de autor Hermanos Jota: diseño, materiales nobles y fabricación artesanal." />
-    <title>Sillón Copacabana — Hermanos Jota Muebles</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles/general.css" />
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/footer.css" />
-    <link rel="stylesheet" href="../styles/components.css" />
-    <link rel="stylesheet" href="../styles/producto.css" />
-    <link rel="stylesheet" href="../styles/carrito.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta id="product-meta-description" name="description"
+    content="Muebles de autor Hermanos Jota: diseño, materiales nobles y fabricación artesanal." />
+  <title>Sillón Copacabana — Hermanos Jota Muebles</title>
 
-  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/header.css" />
+  <link rel="stylesheet" href="../styles/footer.css" />
+  <link rel="stylesheet" href="../styles/components.css" />
+  <link rel="stylesheet" href="../styles/producto.css" />
+  <link rel="stylesheet" href="../styles/carrito.css" />
+  <link rel="stylesheet" href="../styles/buscador.css" />
+</head>
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header__container">
-        <a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
-          <img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
-        </a>
+<body>
 
-        <!-- checkbox hamburguesa -->
-        <input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
-        <label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación" role="button" tabindex="0">
-          <span class="header__toggle-bar"></span>
-          <span class="header__toggle-bar"></span>
-          <span class="header__toggle-bar"></span>
-        </label>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
+        <img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
+      </a>
 
-        <!-- nav desplegable -->
-        <nav class="header__nav" aria-label="Navegación principal">
-          <ul class="header__menu">
-            <li class="header__menu-item">
-              <a href="../index.html" class="header__menu-link">Inicio</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="./catalogo.html" class="header__menu-link header__menu-link--active" aria-current="page">Tienda</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="../index.html#colecciones" class="header__menu-link">Colecciones</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#nosotros" class="header__menu-link">Nosotros</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="./contacto.html" class="header__menu-link">Contacto</a>
-            </li>
-          </ul>
+      <!-- checkbox hamburguesa -->
+      <input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
+      <label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación"
+        role="button" tabindex="0">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </label>
 
-          <div class="header__actions">
-            <button type="button" class="header__action-btn" aria-label="Buscar productos">
-              <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.3-4.3" />
-              </svg>
-            </button>
+      <!-- nav desplegable -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="../index.html" class="header__menu-link">Inicio</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="./catalogo.html" class="header__menu-link header__menu-link--active" aria-current="page">Tienda</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="../index.html#colecciones" class="header__menu-link">Colecciones</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#nosotros" class="header__menu-link">Nosotros</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="./contacto.html" class="header__menu-link">Contacto</a>
+          </li>
+        </ul>
 
-            <button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
-              <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-              </svg>
-            </button>
+        <div class="header__actions">
+          <button type="button" class="header__action-btn" aria-label="Buscar productos">
+            <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
 
-            <button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
-              <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
-              </svg>
-              <span class="header__cart-count" aria-hidden="true">0</span>
-            </button>
+          <button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
+            <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" aria-hidden="true" focusable="false">
+              <path
+                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
+          </button>
+
+          <button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
+            <svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" aria-hidden="true" focusable="false">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="header__cart-count" aria-hidden="true">0</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="product-main">
+
+    <section class="product-detail" aria-labelledby="product-title">
+      <div class="container">
+        <div class="product-detail__grid">
+
+          <div class="product-gallery">
+            <div class="product-gallery__main">
+              <div class="product-gallery__blob" aria-hidden="true"></div>
+              <img src="../assets/sillon-copacabana.png" alt="Sillón Copacabana en cuero cognac visto de frente"
+                class="product-gallery__main-img" id="main-product-image" fetchpriority="high" />
+            </div>
+
+            <div class="product-gallery__thumbnails" id="product-thumbnails" role="region"
+              aria-label="Detalles y acabados del producto">
+              <!-- enfoque 1 -->
+              <button type="button" class="product-gallery__thumb" aria-label="Detalle del cuerpo">
+                <img src="../assets/sillon-copacabana.png" alt="Sillón Copacabana vista completa"
+                  class="product-gallery__thumb-img product-gallery__thumb-img--full" />
+              </button>
+
+              <!-- enfoque 2 -->
+              <button type="button" class="product-gallery__thumb" aria-label="Detalle de la textura del cuero">
+                <img src="../assets/sillon-copacabana.png" alt="Detalle del cuero cognac"
+                  class="product-gallery__thumb-img product-gallery__thumb-img--detail-top" />
+              </button>
+
+              <!-- enfoque 3 -->
+              <button type="button" class="product-gallery__thumb" aria-label="Detalle de la base de madera">
+                <img src="../assets/sillon-copacabana.png" alt="Detalle de la base de acero"
+                  class="product-gallery__thumb-img product-gallery__thumb-img--detail-bottom" />
+              </button>
+            </div>
           </div>
-        </nav>
-      </div>
-    </header>
 
-    <main id="product-main">
+          <!-- descripción del producto -->
+          <div class="product-info">
+            <span class="product-info__badge" id="product-category">Living Room</span>
+            <h1 id="product-title" class="product-info__title">Sillón Copacabana</h1>
+            <p class="product-info__price" id="product-price">$190.000</p>
 
-      <section class="product-detail" aria-labelledby="product-title">
-        <div class="container">
-          <div class="product-detail__grid">
+            <div class="product-info__shipping-alert">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>Haz tu pedido <strong>hoy mismo</strong> y recíbelo mañana</span>
+            </div>
 
-            <div class="product-gallery">
-              <div class="product-gallery__main">
-                <div class="product-gallery__blob" aria-hidden="true"></div>
-                <img src="../assets/sillon-copacabana.png" alt="Sillón Copacabana en cuero cognac visto de frente" class="product-gallery__main-img" id="main-product-image" fetchpriority="high" />
+            <div class="product-info__description">
+              <h2 class="product-info__subheading">Descripción</h2>
+              <p id="product-description">Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna.
+                Inspirado en la estética brasilera moderna de los 60, combina comodidad excepcional con un diseño
+                icónico que trasciende tendencias y épocas.</p>
+            </div>
+
+            <dl class="product-specs" id="product-specs">
+              <div class="product-specs__row">
+                <dt class="product-specs__term">Medidas</dt>
+                <dd class="product-specs__detail">90 × 85 × 95 cm</dd>
               </div>
+              <div class="product-specs__row">
+                <dt class="product-specs__term">Materiales</dt>
+                <dd class="product-specs__detail">Cuero curtido vegetal, acero pintado</dd>
+              </div>
+              <div class="product-specs__row">
+                <dt class="product-specs__term">Acabado</dt>
+                <dd class="product-specs__detail">Cuero anilina premium</dd>
+              </div>
+              <div class="product-specs__row">
+                <dt class="product-specs__term">Rotación</dt>
+                <dd class="product-specs__detail">360° silenciosa y suave</dd>
+              </div>
+              <div class="product-specs__row">
+                <dt class="product-specs__term">Garantía</dt>
+                <dd class="product-specs__detail">10 años en estructura</dd>
+              </div>
+            </dl>
 
-              <div class="product-gallery__thumbnails" id="product-thumbnails" role="region" aria-label="Detalles y acabados del producto">
-                <!-- enfoque 1 -->
-                <button type="button" class="product-gallery__thumb" aria-label="Detalle del cuerpo">
-                  <img src="../assets/sillon-copacabana.png" alt="Sillón Copacabana vista completa" class="product-gallery__thumb-img product-gallery__thumb-img--full" />
-                </button>
+            <div class="product-info__actions">
+              <button type="button" class="btn btn--gold-pill btn--add-to-cart" id="add-current-product"
+                data-action="add-cart">Añadir al Carro</button>
+              <button type="button" class="product-info__fav-btn" id="favorite-current-product"
+                aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-                <!-- enfoque 2 -->
-                <button type="button" class="product-gallery__thumb" aria-label="Detalle de la textura del cuero">
-                  <img src="../assets/sillon-copacabana.png" alt="Detalle del cuero cognac" class="product-gallery__thumb-img product-gallery__thumb-img--detail-top" />
-                </button>
+        </div>
+      </div>
+    </section>
 
-                <!-- enfoque 3 -->
-                <button type="button" class="product-gallery__thumb" aria-label="Detalle de la base de madera">
-                  <img src="../assets/sillon-copacabana.png" alt="Detalle de la base de acero" class="product-gallery__thumb-img product-gallery__thumb-img--detail-bottom" />
-                </button>
+    <!-- reseñas -->
+    <section class="reviews-section" aria-labelledby="reviews-title">
+      <div class="container">
+        <h2 id="reviews-title" class="reviews-section__title">Opiniones del producto</h2>
+
+        <div class="reviews-layout">
+
+          <!-- columna izquierda -->
+          <aside class="reviews-summary">
+            <div class="reviews-summary__score-container">
+              <span class="reviews-summary__score" id="product-rating">4.8</span>
+              <div class="reviews-summary__stars-wrapper">
+                <div class="reviews-summary__stars" aria-label="4.8 de 5 estrellas">★★★★★</div>
+                <span class="reviews-summary__count" id="product-rating-count">529 calificaciones</span>
               </div>
             </div>
 
-            <!-- descripción del producto -->
-            <div class="product-info">
-              <span class="product-info__badge" id="product-category">Living Room</span>
-              <h1 id="product-title" class="product-info__title">Sillón Copacabana</h1>
-              <p class="product-info__price" id="product-price">$190.000</p>
+            <!-- bnarras de progreso -->
+            <div class="reviews-summary__bars">
+              <div class="rating-bar">
+                <span class="rating-bar__label">5 ★</span>
+                <div class="rating-bar__track">
+                  <div class="rating-bar__fill" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-bar__label">4 ★</span>
+                <div class="rating-bar__track">
+                  <div class="rating-bar__fill" style="width: 10%;"></div>
+                </div>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-bar__label">3 ★</span>
+                <div class="rating-bar__track">
+                  <div class="rating-bar__fill" style="width: 3%;"></div>
+                </div>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-bar__label">2 ★</span>
+                <div class="rating-bar__track">
+                  <div class="rating-bar__fill" style="width: 1%;"></div>
+                </div>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-bar__label">1 ★</span>
+                <div class="rating-bar__track">
+                  <div class="rating-bar__fill" style="width: 1%;"></div>
+                </div>
+              </div>
+            </div>
+          </aside>
 
-              <div class="product-info__shipping-alert">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-                <span>Haz tu pedido <strong>hoy mismo</strong> y recíbelo mañana</span>
+          <!-- columna derecha -->
+          <div class="reviews-feed">
+            <h3 class="reviews-feed__title">Opiniones destacadas</h3>
+
+            <div class="reviews-grid" id="product-reviews-grid">
+
+              <article class="review-card">
+                <header class="review-card__header">
+                  <div class="review-card__user">
+                    <div class="review-card__avatar" aria-hidden="true">N</div>
+                    <div>
+                      <h4 class="review-card__name">Nikka Wilson</h4>
+                      <span class="review-card__source">Comprador verificado</span>
+                    </div>
+                  </div>
+                  <div class="review-card__rating" aria-label="Calificación 5 de 5 estrellas">
+                    <span aria-hidden="true">★★★★★</span>
+                  </div>
+                </header>
+                <p class="review-card__text">
+                  "El Sillón Copacabana superó totalmente mis expectativas. El cuero es suave, de excelente calidad y el
+                  mecanismo giratorio funciona con absoluta fluidez."
+                </p>
+              </article>
+
+              <article class="review-card">
+                <header class="review-card__header">
+                  <div class="review-card__user">
+                    <div class="review-card__avatar" aria-hidden="true">M</div>
+                    <div>
+                      <h4 class="review-card__name">Martín Gomez</h4>
+                      <span class="review-card__source">Comprador verificado</span>
+                    </div>
+                  </div>
+                  <div class="review-card__rating" aria-label="Calificación 5 de 5 estrellas">
+                    <span aria-hidden="true">★★★★★</span>
+                  </div>
+                </header>
+                <p class="review-card__text">
+                  "Increíble terminación y materiales. La estructura de acero le da una solidez enorme sin perder
+                  elegancia. El color cognac es idéntico a las fotos."
+                </p>
+              </article>
+
+              <article class="review-card">
+                <header class="review-card__header">
+                  <div class="review-card__user">
+                    <div class="review-card__avatar" aria-hidden="true">S</div>
+                    <div>
+                      <h4 class="review-card__name">Sofia Rossi</h4>
+                      <span class="review-card__source">Comprador verificado</span>
+                    </div>
+                  </div>
+                  <div class="review-card__rating" aria-label="Calificación 4 de 5 estrellas">
+                    <span aria-hidden="true">★★★★☆</span>
+                  </div>
+                </header>
+                <p class="review-card__text">
+                  "Muy cómodo y estéticamente hermoso para el living. El envío tardó un día más de lo previsto, pero la
+                  calidad del mueble lo vale por completo."
+                </p>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- productos relacionados -->
+    <section class="related-products" aria-labelledby="related-title">
+      <div class="container">
+        <h2 id="related-title" class="related-products__title">Productos recomendados</h2>
+
+        <div class="related-products__grid" id="related-products-grid">
+
+          <article class="product-card" data-id="p1" data-category="living casa">
+            <header class="product-card__header">
+              <div class="product-card__info">
+                <h3 class="product-card__title">Sofá Patagonia</h3>
+                <p class="product-card__price">$155.000</p>
+              </div>
+              <div class="product-card__swatches" aria-label="Variantes de color disponibles">
+                <span class="product-card__swatch product-card__swatch--dark" title="Nogal Oscuro"></span>
+                <span class="product-card__swatch product-card__swatch--gold" title="Cera Roble"></span>
+                <span class="product-card__swatch product-card__swatch--wood" title="Madera Natural"></span>
+              </div>
+            </header>
+
+            <div class="product-card__image-wrapper">
+              <a href="./producto.html" aria-label="Ver detalle de Sofá Patagonia">
+                <img src="../assets/sofa-patagonia.png" alt="Sofá Patagonia de diseño moderno y acabado artesanal"
+                  class="product-card__image" loading="lazy" width="300" height="220" />
+              </a>
+            </div>
+
+            <div class="product-card__actions">
+              <div class="product-card__primary-actions">
+                <button type="button" class="btn btn--primary" data-action="buy-now" data-id="p1">Comprar</button>
+                <button type="button" class="btn btn--gold" data-action="add-cart" data-id="p1"
+                  aria-label="Agregar Sofá Patagonia al carrito">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true" focusable="false">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                </button>
               </div>
 
-              <div class="product-info__description">
-                <h2 class="product-info__subheading">Descripción</h2>
-                <p id="product-description">Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera moderna de los 60, combina comodidad excepcional con un diseño icónico que trasciende tendencias y épocas.</p>
-              </div>
-
-              <dl class="product-specs" id="product-specs">
-                <div class="product-specs__row">
-                  <dt class="product-specs__term">Medidas</dt>
-                  <dd class="product-specs__detail">90 × 85 × 95 cm</dd>
-                </div>
-                <div class="product-specs__row">
-                  <dt class="product-specs__term">Materiales</dt>
-                  <dd class="product-specs__detail">Cuero curtido vegetal, acero pintado</dd>
-                </div>
-                <div class="product-specs__row">
-                  <dt class="product-specs__term">Acabado</dt>
-                  <dd class="product-specs__detail">Cuero anilina premium</dd>
-                </div>
-                <div class="product-specs__row">
-                  <dt class="product-specs__term">Rotación</dt>
-                  <dd class="product-specs__detail">360° silenciosa y suave</dd>
-                </div>
-                <div class="product-specs__row">
-                  <dt class="product-specs__term">Garantía</dt>
-                  <dd class="product-specs__detail">10 años en estructura</dd>
-                </div>
-              </dl>
-
-              <div class="product-info__actions">
-                <button type="button" class="btn btn--gold-pill btn--add-to-cart" id="add-current-product" data-action="add-cart">Añadir al Carro</button>
-                <button type="button" class="product-info__fav-btn" id="favorite-current-product" aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              <div class="product-card__secondary-actions">
+                <a href="./producto.html" class="product-card__link-detail">Ver detalle</a>
+                <button type="button" class="btn--icon" data-action="toggle-fav" data-id="p1"
+                  aria-label="Añadir Sofá Patagonia a favoritos" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true" focusable="false">
+                    <path
+                      d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                   </svg>
                 </button>
               </div>
             </div>
+          </article>
 
-          </div>
-        </div>
-      </section>
-
-      <!-- reseñas -->
-      <section class="reviews-section" aria-labelledby="reviews-title">
-        <div class="container">
-          <h2 id="reviews-title" class="reviews-section__title">Opiniones del producto</h2>
-
-          <div class="reviews-layout">
-            
-            <!-- columna izquierda -->
-            <aside class="reviews-summary">
-              <div class="reviews-summary__score-container">
-                <span class="reviews-summary__score" id="product-rating">4.8</span>
-                <div class="reviews-summary__stars-wrapper">
-                  <div class="reviews-summary__stars" aria-label="4.8 de 5 estrellas">★★★★★</div>
-                  <span class="reviews-summary__count" id="product-rating-count">529 calificaciones</span>
-                </div>
+          <article class="product-card" data-id="p2" data-category="comedor casa">
+            <header class="product-card__header">
+              <div class="product-card__info">
+                <h3 class="product-card__title">Silla Belgrano</h3>
+                <p class="product-card__price">$42.500</p>
               </div>
-
-              <!-- bnarras de progreso -->
-              <div class="reviews-summary__bars">
-                <div class="rating-bar">
-                  <span class="rating-bar__label">5 ★</span>
-                  <div class="rating-bar__track"><div class="rating-bar__fill" style="width: 85%;"></div></div>
-                </div>
-                <div class="rating-bar">
-                  <span class="rating-bar__label">4 ★</span>
-                  <div class="rating-bar__track"><div class="rating-bar__fill" style="width: 10%;"></div></div>
-                </div>
-                <div class="rating-bar">
-                  <span class="rating-bar__label">3 ★</span>
-                  <div class="rating-bar__track"><div class="rating-bar__fill" style="width: 3%;"></div></div>
-                </div>
-                <div class="rating-bar">
-                  <span class="rating-bar__label">2 ★</span>
-                  <div class="rating-bar__track"><div class="rating-bar__fill" style="width: 1%;"></div></div>
-                </div>
-                <div class="rating-bar">
-                  <span class="rating-bar__label">1 ★</span>
-                  <div class="rating-bar__track"><div class="rating-bar__fill" style="width: 1%;"></div></div>
-                </div>
+              <div class="product-card__swatches" aria-label="Variantes de color disponibles">
+                <span class="product-card__swatch product-card__swatch--wood" title="Madera Natural"></span>
+                <span class="product-card__swatch product-card__swatch--dark" title="Negro Mate"></span>
               </div>
-            </aside>
+            </header>
 
-            <!-- columna derecha -->
-            <div class="reviews-feed">
-              <h3 class="reviews-feed__title">Opiniones destacadas</h3>
-
-              <div class="reviews-grid" id="product-reviews-grid">
-                
-                <article class="review-card">
-                  <header class="review-card__header">
-                    <div class="review-card__user">
-                      <div class="review-card__avatar" aria-hidden="true">N</div>
-                      <div>
-                        <h4 class="review-card__name">Nikka Wilson</h4>
-                        <span class="review-card__source">Comprador verificado</span>
-                      </div>
-                    </div>
-                    <div class="review-card__rating" aria-label="Calificación 5 de 5 estrellas">
-                      <span aria-hidden="true">★★★★★</span>
-                    </div>
-                  </header>
-                  <p class="review-card__text">
-                    "El Sillón Copacabana superó totalmente mis expectativas. El cuero es suave, de excelente calidad y el mecanismo giratorio funciona con absoluta fluidez."
-                  </p>
-                </article>
-
-                <article class="review-card">
-                  <header class="review-card__header">
-                    <div class="review-card__user">
-                      <div class="review-card__avatar" aria-hidden="true">M</div>
-                      <div>
-                        <h4 class="review-card__name">Martín Gomez</h4>
-                        <span class="review-card__source">Comprador verificado</span>
-                      </div>
-                    </div>
-                    <div class="review-card__rating" aria-label="Calificación 5 de 5 estrellas">
-                      <span aria-hidden="true">★★★★★</span>
-                    </div>
-                  </header>
-                  <p class="review-card__text">
-                    "Increíble terminación y materiales. La estructura de acero le da una solidez enorme sin perder elegancia. El color cognac es idéntico a las fotos."
-                  </p>
-                </article>
-
-                <article class="review-card">
-                  <header class="review-card__header">
-                    <div class="review-card__user">
-                      <div class="review-card__avatar" aria-hidden="true">S</div>
-                      <div>
-                        <h4 class="review-card__name">Sofia Rossi</h4>
-                        <span class="review-card__source">Comprador verificado</span>
-                      </div>
-                    </div>
-                    <div class="review-card__rating" aria-label="Calificación 4 de 5 estrellas">
-                      <span aria-hidden="true">★★★★☆</span>
-                    </div>
-                  </header>
-                  <p class="review-card__text">
-                    "Muy cómodo y estéticamente hermoso para el living. El envío tardó un día más de lo previsto, pero la calidad del mueble lo vale por completo."
-                  </p>
-                </article>
-
-              </div>
+            <div class="product-card__image-wrapper">
+              <a href="./producto.html" aria-label="Ver detalle de Silla de trabajo Belgrano">
+                <img src="../assets/silla-de-trabajo-belgrano.png" alt="Silla ergonómica con estructura de madera"
+                  class="product-card__image" loading="lazy" width="300" height="220" />
+              </a>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      <!-- productos relacionados -->
-      <section class="related-products" aria-labelledby="related-title">
-          <div class="container">
-              <h2 id="related-title" class="related-products__title">Productos recomendados</h2>
-
-              <div class="related-products__grid" id="related-products-grid">
-                  
-                  <article class="product-card" data-id="p1" data-category="living casa">
-                      <header class="product-card__header">
-                          <div class="product-card__info">
-                              <h3 class="product-card__title">Sofá Patagonia</h3>
-                              <p class="product-card__price">$155.000</p>
-                          </div>
-                          <div class="product-card__swatches" aria-label="Variantes de color disponibles">
-                              <span class="product-card__swatch product-card__swatch--dark" title="Nogal Oscuro"></span>
-                              <span class="product-card__swatch product-card__swatch--gold" title="Cera Roble"></span>
-                              <span class="product-card__swatch product-card__swatch--wood" title="Madera Natural"></span>
-                          </div>
-                      </header>
-
-                      <div class="product-card__image-wrapper">
-                          <a href="./producto.html" aria-label="Ver detalle de Sofá Patagonia">
-                              <img src="../assets/sofa-patagonia.png" alt="Sofá Patagonia de diseño moderno y acabado artesanal" class="product-card__image" loading="lazy" width="300" height="220" />
-                          </a>
-                      </div>
-
-                      <div class="product-card__actions">
-                          <div class="product-card__primary-actions">
-                              <button type="button" class="btn btn--primary" data-action="buy-now" data-id="p1">Comprar</button>
-                              <button type="button" class="btn btn--gold" data-action="add-cart" data-id="p1" aria-label="Agregar Sofá Patagonia al carrito">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                                      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-                                      <line x1="3" y1="6" x2="21" y2="6"/>
-                                      <path d="M16 10a4 4 0 0 1-8 0" />
-                                  </svg>
-                              </button>
-                          </div>
-
-                          <div class="product-card__secondary-actions">
-                              <a href="./producto.html" class="product-card__link-detail">Ver detalle</a>
-                              <button type="button" class="btn--icon" data-action="toggle-fav" data-id="p1" aria-label="Añadir Sofá Patagonia a favoritos" aria-pressed="false">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                  </svg>
-                              </button>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="product-card" data-id="p2" data-category="comedor casa">
-                      <header class="product-card__header">
-                          <div class="product-card__info">
-                              <h3 class="product-card__title">Silla Belgrano</h3>
-                              <p class="product-card__price">$42.500</p>
-                          </div>
-                          <div class="product-card__swatches" aria-label="Variantes de color disponibles">
-                              <span class="product-card__swatch product-card__swatch--wood" title="Madera Natural"></span>
-                              <span class="product-card__swatch product-card__swatch--dark" title="Negro Mate"></span>
-                          </div>
-                      </header>
-
-                      <div class="product-card__image-wrapper">
-                          <a href="./producto.html" aria-label="Ver detalle de Silla de trabajo Belgrano">
-                              <img src="../assets/silla-de-trabajo-belgrano.png" alt="Silla ergonómica con estructura de madera" class="product-card__image" loading="lazy" width="300" height="220" />
-                          </a>
-                      </div>
-
-                      <div class="product-card__actions">
-                          <div class="product-card__primary-actions">
-                              <button type="button" class="btn btn--primary" data-action="buy-now" data-id="p2">Comprar</button>
-                              <button type="button" class="btn btn--gold" data-action="add-cart" data-id="p2" aria-label="Agregar Silla Nordik al carrito">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                                      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-                                      <line x1="3" y1="6" x2="21" y2="6"/>
-                                      <path d="M16 10a4 4 0 0 1-8 0" />
-                                  </svg>
-                              </button>
-                          </div>
-
-                          <div class="product-card__secondary-actions">
-                              <a href="./producto.html" class="product-card__link-detail">Ver detalle</a>
-                              <button type="button" class="btn--icon" data-action="toggle-fav" data-id="p2" aria-label="Añadir Silla Nordik a favoritos" aria-pressed="false">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                  </svg>
-                              </button>
-                          </div>
-                      </div>
-                  </article>
-
-                  <article class="product-card" data-id="p3" data-category="living oficina">
-                      <header class="product-card__header">
-                          <div class="product-card__info">
-                              <h3 class="product-card__title">Mesa Ratona Aconcagua</h3>
-                              <p class="product-card__price">$78.900</p>
-                          </div>
-                          <div class="product-card__swatches" aria-label="Variantes de color disponibles">
-                              <span class="product-card__swatch product-card__swatch--gold" title="Cera Roble"></span>
-                              <span class="product-card__swatch product-card__swatch--dark" title="Nogal Oscuro"></span>
-                          </div>
-                      </header>
-
-                      <div class="product-card__image-wrapper">
-                          <a href="./producto.html" aria-label="Ver detalle de Mesa Ratona Aconcagua">
-                              <img src="../assets/mesa-de-noche-aconcagua.png" alt="Mesa Ratona Aconcagua de centro estilo industrial" class="product-card__image" loading="lazy" width="300" height="220" />
-                          </a>
-                      </div>
-
-                      <div class="product-card__actions">
-                          <div class="product-card__primary-actions">
-                              <button type="button" class="btn btn--primary" data-action="buy-now" data-id="p3">Comprar</button>
-                              <button type="button" class="btn btn--gold" data-action="add-cart" data-id="p3" aria-label="Agregar Mesa Ratona Aconcagua al carrito">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                                      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
-                                      <line x1="3" y1="6" x2="21" y2="6"/>
-                                      <path d="M16 10a4 4 0 0 1-8 0" />
-                                  </svg>
-                              </button>
-                          </div>
-
-                          <div class="product-card__secondary-actions">
-                              <a href="./producto.html" class="product-card__link-detail">Ver detalle</a>
-                              <button type="button" class="btn--icon" data-action="toggle-fav" data-id="p3" aria-label="Añadir Mesa Ratona Aconcagua a favoritos" aria-pressed="false">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-                                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                                  </svg>
-                              </button>
-                          </div>
-                      </div>
-                  </article>
-
+            <div class="product-card__actions">
+              <div class="product-card__primary-actions">
+                <button type="button" class="btn btn--primary" data-action="buy-now" data-id="p2">Comprar</button>
+                <button type="button" class="btn btn--gold" data-action="add-cart" data-id="p2"
+                  aria-label="Agregar Silla Nordik al carrito">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true" focusable="false">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                </button>
               </div>
-          </div>
-      </section>
-    </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__brand">
-          <a href="../index.html" class="footer__logo-link">
-            <img src="../assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60" aria-hidden="true" />
-            <span class="footer__brand-name">Hermanos Jota</span>
-          </a>
-        </div>
+              <div class="product-card__secondary-actions">
+                <a href="./producto.html" class="product-card__link-detail">Ver detalle</a>
+                <button type="button" class="btn--icon" data-action="toggle-fav" data-id="p2"
+                  aria-label="Añadir Silla Nordik a favoritos" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true" focusable="false">
+                    <path
+                      d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <div class="footer__grid">
-          <div class="footer__col">
-            <h3 class="footer__title">Hermanos Jota</h3>
-            <p class="footer__text">
-              Casa Taller & Showroom<br />
-              Av. San Juan 2847<br />
-              C1232AAB - Barrio de San Cristóbal<br />
-              Buenos Aires, Argentina
-            </p>
-          </div>
+          <article class="product-card" data-id="p3" data-category="living oficina">
+            <header class="product-card__header">
+              <div class="product-card__info">
+                <h3 class="product-card__title">Mesa Ratona Aconcagua</h3>
+                <p class="product-card__price">$78.900</p>
+              </div>
+              <div class="product-card__swatches" aria-label="Variantes de color disponibles">
+                <span class="product-card__swatch product-card__swatch--gold" title="Cera Roble"></span>
+                <span class="product-card__swatch product-card__swatch--dark" title="Nogal Oscuro"></span>
+              </div>
+            </header>
 
-          <div class="footer__col">
-            <h3 class="footer__title">Horarios Showroom</h3>
-            <p class="footer__text">
-              Lunes a Viernes: 10:00 - 19:00 hs<br />
-              Sábados: 10:00 - 14:00 hs
-            </p>
-          </div>
+            <div class="product-card__image-wrapper">
+              <a href="./producto.html" aria-label="Ver detalle de Mesa Ratona Aconcagua">
+                <img src="../assets/mesa-de-noche-aconcagua.png" alt="Mesa Ratona Aconcagua de centro estilo industrial"
+                  class="product-card__image" loading="lazy" width="300" height="220" />
+              </a>
+            </div>
 
-          <div class="footer__col">
-            <h3 class="footer__title">Contacto Digital</h3>
-            <p class="footer__text">
-              Email: <a href="mailto:info@hermanosjota.com.ar" class="footer__link">info@hermanosjota.com.ar</a><br />
-              Ventas: <a href="mailto:ventas@hermanosjota.com.ar" class="footer__link">ventas@hermanosjota.com.ar</a><br />
-              WhatsApp: <a href="https://wa.me/541145678900" target="_blank" rel="noopener noreferrer" class="footer__link">+54 11 4567-8900</a><br />
-              Instagram: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer__link">@hermanosjota_ba</a>
-            </p>
-          </div>
+            <div class="product-card__actions">
+              <div class="product-card__primary-actions">
+                <button type="button" class="btn btn--primary" data-action="buy-now" data-id="p3">Comprar</button>
+                <button type="button" class="btn btn--gold" data-action="add-cart" data-id="p3"
+                  aria-label="Agregar Mesa Ratona Aconcagua al carrito">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true" focusable="false">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                </button>
+              </div>
 
-          <div class="footer__col">
-            <h3 class="footer__title">Compromiso Sustentable</h3>
-            <p class="footer__text">
-              Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje ecológico.
-            </p>
-          </div>
-        </div>
+              <div class="product-card__secondary-actions">
+                <a href="./producto.html" class="product-card__link-detail">Ver detalle</a>
+                <button type="button" class="btn--icon" data-action="toggle-fav" data-id="p3"
+                  aria-label="Añadir Mesa Ratona Aconcagua a favoritos" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true" focusable="false">
+                    <path
+                      d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <div class="footer__bottom">
-          <p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
-          <nav class="footer__social-nav" aria-label="Redes sociales">
-            <ul class="footer__social-list">
-              <li><a href="#twitter" class="footer__social-link">Twitter</a></li>
-              <li><a href="#facebook" class="footer__social-link">Facebook</a></li>
-              <li><a href="#instagram" class="footer__social-link">Instagram</a></li>
-              <li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
-            </ul>
-          </nav>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="../scripts/producto.js" defer></script>
-	<script src="../scripts/carrito.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo-link">
+          <img src="../assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60" aria-hidden="true" />
+          <span class="footer__brand-name">Hermanos Jota</span>
+        </a>
+      </div>
 
-  </body>
+      <div class="footer__grid">
+        <div class="footer__col">
+          <h3 class="footer__title">Hermanos Jota</h3>
+          <p class="footer__text">
+            Casa Taller & Showroom<br />
+            Av. San Juan 2847<br />
+            C1232AAB - Barrio de San Cristóbal<br />
+            Buenos Aires, Argentina
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Horarios Showroom</h3>
+          <p class="footer__text">
+            Lunes a Viernes: 10:00 - 19:00 hs<br />
+            Sábados: 10:00 - 14:00 hs
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Contacto Digital</h3>
+          <p class="footer__text">
+            Email: <a href="mailto:info@hermanosjota.com.ar" class="footer__link">info@hermanosjota.com.ar</a><br />
+            Ventas: <a href="mailto:ventas@hermanosjota.com.ar"
+              class="footer__link">ventas@hermanosjota.com.ar</a><br />
+            WhatsApp: <a href="https://wa.me/541145678900" target="_blank" rel="noopener noreferrer"
+              class="footer__link">+54 11 4567-8900</a><br />
+            Instagram: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              class="footer__link">@hermanosjota_ba</a>
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Compromiso Sustentable</h3>
+          <p class="footer__text">
+            Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje ecológico.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+        <nav class="footer__social-nav" aria-label="Redes sociales">
+          <ul class="footer__social-list">
+            <li><a href="#twitter" class="footer__social-link">Twitter</a></li>
+            <li><a href="#facebook" class="footer__social-link">Facebook</a></li>
+            <li><a href="#instagram" class="footer__social-link">Instagram</a></li>
+            <li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/buscador.js"></script>
+  <script src="../scripts/producto.js" defer></script>
+  <script src="../scripts/carrito.js"></script>
+
+</body>
+
 </html>

@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="../styles/components.css" />
 		<link rel="stylesheet" href="../styles/catalogo.css" />
 		<link rel="stylesheet" href="../styles/carrito.css" />
+		<link rel="stylesheet" href="../styles/buscador.css" />
 	</head>
 	<body>
 		
@@ -24,20 +25,6 @@
 				<a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
 					<img src="../assets/logo.svg" class="header__logo-icon" width="70" alt="Hermanos Jota" />
 				</a>
-
-				<button
-					type="button"
-					class="header__action-btn header__mobile-search-button"
-					data-search-trigger
-					aria-label="Buscar productos"
-					aria-controls="catalog-search-panel"
-					aria-expanded="false"
-				>
-					<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-						<circle cx="11" cy="11" r="8" />
-						<path d="m21 21-4.3-4.3" />
-					</svg>
-				</button>
 
 				<!-- Checkbox hamburguesa -->
 				<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
@@ -70,19 +57,13 @@
 
 					<!-- sidebar actions -->
 					<div class="header__actions">
-						<button
-							type="button"
-							class="header__action-btn header__desktop-search-button"
-							data-search-trigger
-							aria-label="Buscar productos"
-							aria-controls="catalog-search-panel"
-							aria-expanded="false"
-						>
-							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-								<circle cx="11" cy="11" r="8" />
-								<path d="m21 21-4.3-4.3" />
-							</svg>
-						</button>
+						<button type="button" class="header__action-btn" aria-label="Buscar productos">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<circle cx="11" cy="11" r="8" />
+							<path d="m21 21-4.3-4.3" />
+						</svg>
+					</button>
 
 						<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
 							<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
@@ -820,6 +801,7 @@
 			</div>
 		</footer>
 
+		<script src="../scripts/buscador.js"></script>
 		<script src="../scripts/catalogo.js"></script>
 		<script src="../scripts/carrito.js"></script>
 	</body>
