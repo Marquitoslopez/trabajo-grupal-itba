@@ -76,17 +76,6 @@
 	margin-bottom: var(--space-xl);
 }
 
-/* .product-card {
-	display: flex;
-	flex-direction: column;
-	background-color: var(--color-bg-surface);
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-md);
-	padding: var(--space-md);
-	box-shadow: var(--shadow-sm);
-	transition: all var(--transition-normal);
-} */
-
 .products-section__action {
 	width: 100%;
 	text-align: center;
