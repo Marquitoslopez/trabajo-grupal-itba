@@ -257,6 +257,11 @@ body.cart-drawer-open {
 	background: var(--color-brand-bg);
 	outline: none;
 }
+.cart-item__quantity button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
 
 .cart-item__subtotal {
 	color: var(--color-text-main);

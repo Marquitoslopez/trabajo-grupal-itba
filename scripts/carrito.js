@@ -193,7 +193,7 @@
 
 					<div class="cart-item__bottom">
 						<div class="cart-item__quantity" aria-label="Cantidad de ${product.name}">
-							<button type="button" data-cart-action="decrease" data-id="${productId}" aria-label="Restar una unidad">−</button>
+							<button type="button" data-cart-action="decrease" data-id="${productId}" aria-label="Restar una unidad" ${quantity === 1 ? 'disabled' : ''}>−</button>
 							<span aria-live="polite">${quantity}</span>
 							<button type="button" data-cart-action="increase" data-id="${productId}" aria-label="Agregar una unidad">+</button>
 						</div>
