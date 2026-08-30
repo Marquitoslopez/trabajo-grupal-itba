@@ -36,22 +36,42 @@
 		}
 	}
 
+	function setActivePill(filter) {
+		let matchedButton = null;
+
+		categoryButtons.forEach((btn) => {
+			const isActive = btn.dataset.filter === filter;
+			btn.classList.toggle('filter-bar__pill--active', isActive);
+			btn.setAttribute('aria-selected', String(isActive));
+			if (isActive) matchedButton = btn;
+		});
+
+		return matchedButton;
+	}
+
 	categoryButtons.forEach((button) => {
 		button.addEventListener('click', () => {
-			const filter = button.dataset.filter;
-
-			// Actualiza el estado visual de los pills (activo/inactivo)
-			categoryButtons.forEach((btn) => {
-				const isActive = btn === button;
-				btn.classList.toggle('filter-bar__pill--active', isActive);
-				btn.setAttribute('aria-selected', String(isActive));
-			});
-
-			applyFilter(filter);
+			setActivePill(button.dataset.filter);
+			applyFilter(button.dataset.filter);
 		});
 	});
 
-	// Aplica el filtro inicial (el que esté marcado como activo al cargar la página)
-	const initialFilter = document.querySelector('.filter-bar__pill--active')?.dataset.filter ?? 'all';
+	// Si llegamos con ?categoria=cocina (por ejemplo, desde "Explorar Colección" en el inicio),
+	// usamos ese valor. Si no, respetamos el pill marcado como activo en el HTML, o "all".
+	const urlParams = new URLSearchParams(window.location.search);
+	const categoryFromUrl = urlParams.get('categoria');
+	const validFilters = categoryButtons.map((btn) => btn.dataset.filter);
+
+	const initialFilter =
+		categoryFromUrl && validFilters.includes(categoryFromUrl)
+			? categoryFromUrl
+			: (document.querySelector('.filter-bar__pill--active')?.dataset.filter ?? 'all');
+
+	setActivePill(initialFilter);
 	applyFilter(initialFilter);
+
+	// Si el filtro vino por URL, hacemos scroll directo a la grilla de productos
+	if (categoryFromUrl && validFilters.includes(categoryFromUrl)) {
+		document.querySelector('#catalogo')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
 })();
