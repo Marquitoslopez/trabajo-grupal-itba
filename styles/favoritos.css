@@ -251,15 +251,48 @@ body.favorites-drawer-open {
 	text-align: center;
 }
 
-/* Corazón "activo" en las tarjetas de producto (usa el mismo botón data-action="toggle-fav") */
-.btn--icon[aria-pressed='true'] {
-	color: var(--color-error);
-	border-color: var(--color-error);
+/* Único estilo de favoritos para Inicio, Tienda y Producto */
+.btn--icon,
+.product-info__fav-btn {
+	color: var(--color-brand-accent-soft);
+	background-color: rgba(196, 122, 109, 0.1);
+	border: 1px solid transparent;
+	box-shadow: none;
 }
 
-.btn--icon[aria-pressed='true'] svg {
+.btn--icon svg,
+.product-info__fav-btn svg {
+	fill: none;
+	stroke: currentColor;
+	transition: fill var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn--icon:hover,
+.btn--icon:focus-visible,
+.product-info__fav-btn:hover,
+.product-info__fav-btn:focus-visible {
+	color: var(--color-brand-primary);
+	background-color: rgba(196, 122, 109, 0.16);
+	border-color: rgba(196, 122, 109, 0.22);
+	outline: none;
+}
+
+.btn--icon[aria-pressed='true'],
+.btn--icon.is-active,
+.product-info__fav-btn[aria-pressed='true'],
+.product-info__fav-btn.is-active {
+	color: var(--color-brand-accent-soft);
+	background-color: rgba(196, 122, 109, 0.12);
+	border-color: transparent;
+}
+
+.btn--icon[aria-pressed='true'] svg,
+.btn--icon.is-active svg,
+.product-info__fav-btn[aria-pressed='true'] svg,
+.product-info__fav-btn.is-active svg {
 	fill: currentColor;
 	stroke: currentColor;
+	transform: scale(1.04);
 }
 
 @media (max-width: 520px) {
