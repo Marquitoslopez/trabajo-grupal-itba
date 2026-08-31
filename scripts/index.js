@@ -18,23 +18,12 @@
 				}
 			}
 
-			function updateFavoriteButton(button, productId, productName) {
-				const active = readStoredList('hermanosJotaFavorites').includes(productId);
-
-				button.classList.toggle('is-active', active);
-				button.setAttribute('aria-pressed', String(active));
-				button.setAttribute(
-					'aria-label',
-					`${active ? 'Quitar' : 'Añadir'} ${productName} ${active ? 'de' : 'a'} favoritos`
-				);
-			}
-
 			productCards.forEach((card) => {
 				const productId = card.dataset.id;
 				const productName = card.querySelector('.product-card__title').textContent.trim();
 				const productUrl = `./pages/producto.html?id=${encodeURIComponent(productId)}`;
 				const buyButton = card.querySelector('[data-action="buy-now"]');
-				const favoriteButton = card.querySelector('[data-action="toggle-fav"]');
+				
 
 				card.querySelectorAll('.product-card__image-wrapper a, .product-card__link-detail').forEach((link) => {
 					link.href = productUrl;
@@ -44,19 +33,6 @@
 					window.location.href = productUrl;
 				});
 
-				if (favoriteButton) {
-					updateFavoriteButton(favoriteButton, productId, productName);
-
-					favoriteButton.addEventListener('click', () => {
-						const favorites = readStoredList('hermanosJotaFavorites');
-						const nextFavorites = favorites.includes(productId)
-							? favorites.filter((id) => id !== productId)
-							: [...favorites, productId];
-
-						writeStoredList('hermanosJotaFavorites', nextFavorites);
-						updateFavoriteButton(favoriteButton, productId, productName);
-					});
-				}
 			});
 
 		})();
