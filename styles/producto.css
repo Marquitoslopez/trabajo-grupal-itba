@@ -272,30 +272,9 @@
 	flex-shrink: 0;
 	width: 3.3em;
 	height: 3.3em;
-
 	border-radius: 50%;
-	background-color: transparent;
-	border: 1px solid var(--color-brand-gold);
-	color: var(--color-brand-gold);
 	cursor: pointer;
 	transition: var(--transition-fast);
-}
-
-.product-info__fav-btn:hover,
-.product-info__fav-btn:focus-visible {
-	background-color: var(--color-brand-gold);
-	color: var(--color-bg-surface);
-}
-
-.product-info__fav-btn.is-active,
-.btn--icon.is-active {
-	background-color: var(--color-brand-gold);
-	color: var(--color-bg-surface);
-}
-
-.product-info__fav-btn.is-active svg,
-.btn--icon.is-active svg {
-	fill: currentColor;
 }
 
 /* --- reseñas ---- */
