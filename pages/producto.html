@@ -73,7 +73,7 @@
           </li>
 
           <li class="header__menu-item">
-            <a href="#nosotros" class="header__menu-link">
+            <a href="../index.html#nosotros" class="header__menu-link">
               Nosotros
             </a>
           </li>
@@ -231,8 +231,8 @@
                 Añadir al Carro
               </button>
 
-              <button type="button" class="product-info__fav-btn" id="favorite-current-product"
-                aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
+			  <button type="button" class="product-info__fav-btn" id="favorite-current-product"
+				data-action="toggle-fav" aria-label="Añadir Sillón Copacabana a favoritos" aria-pressed="false">
 
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -521,8 +521,9 @@
   </footer>
 
 
+  <script src="../scripts/productos.js"></script>
   <script src="../scripts/buscador.js"></script>
-  <script src="../scripts/producto.js" defer></script>
+  <script src="../scripts/producto.js"></script>
   <script src="../scripts/carrito.js"></script>
   <script src="../scripts/favoritos.js"></script>
 
