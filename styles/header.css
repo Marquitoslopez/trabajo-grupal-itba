@@ -1,6 +1,6 @@
 /* ---- header ----- */
 .header {
-	padding: var(--space-xs) 0;
+	padding: 0;
 	background-color: var(--color-bg-body);
 	border-bottom: 1px solid var(--color-border);
 	position: sticky;
@@ -9,27 +9,26 @@
 }
 
 .header__container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	max-width: var(--container-max-width);
-	margin: 0 auto;
-	padding: 0 var(--space-md);
+	min-height: 100px;
 }
 
 .header__logo-link {
 	display: flex;
+	width: 120px;
+	height: 100px;
+	overflow: hidden;
+	flex: 0 0 120px;
 	align-items: center;
-	border-radius: var(--radius-sm);
-	text-decoration: none;
+	justify-content: center;
 }
 
 .header__logo-icon {
+	display: block;
 	width: 120px;
-	height: auto;
+	height: 120px;
+	max-width: none;
 	object-fit: contain;
 }
-
 /* menú hamburguesa */
 .header__checkbox {
 	position: absolute;
@@ -134,9 +133,11 @@
 .header__action-btn {
 	position: relative;
 	display: flex;
+	width: 40px;
+	height: 40px;
 	align-items: center;
 	justify-content: center;
-	padding: var(--space-xs);
+	padding: 0;
 	background: none;
 	border: none;
 	border-radius: var(--radius-pill);
@@ -165,6 +166,50 @@
 	align-items: center;
 	justify-content: center;
 }
+/* Ajuste del header para celular y tablet */
+@media (max-width: 991px) {
+	.header__container {
+		display: flex;
+		width: 100%;
+		min-height: 96px;
+		padding: 0 18px;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		box-sizing: border-box;
+	}
+
+	.header__logo-link {
+		width: 120px;
+		height: 96px;
+		overflow: hidden;
+		flex: 0 0 120px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.header__logo-icon {
+		display: block;
+		width: 120px;
+		height: 120px;
+		max-width: none;
+		flex: 0 0 120px;
+		object-fit: contain;
+	}
+
+	.header__toggle {
+		position: relative;
+		width: 30px;
+		height: 22px;
+		margin-left: auto;
+		flex: 0 0 30px;
+	}
+
+	.header__nav {
+		top: 96px;
+		height: calc(100dvh - 96px);
+	}
+}
 
 /* ---- media queries desktoop ------ */
 @media (min-width: 992px) {
@@ -174,11 +219,12 @@
 
 	.header__container {
 		display: grid;
-		grid-template-columns: 1fr auto 1fr;
+		grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
 		grid-template-rows: auto;
 		min-height: 88px;
 		align-items: center;
-		padding: var(--space-xs) var(--space-md);
+		padding: 0 var(--space-md);
+		column-gap: clamp(0.75rem, 2vw, 2rem);
 	}
 
 	.header__logo-link {
@@ -199,7 +245,7 @@
 	.header__menu {
 		grid-column: 2;
 		flex-direction: row;
-		gap: var(--space-lg);
+		gap: clamp(1rem, 2.2vw, var(--space-lg));
 		justify-content: center;
 	}
 
