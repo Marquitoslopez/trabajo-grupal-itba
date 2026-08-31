@@ -142,9 +142,3 @@
 	border-radius: var(--radius-pill);
 	transition: var(--transition-fast);
 }
-
-.btn--icon:hover,
-.btn--icon[aria-pressed="true"] {
-	color: var(--color-error);
-	background-color: rgba(196, 122, 109, 0.1);
-}
