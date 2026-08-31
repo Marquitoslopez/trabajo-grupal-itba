@@ -219,59 +219,6 @@
   const relatedGrid = document.querySelector("#related-products-grid");
   const addToCartButton = document.querySelector("#add-current-product");
   const favoriteButton = document.querySelector("#favorite-current-product");
-
-
-  function readStoredList(key) {
-    try {
-      const value = JSON.parse(localStorage.getItem(key));
-
-      return Array.isArray(value) ? value : [];
-    } catch {
-      return [];
-    }
-  }
-
-  function writeStoredList(key, value) {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch {
-
-    }
-  }
-
-  function isFavorite(productId) {
-    return readStoredList("hermanosJotaFavorites").includes(productId);
-  }
-
-  function updateFavoriteButton(button, productId) {
-    const active = isFavorite(productId);
-
-    const productName = products[productId].name;
-
-    button.classList.toggle("is-active", active);
-
-    button.setAttribute("aria-pressed", String(active));
-
-    button.setAttribute(
-      "aria-label",
-      `${active ? "Quitar" : "Añadir"} ${productName} ${
-        active ? "de" : "a"
-      } favoritos`,
-    );
-  }
-
-  function toggleFavorite(productId, button) {
-    const favorites = readStoredList("hermanosJotaFavorites");
-
-    const nextFavorites = favorites.includes(productId)
-      ? favorites.filter((id) => id !== productId)
-      : [...favorites, productId];
-
-    writeStoredList("hermanosJotaFavorites", nextFavorites);
-
-    updateFavoriteButton(button, productId);
-  }
-
   function createSpecRow([term, detail]) {
     const row = document.createElement("div");
 
@@ -334,12 +281,10 @@
       thumbnail.classList.toggle("product-gallery__thumb--active", index === 0);
     });
 
-    // Guardamos el ID real del producto
-    addToCartButton.dataset.id = currentId;
+	// Guardamos el ID real del producto
+	addToCartButton.dataset.id = currentId;
 
-    favoriteButton.dataset.id = currentId;
-
-    updateFavoriteButton(favoriteButton, currentId);
+	favoriteButton.dataset.id = currentId;
   }
 
   function renderReviews() {
@@ -417,8 +362,6 @@
 
 
   function createRelatedCard([productId, relatedProduct]) {
-    const favorite = isFavorite(productId);
-
     return `
       <article
         class="product-card"
@@ -534,11 +477,11 @@
 
             <button
               type="button"
-              class="btn--icon${favorite ? " is-active" : ""}"
-              data-action="toggle-fav"
-              data-id="${productId}"
-              aria-label="${favorite ? "Quitar" : "Añadir"} ${relatedProduct.name} ${favorite ? "de" : "a"} favoritos"
-              aria-pressed="${favorite}"
+			  class="btn--icon"
+			  data-action="toggle-fav"
+			  data-id="${productId}"
+			  aria-label="Añadir ${relatedProduct.name} a favoritos"
+			  aria-pressed="false"
             >
 
               <svg
@@ -609,10 +552,6 @@
     });
   });
 
-  favoriteButton.addEventListener("click", () => {
-    toggleFavorite(currentId, favoriteButton);
-  });
-
   relatedGrid.addEventListener("click", (event) => {
     const actionButton = event.target.closest("[data-action]");
 
@@ -630,13 +569,7 @@
       return;
     }
 
-    if (action === "toggle-fav") {
-      toggleFavorite(productId, actionButton);
-
-      return;
-    }
-
-    if (action === "add-cart") {
+	if (action === "add-cart") {
       return;
     }
   });
