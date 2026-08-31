@@ -100,6 +100,7 @@
 			const product = products[productId];
 			const active = favorites.includes(productId);
 
+			button.classList.toggle('is-active', active);
 			button.setAttribute('aria-pressed', String(active));
 			if (product) {
 				button.setAttribute('aria-label', `${active ? 'Quitar' : 'Añadir'} ${product.name} ${active ? 'de' : 'a'} favoritos`);
