@@ -40,29 +40,39 @@ Este sprint pone en práctica:
 
 ```
 hermanos-jota/
-├── index.html                 # Página de inicio
-├── pages/
-│   ├── catalogo.html          # Catálogo de productos
-│   ├── producto.html          # Detalle de producto
-│   └── contacto.html          # Formulario de contacto
+
+├── index.html                  # Página de inicio
 │
-├── styles/
-│   ├── general.css            # Variables de marca, reset, tipografía, botones
-│   ├── header.css             # Header + menú hamburguesa (mobile first)
-│   ├── footer.css             # Footer (mobile first)
-│   ├── components.css         # Componentes compartidos (product-card, etc.)
-│   ├── index.css               # Estilos exclusivos de la home
-│   ├── catalogo.css            # Estilos exclusivos del catálogo
-│   ├── producto.css            # Estilos exclusivos del detalle de producto
-│   └── contacto.css            # Estilos exclusivos de contacto
+├── pages/
+│   ├── catalogo.html           # Catálogo de productos
+│   ├── contacto.html            # Formulario de contacto
+│   └── producto.html            # Detalle de producto
 │
 ├── scripts/
-│   ├── productos.js            # ⏳ Array de objetos con el catálogo (pendiente)
-│   ├── catalogo.js             # ⏳ Render dinámico + carga asíncrona + carrito (pendiente)
-│   └── contacto.js             # Validación del formulario + modal de privacidad
+│   ├── buscador.js              # Buscador reutilizable
+│   ├── carrito.js               # Lógica del carrito
+│   ├── catalogo.js              # Lógica del catálogo
+│   ├── contacto.js              # Validación del formulario
+│   ├── favoritos.js             # Gestión de productos favoritos
+│   ├── index.js                 # Lógica de la página de inicio
+│   └── producto.js              # Lógica del detalle de producto
 │
-└── assets/
-    ├── logo.svg
+├── styles/
+│   ├── buscador.css             # Estilos del buscador
+│   ├── carrito.css              # Estilos del carrito
+│   ├── catalogo.css             # Estilos exclusivos del catálogo
+│   ├── components.css           # Componentes compartidos
+│   ├── contacto.css             # Estilos de contacto
+│   ├── favoritos.css            # Estilos de favoritos
+│   ├── footer.css               # Estilos del footer
+│   ├── general.css              # Variables, reset y estilos globales
+│   ├── header.css               # Header y menú hamburguesa
+│   ├── index.css                # Estilos exclusivos de la home
+│   └── producto.css             # Estilos del detalle de producto
+│
+├── assets/                      # Imágenes, iconos y recursos gráficos
+│
+└── README.md                    # Documentación del proyecto
 ```
 
 ---
