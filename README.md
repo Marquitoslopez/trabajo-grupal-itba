@@ -1,4 +1,4 @@
-# 🪵 Hermanos Jota — E-Commerce
+# 🪵 Hermanos Jota — E-Commerce.
 
 ![Estado](https://img.shields.io/badge/Estado-En%20Curso-yellow?style=for-the-badge)
 ![Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)
