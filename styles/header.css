@@ -153,8 +153,8 @@
 
 .header__cart-count {
 	position: absolute;
-	top: 2px;
-	right: 2px;
+	top: 1px;
+	right: 1px;
 	background-color: var(--color-brand-primary);
 	color: var(--color-bg-surface);
 	font-size: var(--font-size-caption);
