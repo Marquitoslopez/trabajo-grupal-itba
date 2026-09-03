@@ -437,7 +437,7 @@
 
 .accordion__panel {
 	padding-bottom: var(--space-md);
-	color: var(--color-brand-primary);
+	color: var(--color-text-main);
 }
 
 /* ------- banner ----------*/
