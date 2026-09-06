@@ -1,7 +1,7 @@
 (() => {
   const productsGrid = document.querySelector(".products-grid");
   const products = Array.isArray(window.catalogProducts)
-    ? window.catalogProducts.slice(0, 4)
+    ? window.catalogProducts.slice(0, 6)
     : [];
 
   function createFeaturedProductCard(product) {
