@@ -1,6 +1,6 @@
 # 🪵 Hermanos Jota — E-Commerce.
 
-![Estado](https://img.shields.io/badge/Estado-En%20Curso-yellow?style=for-the-badge)
+![Estado](https://img.shields.io/badge/Estado-Completo%TP1-green?style=for-the-badge)
 ![Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)
 
 Fachada e-commerce para **Hermanos Jota**, mueblería argentina de piezas artesanales en maderas nativas (algarrobo, quebracho, caldén) y cueros. El proyecto simula una experiencia de compra completa, catálogo, detalle de producto, carrito y contacto, **sin conexión a backend**: todo el catálogo se gestiona en el cliente con JavaScript.
@@ -51,6 +51,7 @@ hermanos-jota/
 ├── scripts/
 │   ├── buscador.js              # Buscador reutilizable
 │   ├── carrito.js               # Lógica del carrito
+│   ├── catalogo-data.js         # Datos del catálogo (arrays de objetos)
 │   ├── catalogo.js              # Lógica del catálogo
 │   ├── contacto.js              # Validación del formulario
 │   ├── favoritos.js             # Gestión de productos favoritos
@@ -58,17 +59,7 @@ hermanos-jota/
 │   └── producto.js              # Lógica del detalle de producto
 │
 ├── styles/
-│   ├── buscador.css             # Estilos del buscador
-│   ├── carrito.css              # Estilos del carrito
-│   ├── catalogo.css             # Estilos exclusivos del catálogo
-│   ├── components.css           # Componentes compartidos
-│   ├── contacto.css             # Estilos de contacto
-│   ├── favoritos.css            # Estilos de favoritos
-│   ├── footer.css               # Estilos del footer
-│   ├── general.css              # Variables, reset y estilos globales
-│   ├── header.css               # Header y menú hamburguesa
-│   ├── index.css                # Estilos exclusivos de la home
-│   └── producto.css             # Estilos del detalle de producto
+│   └── unificado.css            # Estilos generales y componentes del sitio
 │
 ├── assets/                      # Imágenes, iconos y recursos gráficos
 │
