@@ -80,7 +80,7 @@ El diseño sigue el Manual de Marca de Hermanos Jota:
 | `#D4A437` Vara de Oro | Detalles premium, botón "Enviar" |
 | `#C47A6D` Rosa Polvoriento | Acentos suaves, estados de error |
 
-**Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) para títulos editoriales, [Inter](https://fonts.google.com/specimen/Inter) para cuerpo de texto e interfaz. Todas las variables de diseño (color, tipografía, espaciado, radios) están centralizadas en `styles/general.css`.
+**Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) para títulos editoriales, [Inter](https://fonts.google.com/specimen/Inter) para cuerpo de texto e interfaz. Todas las variables de diseño (color, tipografía, espaciado, radios) están centralizadas en `styles/unificado.css`.
 
 ---
 
