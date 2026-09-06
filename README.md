@@ -1,6 +1,6 @@
 # 🪵 Hermanos Jota — E-Commerce.
 
-![Estado](https://img.shields.io/badge/Estado-Completo%TP1-green?style=for-the-badge)
+![Estado](https://img.shields.io/badge/Estado-Completo%20--%20TP%201-brightgreen?style=for-the-badge)
 ![Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)
 
 Fachada e-commerce para **Hermanos Jota**, mueblería argentina de piezas artesanales en maderas nativas (algarrobo, quebracho, caldén) y cueros. El proyecto simula una experiencia de compra completa, catálogo, detalle de producto, carrito y contacto, **sin conexión a backend**: todo el catálogo se gestiona en el cliente con JavaScript.
