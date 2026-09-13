@@ -1,7 +1,7 @@
 # 🪵 Hermanos Jota — E-Commerce
 
-![Estado](https://img.shields.io/badge/Estado-Completo%20--%20TP%201-brightgreen?style=for-the-badge)
-![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-yellow?style=for-the-badge)
+![Estado](https://img.shields.io/badge/Estado-TP%201%20--%20Completo-brightgreen?style=for-the-badge)
+![Estado](https://img.shields.io/badge/Estado-TP%202%20--%20En%20desarrollo-yellow?style=for-the-badge)
 
 ![Stack](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JavaScript%20%7C%20Node.js%20%7C%20Express-blue?style=for-the-badge)
 
