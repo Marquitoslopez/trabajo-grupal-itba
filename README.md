@@ -29,7 +29,7 @@ Desarrollado como proyecto en equipo para el **ITBA (Instituto Tecnológico de B
 
 A lo largo de los distintos sprints, el proyecto permite poner en práctica:
 
-### Frontend
+### Frontend - HTML5 · CSS3 · JavaScript · localStorage
 
 1. Estructuración de sitios complejos utilizando **HTML5 semántico**.
 2. Diseño responsivo con **CSS3**, Flexbox y Grid.
@@ -40,7 +40,7 @@ A lo largo de los distintos sprints, el proyecto permite poner en práctica:
 7. Interacción con el usuario mediante **eventos y `addEventListener`**.
 8. Persistencia de información en el navegador mediante **localStorage**.
 
-### Backend
+### Backend - Node.js · Express · Nodemon
 
 9. Desarrollo de un servidor utilizando **Node.js y Express**.
 10. Creación de una **API REST**.
@@ -62,44 +62,34 @@ A lo largo de los distintos sprints, el proyecto permite poner en práctica:
 ```text
 hermanos-jota/
 │
-├── index.html                    # Página de inicio
+├── index.html
 │
 ├── pages/
-│   ├── catalogo.html             # Catálogo de productos
-│   ├── contacto.html             # Formulario de contacto
-│   └── producto.html             # Detalle de producto
+│   ├── catalogo.html
+│   ├── contacto.html
+│   └── producto.html
 │
 ├── scripts/
-│   ├── buscador.js               # Buscador reutilizable
-│   ├── carrito.js                # Lógica del carrito
-│   ├── catalogo-data.js          # Datos del catálogo inicial
-│   ├── catalogo.js               # Lógica del catálogo
-│   ├── contacto.js               # Validación del formulario
-│   ├── favoritos.js              # Gestión de productos favoritos
-│   ├── index.js                  # Lógica de la página de inicio
-│   └── producto.js               # Lógica del detalle de producto
+│   ├── buscador.js
+│   ├── carrito.js
+│   ├── catalogo-data.js
+│   ├── catalogo.js
+│   ├── contacto.js
+│   ├── favoritos.js
+│   ├── index.js
+│   └── producto.js
 │
 ├── styles/
-│   └── unificado.css             # Estilos generales y componentes
+│   └── unificado.css
 │
-├── assets/                       # Imágenes, iconos y recursos gráficos
+├── assets/
 │
 ├── backend/
 │   ├── src/
 │   │   ├── controllers/
-│   │   │   └── productos.controller.js
-│   │   │
 │   │   ├── data/
-│   │   │   └── productos.js
-│   │   │
 │   │   ├── middlewares/
-│   │   │   ├── logger.js
-│   │   │   ├── notFound.js
-│   │   │   └── errorHandler.js
-│   │   │
 │   │   ├── routes/
-│   │   │   └── productos.routes.js
-│   │   │
 │   │   └── app.js
 │   │
 │   ├── server.js
@@ -107,4 +97,20 @@ hermanos-jota/
 │   ├── package-lock.json
 │   └── .gitignore
 │
-└── README.md                    # Documentación del proyecto
+└── README.md
+
+---
+
+## 🎨 Identidad de marca
+
+El diseño sigue el Manual de Marca de Hermanos Jota:
+
+| Color | Uso |
+|---|---|
+| `#A0522D` Siena Tostado | Color principal, títulos, CTAs |
+| `#87A96B` Verde Salvia | Acento secundario, sustentabilidad |
+| `#F5E6D3` Alabastro Cálido | Fondos |
+| `#D4A437` Vara de Oro | Detalles premium, botón "Enviar" |
+| `#C47A6D` Rosa Polvoriento | Acentos suaves, estados de error |
+
+**Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) para títulos editoriales, [Inter](https://fonts.google.com/specimen/Inter) para cuerpo de texto e interfaz. Todas las variables de diseño (color, tipografía, espaciado, radios) están centralizadas en `styles/unificado.css`.

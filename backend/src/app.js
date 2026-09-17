@@ -12,7 +12,7 @@ app.use(logger);
 app.use(express.json());
 
 // Rutas
-app.use("/api/productos", productosRouter);
+app.use("/api/productos", productosRouter); // REVISAR ESTO API/PRODUCTOS
 
 // 404 general
 app.use(notFound);
