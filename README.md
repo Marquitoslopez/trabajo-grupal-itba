@@ -17,11 +17,11 @@ Desarrollado como proyecto en equipo para el **ITBA (Instituto Tecnológico de B
 
 ## 👥 Equipo
 
-- *Marcos Lopez*
-- *Nehuén Peyrano*
-- *Gastón Davalos*
-- *Villarroel Giuliana*
-- *Alegre Gonzalo*
+- _Marcos Lopez_
+- _Nehuén Peyrano_
+- _Gastón Davalos_
+- _Villarroel Giuliana_
+- _Alegre Gonzalo_
 
 ---
 
@@ -29,7 +29,7 @@ Desarrollado como proyecto en equipo para el **ITBA (Instituto Tecnológico de B
 
 A lo largo de los distintos sprints, el proyecto permite poner en práctica:
 
-### Frontend - HTML5 · CSS3 · JavaScript · localStorage
+### Frontend - HTML5 · CSS3 · JavaScript
 
 1. Estructuración de sitios complejos utilizando **HTML5 semántico**.
 2. Diseño responsivo con **CSS3**, Flexbox y Grid.
@@ -40,7 +40,22 @@ A lo largo de los distintos sprints, el proyecto permite poner en práctica:
 7. Interacción con el usuario mediante **eventos y `addEventListener`**.
 8. Persistencia de información en el navegador mediante **localStorage**.
 
-### Backend - Node.js · Express · Nodemon
+### Implementado
+
+- Estructura de las páginas principales.
+- Diseño responsive.
+- Catálogo de productos.
+- Productos mediante arrays de objetos.
+- Generación dinámica de contenido.
+- Buscador y filtros.
+- Detalle de productos.
+- Carrito de compras.
+- Sistema de favoritos.
+- Formulario de contacto y validaciones.
+- Persistencia mediante `localStorage`.
+- Carga asíncrona simulada.
+
+### Backend - Node.js · Express
 
 9. Desarrollo de un servidor utilizando **Node.js y Express**.
 10. Creación de una **API REST**.
@@ -99,18 +114,41 @@ hermanos-jota/
 │
 └── README.md
 
+
+```
+
 ---
 
 ## 🎨 Identidad de marca
 
 El diseño sigue el Manual de Marca de Hermanos Jota:
 
-| Color | Uso |
-|---|---|
-| `#A0522D` Siena Tostado | Color principal, títulos, CTAs |
-| `#87A96B` Verde Salvia | Acento secundario, sustentabilidad |
-| `#F5E6D3` Alabastro Cálido | Fondos |
-| `#D4A437` Vara de Oro | Detalles premium, botón "Enviar" |
-| `#C47A6D` Rosa Polvoriento | Acentos suaves, estados de error |
+| Color                      | Uso                                |
+| -------------------------- | ---------------------------------- |
+| `#A0522D` Siena Tostado    | Color principal, títulos, CTAs     |
+| `#87A96B` Verde Salvia     | Acento secundario, sustentabilidad |
+| `#F5E6D3` Alabastro Cálido | Fondos                             |
+| `#D4A437` Vara de Oro      | Detalles premium, botón "Enviar"   |
+| `#C47A6D` Rosa Polvoriento | Acentos suaves, estados de error   |
 
 **Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) para títulos editoriales, [Inter](https://fonts.google.com/specimen/Inter) para cuerpo de texto e interfaz. Todas las variables de diseño (color, tipografía, espaciado, radios) están centralizadas en `styles/unificado.css`.
+
+🚀 Ejecución - Backend
+
+```text
+cd backend
+npm install
+npm run dev
+```
+
+Servidor:
+
+```text
+http://localhost:3000
+```
+
+API:
+
+```text
+http://localhost:3000/api/productos
+```
