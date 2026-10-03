@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
   const { cartCount, openCart } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomeSectionActive = location.pathname === '/' && ['#colecciones', '#nosotros'].includes(location.hash);
+  const isHomeActive = location.pathname === '/' && !location.hash;
 
   return (
     <header className="header">
@@ -39,7 +42,7 @@ export default function Navbar() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `header__menu-link${isActive ? ' header__menu-link--active' : ''}`
+                  `header__menu-link${isActive || isHomeActive ? ' header__menu-link--active' : ''}`
                 }
                 end
               >
@@ -49,7 +52,7 @@ export default function Navbar() {
             <li className="header__menu-item">
               <Link
                 to={{ pathname: '/', hash: '#colecciones' }}
-                className="header__menu-link"
+                className={`header__menu-link${isHomeSectionActive && location.hash === '#colecciones' ? ' header__menu-link--active' : ''}`}
               >
                 Colecciones
               </Link>
@@ -57,7 +60,7 @@ export default function Navbar() {
             <li className="header__menu-item">
               <Link
                 to={{ pathname: '/', hash: '#nosotros' }}
-                className="header__menu-link"
+                className={`header__menu-link${isHomeSectionActive && location.hash === '#nosotros' ? ' header__menu-link--active' : ''}`}
               >
                 Nosotros
               </Link>
