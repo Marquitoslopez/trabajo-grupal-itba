@@ -47,16 +47,6 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="header__menu-item">
-              <NavLink
-                to="/catalogo"
-                className={({ isActive }) =>
-                  `header__menu-link${isActive ? ' header__menu-link--active' : ''}`
-                }
-              >
-                Tienda
-              </NavLink>
-            </li>
-            <li className="header__menu-item">
               <a href="/#colecciones" className="header__menu-link">
                 Colecciones
               </a>
@@ -65,6 +55,16 @@ export default function Navbar() {
               <a href="/#nosotros" className="header__menu-link">
                 Nosotros
               </a>
+            </li>
+            <li className="header__menu-item">
+              <NavLink
+                to="/catalogo"
+                className={({ isActive }) =>
+                  `header__menu-link${isActive ? ' header__menu-link--active' : ''}`
+                }
+              >
+                Tienda
+              </NavLink>
             </li>
             <li className="header__menu-item">
               <NavLink
