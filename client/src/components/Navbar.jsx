@@ -47,14 +47,20 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="header__menu-item">
-              <a href="/#colecciones" className="header__menu-link">
+              <Link
+                to={{ pathname: '/', hash: '#colecciones' }}
+                className="header__menu-link"
+              >
                 Colecciones
-              </a>
+              </Link>
             </li>
             <li className="header__menu-item">
-              <a href="/#nosotros" className="header__menu-link">
+              <Link
+                to={{ pathname: '/', hash: '#nosotros' }}
+                className="header__menu-link"
+              >
                 Nosotros
-              </a>
+              </Link>
             </li>
             <li className="header__menu-item">
               <NavLink
