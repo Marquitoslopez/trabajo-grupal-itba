@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProductos } from '../services/api';
 import ProductCard from '../components/ProductCard';
-import { formatPrice } from '../utils/format';
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);

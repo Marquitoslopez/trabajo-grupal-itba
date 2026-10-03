@@ -1,12 +1,21 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const CART_STORAGE_KEY = 'hermanos-jota-cart';
+const FAVORITES_STORAGE_KEY = 'hermanos-jota-favorites';
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
     try {
       const stored = localStorage.getItem(CART_STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [favorites, setFavorites] = useState(() => {
+    try {
+      const stored = localStorage.getItem(FAVORITES_STORAGE_KEY);
       return stored ? JSON.parse(stored) : [];
     } catch {
       return [];
@@ -22,6 +31,14 @@ export function CartProvider({ children }) {
       /* ignore */
     }
   }, [cart]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+    } catch {
+      /* ignore */
+    }
+  }, [favorites]);
 
   const addToCart = useCallback((productId) => {
     setCart((prev) => [...prev, productId]);
@@ -45,6 +62,15 @@ export function CartProvider({ children }) {
 
   const clearCart = useCallback(() => setCart([]), []);
 
+  const toggleFavorite = useCallback((productId) => {
+    setFavorites((prev) => {
+      const exists = prev.includes(productId);
+      return exists ? prev.filter((id) => id !== productId) : [...prev, productId];
+    });
+  }, []);
+
+  const isFavorite = useCallback((productId) => favorites.includes(productId), [favorites]);
+
   const getGroupedCart = useCallback((productsMap) => {
     const quantities = new Map();
     cart.forEach((id) => {
@@ -65,10 +91,14 @@ export function CartProvider({ children }) {
       value={{
         cart,
         cartCount: cart.length,
+        favorites,
+        favoriteCount: favorites.length,
         addToCart,
         removeFromCart,
         removeAllOf,
         clearCart,
+        toggleFavorite,
+        isFavorite,
         getGroupedCart,
         isCartOpen,
         openCart,

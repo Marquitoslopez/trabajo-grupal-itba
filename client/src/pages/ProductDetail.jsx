@@ -9,7 +9,8 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToCart } = useCart();
+  const { addToCart, toggleFavorite, isFavorite } = useCart();
+  const favorite = product ? isFavorite(product.id) : false;
 
   useEffect(() => {
     setLoading(true);
@@ -55,13 +56,23 @@ export default function ProductDetail() {
             <p className="product-detail__categories">
               Categorías: {product.categories}
             </p>
-            <button
-              type="button"
-              className="btn btn--primary"
-              onClick={() => addToCart(product.id)}
-            >
-              Agregar al carrito
-            </button>
+            <div className="product-detail__actions">
+              <button
+                type="button"
+                className="btn btn--primary"
+                onClick={() => addToCart(product.id)}
+              >
+                Agregar al carrito
+              </button>
+              <button
+                type="button"
+                className="btn btn--secondary"
+                onClick={() => toggleFavorite(product.id)}
+                aria-pressed={favorite}
+              >
+                {favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+              </button>
+            </div>
             <Link to="/catalogo" className="btn btn--secondary">
               Volver al catálogo
             </Link>
