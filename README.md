@@ -133,18 +133,41 @@ El diseño sigue el Manual de Marca de Hermanos Jota:
 
 **Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) para títulos editoriales, [Inter](https://fonts.google.com/specimen/Inter) para cuerpo de texto e interfaz. Todas las variables de diseño (color, tipografía, espaciado, radios) están centralizadas en `styles/unificado.css`.
 
-🚀 Ejecución - Backend
+🚀 Ejecución
 
-```text
-cd backend
+### Proyecto raíz
+
+```bash
 npm install
 npm run dev
 ```
 
-Servidor:
+Esto levanta simultáneamente:
+- Backend en http://localhost:3000
+- Frontend de React en el puerto default de Vite
 
-```text
-http://localhost:3000
+### Ejecutar por separado
+
+```bash
+# Backend
+cd backend
+npm install
+npm run dev
+
+# Frontend
+cd client
+npm install
+npm run dev
+```
+
+### Producción / build
+
+```bash
+# Build del frontend
+npm run build:client
+
+# Inicio del backend
+npm run start:backend
 ```
 
 API:

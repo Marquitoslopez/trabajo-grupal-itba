@@ -1,0 +1,15 @@
+{
+  "name": "muebleria-jota",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "npm-run-all --parallel dev:backend dev:client",
+    "start:backend": "npm --prefix backend run start",
+    "build:client": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
