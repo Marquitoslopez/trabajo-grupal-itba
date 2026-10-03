@@ -1,14 +1,16 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getProductos } from '../services/api';
+import { getProductos, filterProducts, PRODUCT_CATEGORIES } from '../services/api';
 import ProductCard from '../components/ProductCard';
+
+const ALL_CATEGORIES = ['all', ...PRODUCT_CATEGORIES];
 
 export default function Catalog() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [searchParams] = useSearchParams();
-  const catParam = searchParams.get('cat') || '';
+  const catParam = searchParams.get('cat') || 'all';
 
   useEffect(() => {
     getProductos()
@@ -18,21 +20,8 @@ export default function Catalog() {
   }, []);
 
   const filtered = useMemo(() => {
-    let list = products;
-    if (catParam) {
-      list = list.filter((p) =>
-        (p.categories || '').toLowerCase().includes(catParam.toLowerCase())
-      );
-    }
-    if (search.trim()) {
-      const q = search.trim().toLowerCase();
-      list = list.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          (p.categories || '').toLowerCase().includes(q)
-      );
-    }
-    return list;
+    const category = catParam === 'all' ? '' : catParam;
+    return filterProducts(products, { category, search });
   }, [products, catParam, search]);
 
   return (
@@ -56,15 +45,20 @@ export default function Catalog() {
               aria-label="Buscar productos"
             />
             <div className="catalog-filters__cats">
-              {['', 'living', 'habitacion', 'cocina', 'oficina', 'casa'].map((c) => (
-                <a
-                  key={c || 'all'}
-                  href={c ? `/catalogo?cat=${c}` : '/catalogo'}
-                  className={`filter-chip${catParam === c ? ' filter-chip--active' : ''}`}
-                >
-                  {c === '' ? 'Todos' : c.charAt(0).toUpperCase() + c.slice(1)}
-                </a>
-              ))}
+              {ALL_CATEGORIES.map((c) => {
+                const label = c === 'all' ? 'Todos' : c.charAt(0).toUpperCase() + c.slice(1);
+                const href = c === 'all' ? '/catalogo' : `/catalogo?cat=${c}`;
+
+                return (
+                  <a
+                    key={c}
+                    href={href}
+                    className={`filter-chip${catParam === c ? ' filter-chip--active' : ''}`}
+                  >
+                    {label}
+                  </a>
+                );
+              })}
             </div>
           </div>
 
