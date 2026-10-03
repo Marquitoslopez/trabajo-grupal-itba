@@ -89,4 +89,12 @@ const productos = [
   },
 ];
 
-module.exports = productos;
+const getProductos = () => productos;
+
+const getProductoById = (id) => productos.find((producto) => producto.id === id);
+
+module.exports = {
+  productos,
+  getProductos,
+  getProductoById,
+};
