@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { useCart } from '../context/CartContext';
 
 export default function Contact() {
+  const { showToast } = useCart();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -16,6 +18,8 @@ export default function Contact() {
 
   const privacyLinkRef = useRef(null);
   const closeButtonRef = useRef(null);
+  const sentTimerRef = useRef(null);
+  const confirmationRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -146,6 +150,7 @@ export default function Contact() {
     }
 
     setSent(true);
+    showToast('Mensaje enviado correctamente');
 
     setForm({
       name: '',
@@ -158,10 +163,22 @@ export default function Contact() {
 
     setErrors({});
 
-    setTimeout(() => {
+    // Aviso visual: se muestra y desaparece solo (como en contacto.js)
+    clearTimeout(sentTimerRef.current);
+    sentTimerRef.current = setTimeout(() => {
       setSent(false);
     }, 5000);
+
+    // Scroll al mensaje de confirmación
+    requestAnimationFrame(() => {
+      confirmationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
   };
+
+  // Limpiar timer al desmontar
+  useEffect(() => {
+    return () => clearTimeout(sentTimerRef.current);
+  }, []);
 
   const openPrivacyModal = (event) => {
     event.preventDefault();
@@ -393,26 +410,27 @@ export default function Contact() {
               </p>
             </header>
 
-            {sent && (
-              <div
-                id="confirmacion-envio"
-                className="contact-form__confirmation"
-                role="status"
-                aria-live="polite"
+            <div
+              ref={confirmationRef}
+              id="confirmacion-envio"
+              className="contact-form__confirmation"
+              role="status"
+              aria-live="polite"
+              aria-hidden={!sent}
+              style={{ display: sent ? 'flex' : 'none' }}
+            >
+              <span
+                className="contact-form__confirmation-icon"
+                aria-hidden="true"
               >
-                <span
-                  className="contact-form__confirmation-icon"
-                  aria-hidden="true"
-                >
-                  ✓
-                </span>
+                ✓
+              </span>
 
-                <p>
-                  ¡Gracias! Recibimos tu mensaje y te vamos a responder a
-                  la brevedad.
-                </p>
-              </div>
-            )}
+              <p>
+                ¡Gracias! Recibimos tu mensaje y te vamos a responder a
+                la brevedad.
+              </p>
+            </div>
 
             <form
               className="contact-form"
