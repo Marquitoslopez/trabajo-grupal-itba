@@ -2,7 +2,6 @@
 
 ![Estado TP1](https://img.shields.io/badge/Estado-TP%201%20--%20Completo-brightgreen?style=for-the-badge)
 ![Estado TP2](https://img.shields.io/badge/Estado-TP%202%20--%20Completo-brightgreen?style=for-the-badge)
-![Estado Sprints 3-4](https://img.shields.io/badge/Estado-Sprints%203%20--%204%20--%20En%20desarrollo-yellow?style=for-the-badge)
 
 ![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vite%20%7C%20Node.js%20%7C%20Express-blue?style=for-the-badge)
 
@@ -498,29 +497,6 @@ El proyecto permite poner en práctica:
 # 📌 Estado actual
 
 El proyecto se encuentra **en desarrollo activo**.
-
-### Completado
-
-- Sprint 1.
-- Sprint 2.
-- Backend inicial de productos.
-- API REST de productos.
-- Migración progresiva del frontend a React.
-- Navegación con React Router.
-- Carrito de compras.
-- Sistema de favoritos.
-- Buscador.
-- Formulario de contacto.
-- Validaciones.
-- Persistencia mediante `localStorage`.
-- Componentización del frontend.
-
-### En desarrollo
-
-- Finalización de la migración completa a React.
-- Nuevas funcionalidades del e-commerce.
-- Mejoras y validaciones del backend.
-- Integración de futuras funcionalidades según los requisitos de los próximos sprints.
 
 ---
 
