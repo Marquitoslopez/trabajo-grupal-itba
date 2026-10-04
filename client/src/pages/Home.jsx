@@ -96,17 +96,22 @@ export default function Home() {
         <div className="container hero__container">
           <div className="hero__content">
             <h1 id="hero-title" className="hero__title">
-              Muebles de autor con maderas nativas
+              El <span className="hero__title--highlight">alma</span> del
+              bosque en el corazón de tu{' '}
+              <span className="hero__title--highlight">hogar</span>
             </h1>
 
             <p className="hero__subtitle">
-              Piezas artesanales elaboradas con algarrobo, quebracho y caldén.
-              Diseño atemporal para tu hogar.
+              Nos especializamos en piezas de alta calidad con una estética
+              distintiva, curadas y diseñadas para habitar tu espacio con
+              distinción.
             </p>
 
-            <Link to="/catalogo" className="btn btn--primary">
-              Explorar catálogo
-            </Link>
+            <div className="hero__actions">
+              <Link to="/catalogo" className="btn btn--primary">
+                Explorar Colección
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -125,11 +130,13 @@ export default function Home() {
               id="destacados-title"
               className="section-header__title"
             >
-              Piezas destacadas
+              Nuestras Nuevas Colecciones
             </h2>
 
             <p className="section-header__subtitle">
-              Una selección de nuestras creaciones más queridas.
+              Piezas únicas esculpidas en maderas nativas argentinas. Acabados
+              100% naturales en aceite de lino y cera de abejas que cuidan el
+              planeta y tu espacio.
             </p>
           </div>
 
@@ -148,7 +155,7 @@ export default function Home() {
 
           <div className="products-section__action">
             <Link to="/catalogo" className="btn btn--outline">
-              Ver todo el catálogo
+              Ver Todos Los Productos
             </Link>
           </div>
         </div>
@@ -168,8 +175,14 @@ export default function Home() {
               id="colecciones-title"
               className="section-header__title"
             >
-              Colecciones
+              Productos Recomendados Para Ti
             </h2>
+
+            <p className="section-header__subtitle">
+              Pensamos cada detalle para que no tengas que hacerlo tú. Una
+              selección donde la innovación en el diseño se une a nuestra
+              tradición maderera para acompañar tu espacio.
+            </p>
           </div>
 
           <div className="categories-mosaic">
