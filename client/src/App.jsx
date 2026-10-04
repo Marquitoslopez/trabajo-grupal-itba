@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartPanel from './components/CartPanel';
+import FavoritesPanel from './components/FavoritesPanel';
 import Toast from './components/Toast';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
@@ -11,6 +13,7 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <>
+    <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +23,7 @@ export default function App() {
       </Routes>
       <Footer />
       <CartPanel />
+      <FavoritesPanel />
       <Toast />
     </>
   );

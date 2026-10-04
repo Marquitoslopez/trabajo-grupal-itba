@@ -1,12 +1,18 @@
-/* ==================================================================
-   Orden: General, Header, Footer, Components, Buscador, Carrito,
-   Favoritos, Index, Catalogo, Producto, Contacto.
-   
-   producto.css cambiar:
-        .reviews-section     -> .product-reviews-section
-        .reviews-section__title -> .product-reviews-section__title
-        .reviews-grid        -> .product-reviews-grid
-   ================================================================== */
+/* ==========================================================================
+   Orden general del archivo:
+   01. Variables y configuración
+   02. Reset, tipografía y utilidades
+   03. Header / navegación
+   04. Footer
+   05. Componentes reutilizables
+   06. Buscador
+   07. Carrito
+   08. Favoritos
+   09. Inicio
+   10. Catálogo
+   11. Producto
+   12. Contacto y modal de privacidad
+   ========================================================================== */
 
 /* ============================== GENERAL ============================== */
 
@@ -112,7 +118,6 @@ body {
 
 :focus-visible {
 	outline: var(--focus-outline);
-	outline-offset: 3px;
 	outline-offset: 3px;
 }
 
@@ -294,6 +299,13 @@ small {
 }
 
 /* ============================== HEADER ================================ */
+
+/* Evita que el header sticky tape los títulos al navegar por anclas. */
+#colecciones,
+#nosotros {
+	scroll-margin-top: 110px;
+}
+
 
 /* ---- header ----- */
 .header {
@@ -560,127 +572,147 @@ small {
 	}
 }
 
-/* ============================== FOOTER ================================ */
+/* ================================================================
+   FOOTER
+   ================================================================ */
 
 /* ---- footer (mobile first) ---- */
+
 .footer {
-	background-color: var(--color-text-main);
-	color: var(--color-bg-body);
-	padding: var(--space-xl) 0 var(--space-md) 0;
+    background-color: var(--color-text-main);
+    color: var(--color-bg-body);
+    padding: var(--space-xl) 0 var(--space-md);
 }
 
+.footer__container {
+    width: min(100% - 1rem, 1200px);
+    margin: 0 auto;
+}
+
+/* ---- marca ---- */
+
 .footer__brand {
-	margin-bottom: var(--space-lg);
-	text-align: center;
+    margin-bottom: var(--space-lg);
+    text-align: center;
 }
 
 .footer__logo-link {
-	display: inline-flex;
-	align-items: center;
-	gap: var(--space-sm);
-	text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
 }
 
 .footer__logo-icon {
-	height: auto;
-	object-fit: contain;
+    display: block;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
 }
 
 .footer__brand-name {
-	font-family: var(--font-secondary);
-	font-size: var(--font-size-h2);
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	color: var(--color-bg-surface);
+    margin: var(--space-sm) 0 0;
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-h2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-bg-surface);
 }
 
-/* mobile: columnas apiladas y centradas */
+.footer__tagline {
+    margin: var(--space-xs) 0 0;
+    font-size: var(--font-size-caption);
+    color: var(--color-border);
+    line-height: 1.6;
+}
+
+/* ---- columnas ---- */
+
 .footer__grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--space-lg);
-	margin-bottom: var(--space-xl);
-	text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    text-align: center;
 }
 
-.footer__title {
-	color: var(--color-brand-gold);
-	font-size: 1.1rem;
-	font-weight: var(--font-weight-bold);
-	margin-bottom: var(--space-md);
+.footer__col {
+    min-width: 0;
 }
 
-.footer__text {
-	font-size: var(--font-size-caption);
-	color: var(--color-border);
-	line-height: 1.6;
+.footer__heading {
+    margin: 0 0 var(--space-md);
+    color: var(--color-brand-gold);
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
 }
 
-.footer__link {
-	color: var(--color-bg-surface);
-	text-decoration: none;
-	transition: color var(--transition-normal);
+.footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: 0;
+    margin: 0;
 }
 
-.footer__link:hover {
-	color: var(--color-brand-gold);
-	text-decoration: underline;
+.footer__links li {
+    margin: 0;
+    font-size: var(--font-size-caption);
+    color: var(--color-border);
+    line-height: 1.6;
 }
 
-/* mobile: todo apilado y centrado */
+.footer__links a {
+    color: var(--color-bg-surface);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer__links a:hover {
+    color: var(--color-brand-gold);
+    text-decoration: underline;
+}
+
+/* ---- parte inferior ---- */
+
 .footer__bottom {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: var(--space-md);
-	text-align: center;
-	font-size: var(--font-size-caption);
-	color: var(--color-border);
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
-	padding-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+    font-size: var(--font-size-caption);
+    color: var(--color-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-md);
 }
 
-.footer__copy {
-	margin: 0;
+.footer__bottom p {
+    margin: 0;
 }
 
-.footer__social-list {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: var(--space-lg);
-	padding: 0;
-	margin: 0;
-}
-
-.footer__social-link {
-	color: var(--color-border);
-	text-decoration: none;
-	transition: color var(--transition-normal);
-}
-
-.footer__social-link:hover {
-	color: var(--color-bg-surface);
-	text-decoration: underline;
-}
+/* ---- desktop ---- */
 
 @media (min-width: 700px) {
-	.footer__brand {
-		text-align: left;
-	}
 
-	.footer__grid {
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-		text-align: left;
-	}
+    .footer__brand {
+        text-align: left;
+    }
 
-	.footer__bottom {
-		flex-direction: row;
-		justify-content: space-between;
-		text-align: left;
-	}
+    .footer__grid {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 220px), 1fr)
+        );
+        text-align: left;
+    }
+
+    .footer__bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
 }
 
 /* ============================== COMPONENTS ============================== */
@@ -1716,10 +1748,6 @@ body.cart-drawer-open {
 
 body.favorites-drawer-open {
 	overflow: hidden;
-}
-
-.header__action-btn {
-	position: relative;
 }
 
 .header__fav-count {

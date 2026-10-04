@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 
 const CART_STORAGE_KEY = 'hermanos-jota-cart';
 const FAVORITES_STORAGE_KEY = 'hermanos-jota-favorites';
@@ -22,7 +22,9 @@ export function CartProvider({ children }) {
     }
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
   const [toast, setToast] = useState(null);
+  const toastTimer = useRef(null);
 
   useEffect(() => {
     try {
@@ -40,10 +42,23 @@ export function CartProvider({ children }) {
     }
   }, [favorites]);
 
+  useEffect(() => {
+    return () => clearTimeout(toastTimer.current);
+  }, []);
+
+  const showToast = useCallback((message, type = 'success') => {
+    clearTimeout(toastTimer.current);
+    setToast({ message, type });
+    toastTimer.current = setTimeout(() => setToast(null), 2500);
+  }, []);
+
   const addToCart = useCallback((productId) => {
     setCart((prev) => [...prev, productId]);
-    setToast({ message: 'Producto agregado al carrito', type: 'success' });
-    setTimeout(() => setToast(null), 2500);
+    showToast('Producto agregado al carrito');
+  }, [showToast]);
+
+  const increaseQuantity = useCallback((productId) => {
+    setCart((prev) => [...prev, productId]);
   }, []);
 
   const removeFromCart = useCallback((productId) => {
@@ -83,8 +98,17 @@ export function CartProvider({ children }) {
     }));
   }, [cart]);
 
-  const openCart = () => setIsCartOpen(true);
-  const closeCart = () => setIsCartOpen(false);
+  const openCart = useCallback(() => {
+    setIsFavoritesOpen(false);
+    setIsCartOpen(true);
+  }, []);
+  const closeCart = useCallback(() => setIsCartOpen(false), []);
+
+  const openFavorites = useCallback(() => {
+    setIsCartOpen(false);
+    setIsFavoritesOpen(true);
+  }, []);
+  const closeFavorites = useCallback(() => setIsFavoritesOpen(false), []);
 
   return (
     <CartContext.Provider
@@ -94,6 +118,7 @@ export function CartProvider({ children }) {
         favorites,
         favoriteCount: favorites.length,
         addToCart,
+        increaseQuantity,
         removeFromCart,
         removeAllOf,
         clearCart,
@@ -103,8 +128,12 @@ export function CartProvider({ children }) {
         isCartOpen,
         openCart,
         closeCart,
+        isFavoritesOpen,
+        openFavorites,
+        closeFavorites,
         toast,
         setToast,
+        showToast,
       }}
     >
       {children}
