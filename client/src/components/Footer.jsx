@@ -3,121 +3,117 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer__container">
+      <div className="container">
         <div className="footer__brand">
-          <Link
-            to="/"
-            className="footer__logo-link"
-            aria-label="Hermanos Jota - Inicio"
-          >
+          <Link to="/" className="footer__logo-link">
             <img
               src="/assets/logo.svg"
-              className="footer__logo-icon"
-              width="100"
               alt="Hermanos Jota"
+              className="footer__logo-icon"
+              width="60"
+              aria-hidden="true"
             />
+            <span className="footer__brand-name">Hermanos Jota</span>
           </Link>
-
-          <p className="footer__brand-name">
-            Hermanos Jota
-          </p>
-
-          <p className="footer__tagline">
-            Muebles de autor con maderas nativas argentinas.
-          </p>
         </div>
 
         <div className="footer__grid">
-          {/* NAVEGACIÓN */}
           <div className="footer__col">
-            <h3 className="footer__heading">
-              Navegación
-            </h3>
-
-            <ul className="footer__links">
-              <li>
-                <Link to="/">Inicio</Link>
-              </li>
-
-              <li>
-                <Link to="/catalogo">Tienda</Link>
-              </li>
-
-              <li>
-                <Link to="/contacto">Contacto</Link>
-              </li>
-            </ul>
+            <h3 className="footer__title">Hermanos Jota</h3>
+            <p className="footer__text">
+              Casa Taller &amp; Showroom
+              <br />
+              Av. San Juan 2847
+              <br />
+              C1232AAB - Barrio de San Cristóbal
+              <br />
+              Buenos Aires, Argentina
+            </p>
           </div>
 
-          {/* COLECCIONES */}
           <div className="footer__col">
-            <h3 className="footer__heading">
-              Colecciones
-            </h3>
-
-            <ul className="footer__links">
-              <li>
-                <Link to="/catalogo?cat=living">
-                  Living
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/catalogo?cat=habitacion">
-                  Habitación
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/catalogo?cat=cocina">
-                  Cocina
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/catalogo?cat=oficina">
-                  Oficina
-                </Link>
-              </li>
-            </ul>
+            <h3 className="footer__title">Horarios Showroom</h3>
+            <p className="footer__text">
+              Lunes a Viernes: 10:00 - 19:00 hs
+              <br />
+              Sábados: 10:00 - 14:00 hs
+            </p>
           </div>
 
-          {/* CONTACTO */}
           <div className="footer__col">
-            <h3 className="footer__heading">
-              Contacto
-            </h3>
+            <h3 className="footer__title">Contacto Digital</h3>
+            <p className="footer__text">
+              Email:{' '}
+              <a href="mailto:info@hermanosjota.com.ar" className="footer__link">
+                info@hermanosjota.com.ar
+              </a>
+              <br />
+              Ventas:{' '}
+              <a href="mailto:ventas@hermanosjota.com.ar" className="footer__link">
+                ventas@hermanosjota.com.ar
+              </a>
+              <br />
+              WhatsApp:{' '}
+              <a
+                href="https://wa.me/541145678900"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__link"
+              >
+                +54 11 4567-8900
+              </a>
+              <br />
+              Instagram:{' '}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__link"
+              >
+                @hermanosjota_ba
+              </a>
+            </p>
+          </div>
 
-            <ul className="footer__links">
-              <li>
-                Buenos Aires, Argentina
-              </li>
-
-              <li>
-                <a href="mailto:info@hermanosjota.com.ar">
-                  info@hermanosjota.com.ar
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://wa.me/541145678900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </a>
-              </li>
-            </ul>
+          <div className="footer__col">
+            <h3 className="footer__title">Compromiso Sustentable</h3>
+            <p className="footer__text">
+              Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados
+              biológicos sin VOCs y embalaje ecológico.
+            </p>
           </div>
         </div>
-      </div>
 
-      <div className="footer__bottom">
-        <p>
-          © {new Date().getFullYear()} Hermanos Jota.
-          Todos los derechos reservados.
-        </p>
+        <div className="footer__bottom">
+          <p className="footer__copy">
+            © {new Date().getFullYear()} Hermanos Jota. Todos los derechos
+            reservados.
+          </p>
+          <nav className="footer__social-nav" aria-label="Redes sociales">
+            <ul className="footer__social-list">
+              <li>
+                <a href="#twitter" className="footer__social-link">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#facebook" className="footer__social-link">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="#instagram" className="footer__social-link">
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#linkedin" className="footer__social-link">
+                  Linkedin
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </footer>
   );
