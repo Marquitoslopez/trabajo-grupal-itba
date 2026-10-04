@@ -8,9 +8,14 @@ const ALL_CATEGORIES = ['all', ...PRODUCT_CATEGORIES];
 export default function Catalog() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
   const [searchParams] = useSearchParams();
   const catParam = searchParams.get('cat') || 'all';
+  const qParam = searchParams.get('q') || '';
+  const [search, setSearch] = useState(qParam);
+
+  useEffect(() => {
+    setSearch(qParam);
+  }, [qParam]);
 
   useEffect(() => {
     getProductos()
@@ -67,7 +72,7 @@ export default function Catalog() {
           ) : filtered.length === 0 ? (
             <p>No se encontraron productos.</p>
           ) : (
-            <div className="product-grid">
+            <div className="products-grid">
               {filtered.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
