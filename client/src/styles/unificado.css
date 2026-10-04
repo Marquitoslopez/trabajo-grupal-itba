@@ -692,6 +692,40 @@ small {
     margin: 0;
 }
 
+.footer__title{
+	color: var(--color-brand-gold);
+}
+
+.footer__text{
+	padding-top: var(--space-sm);
+	font-size: var(--font-size-caption);
+}
+
+.footer__social-nav {
+    margin: 0;
+}
+
+.footer__social-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__social-link {
+    color: var(--color-bg-surface);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.footer__social-link:hover {
+    color: var(--color-brand-gold);
+    text-decoration: underline;
+}
+
 /* ---- desktop ---- */
 
 @media (min-width: 700px) {
