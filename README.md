@@ -1,110 +1,204 @@
 # 🪵 Hermanos Jota — E-Commerce
 
-![Estado](https://img.shields.io/badge/Estado-TP%201%20--%20Completo-brightgreen?style=for-the-badge)
-![Estado](https://img.shields.io/badge/Estado-TP%202%20--%20Completo-brightgreen?style=for-the-badge)
+![Estado TP1](https://img.shields.io/badge/Estado-TP%201%20--%20Completo-brightgreen?style=for-the-badge)
+![Estado TP2](https://img.shields.io/badge/Estado-TP%202%20--%20Completo-brightgreen?style=for-the-badge)
+![Estado Sprints 3-4](https://img.shields.io/badge/Estado-Sprints%203%20--%204%20--%20En%20desarrollo-yellow?style=for-the-badge)
 
-![Stack](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JavaScript%20%7C%20Node.js%20%7C%20Express-blue?style=for-the-badge)
+![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vite%20%7C%20Node.js%20%7C%20Express-blue?style=for-the-badge)
 
-E-commerce para **Hermanos Jota**, mueblería argentina de piezas artesanales elaboradas con maderas nativas como algarrobo, quebracho y caldén, combinadas con cuero.
+E-commerce desarrollado para **Hermanos Jota**, una mueblería argentina especializada en piezas artesanales elaboradas con maderas nativas como algarrobo, quebracho y caldén, combinadas con cuero.
 
-El proyecto comenzó como una fachada de cliente desarrollada con **HTML, CSS y JavaScript**, incorporando posteriormente un **backend desarrollado con Node.js y Express** para exponer los productos mediante una API REST.
+El proyecto comenzó como una interfaz web desarrollada con **HTML, CSS y JavaScript**, y evolucionó progresivamente hacia una arquitectura basada en **React + Vite en el frontend** y **Node.js + Express en el backend**.
 
-Desarrollado como proyecto en equipo para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
+El backend expone los productos mediante una **API REST**, mientras que el frontend consume dicha API para renderizar el catálogo y los detalles de cada producto.
 
-> 📌 **Estado actual:** el proyecto se encuentra en desarrollo. Los Sprints 1 y 2 corresponden a la fachada inicial del e-commerce, mientras que los Sprints 3 y 4 incorporan la arquitectura del backend y la API de productos. La migración completa del frontend a React y futuras funcionalidades continúan en desarrollo.
+Desarrollado como proyecto grupal para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
+
+> **Estado actual:** el proyecto se encuentra en desarrollo. Los Sprints 1 y 2 corresponden a la implementación inicial del e-commerce con HTML, CSS y JavaScript. Los Sprints 3 y 4 incorporan React, Vite, Node.js, Express y una API REST de productos. La migración y evolución del proyecto continúan en desarrollo.
 
 ---
 
 ## 👥 Equipo
 
-- _Marcos Lopez_
-- _Nehuén Peyrano_
-- _Gastón Davalos_
-- _Villarroel Giuliana_
-- _Alegre Gonzalo_
+- **Marcos Lopez**
+- **Nehuén Peyrano**
+- **Gastón Davalos**
+- **Villarroel Giuliana**
+- **Alegre Gonzalo**
 
 ---
 
-## 🎯 Objetivos de aprendizaje
+# 🚀 Evolución del proyecto
 
-A lo largo de los distintos sprints, el proyecto permite poner en práctica:
+## Sprint 1 — Estructura y diseño
 
-### Frontend - HTML5 · CSS3 · JavaScript
+Se desarrolló la primera versión visual del e-commerce utilizando:
 
-1. Estructuración de sitios complejos utilizando **HTML5 semántico**.
-2. Diseño responsivo con **CSS3**, Flexbox y Grid.
-3. Lógica de programación con **JavaScript**.
-4. Manipulación del **DOM** para crear y modificar contenido dinámicamente.
-5. Gestión de colecciones de datos mediante **arrays de objetos**.
-6. Simulación de carga de datos **asíncrona**.
-7. Interacción con el usuario mediante **eventos y `addEventListener`**.
-8. Persistencia de información en el navegador mediante **localStorage**.
-
-### Implementado
-
-- Estructura de las páginas principales.
+- HTML5 semántico.
+- CSS3.
 - Diseño responsive.
-- Catálogo de productos.
-- Productos mediante arrays de objetos.
-- Generación dinámica de contenido.
-- Buscador y filtros.
+- Flexbox y Grid.
+- Identidad visual de la marca.
+- Estructura de las principales páginas del sitio.
+
+Se implementaron las principales páginas:
+
+- Inicio.
+- Catálogo.
+- Detalle de producto.
+- Contacto.
+
+---
+
+## Sprint 2 — Interactividad con JavaScript
+
+Se incorporó JavaScript para convertir la interfaz estática en una aplicación interactiva.
+
+Se implementaron:
+
+- Catálogo dinámico.
+- Arrays de objetos para representar productos.
+- Renderizado dinámico.
+- Buscador.
+- Filtros por categoría.
 - Detalle de productos.
 - Carrito de compras.
 - Sistema de favoritos.
-- Formulario de contacto y validaciones.
+- Formulario de contacto.
+- Validaciones.
 - Persistencia mediante `localStorage`.
-- Carga asíncrona simulada.
-
-### Backend - Node.js · Express
-
-9. Desarrollo de un servidor utilizando **Node.js y Express**.
-10. Creación de una **API REST**.
-11. Organización del backend mediante **controllers, routes, middlewares y data**.
-12. Implementación de endpoints para consultar productos.
-13. Implementación de **middleware global de logging**.
-14. Manejo de rutas inexistentes mediante middleware **404**.
-15. Implementación de un **manejador centralizado de errores**.
-
-### Trabajo colaborativo
-
-16. Uso de **Git y GitHub** para el control de versiones.
-17. Trabajo mediante **ramas y desarrollo colaborativo**.
+- Simulación de carga asíncrona.
+- Interacciones mediante eventos.
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Sprints 3 y 4 — React + Backend
+
+El proyecto evoluciona hacia una arquitectura moderna basada en un frontend desarrollado con React y un backend desarrollado con Node.js y Express.
+
+### Frontend
+
+Se incorporan:
+
+- React.
+- Vite.
+- React Router.
+- Componentización.
+- Hooks de React.
+- Context API.
+- Consumo de API mediante `fetch`.
+- Estados de carga y error.
+- Carrito de compras.
+- Sistema de favoritos.
+- Buscador.
+- Formularios controlados.
+- Persistencia mediante `localStorage`.
+
+### Backend
+
+Se incorpora:
+
+- Node.js.
+- Express.
+- Express Router.
+- API REST.
+- Controllers.
+- Middleware global de logging.
+- Middleware para rutas inexistentes.
+- Manejador centralizado de errores.
+- Archivo local de productos.
+- Endpoints para consulta de productos.
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+| Tecnología | Uso |
+|---|---|
+| HTML5 | Estructura inicial |
+| CSS3 | Diseño y responsive |
+| JavaScript | Lógica de la primera versión |
+| React | Desarrollo del frontend actual |
+| Vite | Entorno de desarrollo y build |
+| React Router | Navegación de la aplicación |
+| Node.js | Runtime del backend |
+| Express | Servidor y API REST |
+| Git | Control de versiones |
+| GitHub | Repositorio y trabajo colaborativo |
+| localStorage | Persistencia del carrito y favoritos |
+
+---
+
+# ✨ Funcionalidades
+
+## Frontend
+
+- Página de inicio.
+- Catálogo de productos.
+- Filtrado por categorías.
+- Buscador de productos.
+- Detalle individual de productos.
+- Carrito de compras.
+- Contador de productos.
+- Modificación de cantidades.
+- Eliminación de productos.
+- Sistema de favoritos.
+- Contador de favoritos.
+- Panel lateral de carrito.
+- Panel lateral de favoritos.
+- Buscador global.
+- Formulario de contacto controlado.
+- Validación de campos.
+- Modal de política de privacidad.
+- Mensajes de confirmación.
+- Toasts de interacción.
+- Navegación mediante React Router.
+- Persistencia del carrito mediante `localStorage`.
+- Persistencia de favoritos mediante `localStorage`.
+
+## Backend
+
+La API permite consultar los productos mediante los siguientes endpoints:
+
+### Obtener todos los productos
+
+```http
+GET /api/productos
+```
+
+Devuelve el listado completo de productos en formato JSON.
+
+### Obtener un producto
+
+```http
+GET /api/productos/:id
+```
+
+Devuelve el producto correspondiente al ID indicado.
+
+Si el producto no existe, la API devuelve:
+
+```http
+404 Not Found
+```
+
+---
+
+# 📁 Estructura del proyecto
 
 ```text
 hermanos-jota/
 │
-├── index.html
-│
-├── pages/
-│   ├── catalogo.html
-│   ├── contacto.html
-│   └── producto.html
-│
-├── scripts/
-│   ├── buscador.js
-│   ├── carrito.js
-│   ├── catalogo-data.js
-│   ├── catalogo.js
-│   ├── contacto.js
-│   ├── favoritos.js
-│   ├── index.js
-│   └── producto.js
-│
-├── styles/
-│   └── unificado.css
-│
-├── assets/
-│
 ├── backend/
 │   ├── src/
 │   │   ├── controllers/
+│   │   │
 │   │   ├── data/
+│   │   │
 │   │   ├── middlewares/
+│   │   │
 │   │   ├── routes/
+│   │   │
 │   │   └── app.js
 │   │
 │   ├── server.js
@@ -112,66 +206,326 @@ hermanos-jota/
 │   ├── package-lock.json
 │   └── .gitignore
 │
+├── client/
+│   ├── public/
+│   │   └── assets/
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CartPanel.jsx
+│   │   │   ├── ContactForm.jsx
+│   │   │   ├── FavoritesPanel.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── ProductCard.jsx
+│   │   │   ├── ProductList.jsx
+│   │   │   ├── SearchPanel.jsx
+│   │   │   └── Toast.jsx
+│   │   │
+│   │   ├── context/
+│   │   │   └── CartContext.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Catalog.jsx
+│   │   │   ├── ProductDetail.jsx
+│   │   │   └── Contact.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── styles/
+│   │   │   └── unificado.css
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
+│
+├── .gitignore
 └── README.md
+```
 
+> La estructura puede continuar evolucionando a medida que se incorporen nuevas funcionalidades durante los próximos sprints.
 
+---
+
+# 🎨 Identidad de marca
+
+El diseño sigue el Manual de Marca de Hermanos Jota:
+
+| Color | Uso |
+|---|---|
+| `#A0522D` Siena Tostado | Color principal, títulos y CTAs |
+| `#87A96B` Verde Salvia | Acento secundario y sustentabilidad |
+| `#F5E6D3` Alabastro Cálido | Fondos |
+| `#D4A437` Vara de Oro | Detalles premium y acciones principales |
+| `#C47A6D` Rosa Polvoriento | Acentos y estados de error |
+
+### Tipografía
+
+- **Playfair Display** para títulos editoriales.
+- **Inter** para cuerpo de texto e interfaz.
+
+Las principales variables de diseño se encuentran centralizadas en:
+
+```text
+client/src/styles/unificado.css
 ```
 
 ---
 
-## 🎨 Identidad de marca
+# ⚙️ Requisitos
 
-El diseño sigue el Manual de Marca de Hermanos Jota:
+Para ejecutar el proyecto se necesita:
 
-| Color                      | Uso                                |
-| -------------------------- | ---------------------------------- |
-| `#A0522D` Siena Tostado    | Color principal, títulos, CTAs     |
-| `#87A96B` Verde Salvia     | Acento secundario, sustentabilidad |
-| `#F5E6D3` Alabastro Cálido | Fondos                             |
-| `#D4A437` Vara de Oro      | Detalles premium, botón "Enviar"   |
-| `#C47A6D` Rosa Polvoriento | Acentos suaves, estados de error   |
+- Node.js
+- npm
+- Git
 
-**Tipografía:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) para títulos editoriales, [Inter](https://fonts.google.com/specimen/Inter) para cuerpo de texto e interfaz. Todas las variables de diseño (color, tipografía, espaciado, radios) están centralizadas en `styles/unificado.css`.
+Se recomienda utilizar una versión reciente de Node.js.
 
-🚀 Ejecución
+---
 
-### Proyecto raíz
+# 📥 Instalación
+
+Clonar el repositorio:
 
 ```bash
+git clone https://github.com/Marquitoslopez/trabajo-grupal-itba.git
+```
+
+Ingresar al proyecto:
+
+```bash
+cd trabajo-grupal-itba
+```
+
+---
+
+# ▶️ Ejecución
+
+## Backend
+
+Desde la carpeta del backend:
+
+```bash
+cd backend
 npm install
 npm run dev
 ```
 
-Esto levanta simultáneamente:
-- Backend en http://localhost:3000
-- Frontend de React en el puerto default de Vite
+El backend estará disponible en:
 
-### Ejecutar por separado
+```text
+http://localhost:3000
+```
+
+API de productos:
+
+```text
+http://localhost:3000/api/productos
+```
+
+---
+
+## Frontend
+
+En otra terminal:
 
 ```bash
-# Backend
-cd backend
-npm install
-npm run dev
-
-# Frontend
 cd client
 npm install
 npm run dev
 ```
 
-### Producción / build
+Vite mostrará en la terminal la URL correspondiente, normalmente:
 
-```bash
-# Build del frontend
-npm run build:client
-
-# Inicio del backend
-npm run start:backend
+```text
+http://localhost:5173
 ```
 
-API:
+> Para utilizar correctamente el catálogo y los detalles de productos, el backend debe estar ejecutándose simultáneamente.
+
+---
+
+# 🔌 API
+
+## Productos
+
+### Obtener todos los productos
+
+```http
+GET /api/productos
+```
+
+### Obtener un producto por ID
+
+```http
+GET /api/productos/:id
+```
+
+Ejemplo:
 
 ```text
 http://localhost:3000/api/productos
 ```
+
+La API devuelve la información de los productos en formato JSON.
+
+---
+
+# 🧩 Arquitectura
+
+La aplicación se divide en dos partes principales:
+
+```text
+┌───────────────────────────────┐
+│           FRONTEND            │
+│        React + Vite           │
+│                               │
+│ Components / Pages / Context  │
+│ Services / React Router       │
+└───────────────┬───────────────┘
+                │
+                │ HTTP / REST
+                ▼
+┌───────────────────────────────┐
+│           BACKEND             │
+│       Node.js + Express       │
+│                               │
+│ Routes / Controllers          │
+│ Middlewares / Data            │
+└───────────────────────────────┘
+```
+
+El frontend obtiene los productos mediante solicitudes HTTP al backend.
+
+Por ejemplo:
+
+```text
+React
+  ↓
+GET /api/productos
+  ↓
+Express
+  ↓
+Data de productos
+  ↓
+JSON
+  ↓
+React
+  ↓
+Renderizado del catálogo
+```
+
+---
+
+# 🌿 Trabajo colaborativo
+
+El desarrollo se realiza mediante **Git y GitHub**, utilizando ramas para separar las distintas etapas y funcionalidades.
+
+Las funcionalidades se desarrollan en ramas independientes y posteriormente se integran mediante **merge** o **Pull Requests**.
+
+Ejemplo:
+
+```text
+main
+ │
+ ├── Sprint 1-2
+ │
+ ├── backend-sprint3-4
+ │
+ └── ramas de desarrollo individuales
+```
+
+También se utilizan ramas temporales para revisión antes de integrar cambios a las ramas principales.
+
+---
+
+# 📚 Objetivos de aprendizaje
+
+El proyecto permite poner en práctica:
+
+## Frontend
+
+1. HTML5 semántico.
+2. CSS3.
+3. Diseño responsive.
+4. Flexbox y Grid.
+5. JavaScript.
+6. Manipulación del DOM.
+7. Arrays y objetos.
+8. Programación asíncrona.
+9. Eventos.
+10. `localStorage`.
+11. React.
+12. Componentización.
+13. Hooks.
+14. React Router.
+15. Context API.
+16. Consumo de APIs REST.
+17. Formularios controlados.
+
+## Backend
+
+18. Node.js.
+19. Express.
+20. Creación de APIs REST.
+21. Express Router.
+22. Controllers.
+23. Middlewares.
+24. Middleware de logging.
+25. Manejo de rutas inexistentes.
+26. Manejo centralizado de errores.
+27. Organización del código por responsabilidades.
+
+## Trabajo colaborativo
+
+28. Git.
+29. GitHub.
+30. Branches.
+31. Merge.
+32. Pull Requests.
+33. Trabajo colaborativo.
+34. Organización del desarrollo por sprints.
+
+---
+
+# 📌 Estado actual
+
+El proyecto se encuentra **en desarrollo activo**.
+
+### Completado
+
+- Sprint 1.
+- Sprint 2.
+- Backend inicial de productos.
+- API REST de productos.
+- Migración progresiva del frontend a React.
+- Navegación con React Router.
+- Carrito de compras.
+- Sistema de favoritos.
+- Buscador.
+- Formulario de contacto.
+- Validaciones.
+- Persistencia mediante `localStorage`.
+- Componentización del frontend.
+
+### En desarrollo
+
+- Finalización de la migración completa a React.
+- Nuevas funcionalidades del e-commerce.
+- Mejoras y validaciones del backend.
+- Integración de futuras funcionalidades según los requisitos de los próximos sprints.
+
+---
+
+# 📄 Licencia
+
+Proyecto académico desarrollado para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
+
+Uso educativo y académico.
