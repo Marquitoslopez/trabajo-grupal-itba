@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Catálogo de Hermanos Jota — Explora nuestros muebles de autor en maderas nativas: sillas, sillones, mesas, escritorios y almacenamiento." />
+	<title>Tienda</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="../styles/unificado.css" />
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__container">
+			<a href="../index.html" class="header__logo-link" aria-label="Hermanos Jota - Inicio">
+				<img src="../assets/logo.svg" class="header__logo-icon" width="120" alt="Hermanos Jota" />
+			</a>
+
+			<!-- Checkbox hamburguesa -->
+			<input type="checkbox" id="header-menu-toggle" class="header__checkbox" aria-hidden="true" />
+			<label for="header-menu-toggle" class="header__toggle" aria-label="Abrir o cerrar menú de navegación"
+				role="button" tabindex="0">
+				<span class="header__toggle-bar"></span>
+				<span class="header__toggle-bar"></span>
+				<span class="header__toggle-bar"></span>
+			</label>
+
+			<!-- nav desplegable -->
+			<nav class="header__nav" aria-label="Navegación principal">
+
+				<ul class="header__menu">
+					<li class="header__menu-item">
+						<a href="../index.html" class="header__menu-link">Inicio</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="./catalogo.html" class="header__menu-link header__menu-link--active"
+							aria-current="page">Tienda</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="../index.html#colecciones" class="header__menu-link">Colecciones</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#nosotros" class="header__menu-link">Nosotros</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="./contacto.html" class="header__menu-link">Contacto</a>
+					</li>
+				</ul>
+
+				<!-- sidebar actions -->
+				<div class="header__actions">
+					<button type="button" class="header__action-btn" aria-label="Buscar productos">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<circle cx="11" cy="11" r="8" />
+							<path d="m21 21-4.3-4.3" />
+						</svg>
+					</button>
+
+					<button type="button" class="header__action-btn" aria-label="Ver favoritos, 0 guardados">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path
+								d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+						</svg>
+					</button>
+
+					<button type="button" class="header__action-btn" aria-label="Ver carrito de compras">
+						<svg class="header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+							<line x1="3" y1="6" x2="21" y2="6" />
+							<path d="M16 10a4 4 0 0 1-8 0" />
+						</svg>
+						<span class="header__cart-count" aria-hidden="true">0</span>
+					</button>
+				</div>
+			</nav>
+		</div>
+
+		<div class="catalog-search-panel" id="catalog-search-panel" aria-hidden="true">
+			<div class="container">
+				<div class="catalog-search-panel__content" role="dialog" aria-label="Buscador de productos">
+					<div class="catalog-search-panel__heading">
+						<div>
+							<span class="catalog-search-panel__eyebrow">BÚSQUEDA INTELIGENTE</span>
+							<p>Encontrá tu próxima pieza</p>
+							<small>Buscá por nombre, ambiente o tipo de mueble.</small>
+						</div>
+
+						<button type="button" class="catalog-search-panel__close" id="catalog-search-close"
+							aria-label="Cerrar búsqueda">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" aria-hidden="true" focusable="false">
+								<path d="M18 6 6 18" />
+								<path d="m6 6 12 12" />
+							</svg>
+						</button>
+					</div>
+
+					<form class="catalog-search" id="catalog-search" role="search">
+						<label class="sr-only" for="catalog-search-input">Buscar productos en el catálogo</label>
+						<div class="catalog-search__field">
+							<svg class="catalog-search__icon" width="21" height="21" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+								<circle cx="11" cy="11" r="8" />
+								<path d="m21 21-4.3-4.3" />
+							</svg>
+							<input type="search" class="catalog-search__input" id="catalog-search-input"
+								placeholder="Probá con “mesa”, “living” o “madera”..." autocomplete="off"
+								role="combobox" aria-autocomplete="list" aria-controls="catalog-search-results"
+								aria-expanded="false" />
+							<kbd class="catalog-search__shortcut" aria-hidden="true">Ctrl K</kbd>
+							<button type="button" class="catalog-search__clear" id="catalog-search-clear"
+								aria-label="Limpiar búsqueda" hidden>×</button>
+						</div>
+					</form>
+
+					<div class="catalog-search-discover" id="catalog-search-discover">
+						<span>Descubrí rápido</span>
+						<div class="catalog-search-discover__list">
+							<button type="button" data-search-suggestion="sofá">Sofás</button>
+							<button type="button" data-search-suggestion="mesa">Mesas</button>
+							<button type="button" data-search-suggestion="living">Living</button>
+							<button type="button" data-search-suggestion="oficina">Oficina</button>
+						</div>
+					</div>
+
+					<div class="catalog-search-results" id="catalog-search-results" role="listbox"
+						aria-label="Productos encontrados" hidden></div>
+
+					<div class="catalog-search-panel__footer">
+						<p class="catalog-search-panel__feedback" id="catalog-result-status" role="status"
+							aria-live="polite">
+							Escribí para ver resultados al instante.
+						</p>
+						<button type="button" class="catalog-search-panel__show-all" id="catalog-search-show-all"
+							hidden>
+							Ver todos <span aria-hidden="true">→</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="catalog-content">
+
+		<section class="page-banner" aria-labelledby="shop-title">
+			<div class="page-banner__overlay" aria-hidden="true"></div>
+			<img class="page-banner__bg" src="../assets/bg-inicio.png"
+				alt="Interior con mobiliario de madera noble Hermanos Jota" width="1920" height="400"
+				fetchpriority="high" />
+			<div class="page-banner__content">
+				<h1 id="shop-title" class="page-banner__title">SHOP</h1>
+			</div>
+		</section>
+
+		<section class="filter-bar" aria-label="Filtros de categoría de productos">
+			<div class="container">
+				<div class="filter-bar__list" role="tablist" aria-label="Categorías">
+					<button type="button" class="filter-bar__pill filter-bar__pill--active" role="tab"
+						aria-selected="true" data-filter="all">
+						Todos
+					</button>
+
+					<button type="button" class="filter-bar__pill" role="tab" aria-selected="false"
+						data-filter="living">
+						Living-Room
+					</button>
+
+					<button type="button" class="filter-bar__pill" role="tab" aria-selected="false"
+						data-filter="habitacion">
+						Habitación
+					</button>
+
+					<button type="button" class="filter-bar__pill" role="tab" aria-selected="false"
+						data-filter="cocina">
+						Cocina
+					</button>
+
+					<button type="button" class="filter-bar__pill" role="tab" aria-selected="false"
+						data-filter="oficina">
+						Oficina
+					</button>
+
+					<button type="button" class="filter-bar__pill" role="tab" aria-selected="false" data-filter="casa">
+						Casa
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="catalog" aria-labelledby="catalog-heading" id="catalogo">
+			<h2 id="catalog-heading" class="sr-only">Catálogo Completo de Muebles</h2>
+
+			<div class="container">
+				<div class="catalog__grid" id="catalog-grid">
+				</div>
+
+				<div class="catalog__empty" id="catalog-empty" hidden>
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+						aria-hidden="true" focusable="false">
+						<circle cx="11" cy="11" r="8" />
+						<path d="m21 21-4.3-4.3" />
+					</svg>
+					<p>No encontramos productos con esa búsqueda.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="reviews-section" aria-labelledby="reviews-title">
+			<div class="container">
+				<div class="section-header">
+					<h2 id="reviews-title" class="section-header__title">Lo Que Dicen Quienes Conviven Con Hermanos Jota
+					</h2>
+					<p class="section-header__subtitle">Experiencias reales de personas que eligieron diseño, calidez y
+						piezas hechas para durar.</p>
+				</div>
+
+				<div class="reviews-grid">
+					<article class="review-card">
+						<header class="review-card__header">
+							<div class="review-card__user">
+								<div class="review-card__avatar" aria-hidden="true">M</div>
+								<div>
+									<h3 class="review-card__name">Mike Wazowski</h3>
+									<span class="review-card__source">Monsters University</span>
+								</div>
+							</div>
+							<div class="review-card__rating" aria-label="Calificación 5.0 de 5 estrellas">
+								<span aria-hidden="true">★ 5.0</span>
+							</div>
+						</header>
+						<p class="review-card__text">"Compramos la mesa para nuestro living y cambió por completo el
+							ambiente. Se siente sólida, cálida y especial."</p>
+					</article>
+
+					<article class="review-card">
+						<header class="review-card__header">
+							<div class="review-card__user">
+								<div class="review-card__avatar" aria-hidden="true">C</div>
+								<div>
+									<h3 class="review-card__name">Clarence</h3>
+									<span class="review-card__source">Escuela Primaria de Aberdale</span>
+								</div>
+							</div>
+							<div class="review-card__rating" aria-label="Calificación 4.5 de 5 estrellas">
+								<span aria-hidden="true">★ 4.5</span>
+							</div>
+						</header>
+						<p class="review-card__text">"El diseño es precioso y los materiales se sienten de excelente
+							calidad. Una pieza que realmente acompaña el espacio."</p>
+					</article>
+
+					<article class="review-card">
+						<header class="review-card__header">
+							<div class="review-card__user">
+								<div class="review-card__avatar" aria-hidden="true">H</div>
+								<div>
+									<h3 class="review-card__name">Homero Simpson</h3>
+									<span class="review-card__source">Springfield High School</span>
+								</div>
+							</div>
+							<div class="review-card__rating" aria-label="Calificación 5.0 de 5 estrellas">
+								<span aria-hidden="true">★ 5.0</span>
+							</div>
+						</header>
+						<p class="review-card__text">"Nos encantó el equilibrio entre lo clásico y lo moderno. La
+							terminación es impecable y llegó perfecta."</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-banner" id="nosotros" aria-labelledby="cta-banner-title">
+			<div class="cta-banner__container">
+				<img class="cta-banner__bg" src="../assets/habitacion.png" alt="" loading="lazy" width="1600"
+					height="600" />
+				<div class="cta-banner__overlay" aria-hidden="true"></div>
+				<div class="cta-banner__content">
+					<h2 id="cta-banner-title" class="cta-banner__title">
+						No<span class="cta-banner__title--highlight"> diseñamos muebles</span> para llenar espacios,
+						sino<span class="cta-banner__title--highlight"> para acompañar vidas</span>.
+					</h2>
+					<a href="#nosotros" class="btn btn--primary">Conócenos</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__brand">
+				<a href="../index.html" class="footer__logo-link">
+					<img src="../assets/logo.svg" alt="Hermanos Jota" class="footer__logo-icon" width="60"
+						aria-hidden="true" />
+					<span class="footer__brand-name">Hermanos Jota</span>
+				</a>
+			</div>
+
+			<div class="footer__grid">
+				<div class="footer__col">
+					<h3 class="footer__title">Hermanos Jota</h3>
+					<p class="footer__text">
+						Casa Taller & Showroom<br />
+						Av. San Juan 2847<br />
+						C1232AAB - Barrio de San Cristóbal<br />
+						Buenos Aires, Argentina
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Horarios Showroom</h3>
+					<p class="footer__text">
+						Lunes a Viernes: 10:00 - 19:00 hs<br />
+						Sábados: 10:00 - 14:00 hs
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Contacto Digital</h3>
+					<p class="footer__text">
+						Email: <a href="mailto:info@hermanosjota.com.ar"
+							class="footer__link">info@hermanosjota.com.ar</a><br />
+						Ventas: <a href="mailto:ventas@hermanosjota.com.ar"
+							class="footer__link">ventas@hermanosjota.com.ar</a><br />
+						WhatsApp: <a href="https://wa.me/541145678900" target="_blank" rel="noopener noreferrer"
+							class="footer__link">+54 11 4567-8900</a><br />
+						Instagram: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+							class="footer__link">@hermanosjota_ba</a>
+					</p>
+				</div>
+
+				<div class="footer__col">
+					<h3 class="footer__title">Compromiso Sustentable</h3>
+					<p class="footer__text">
+						Maderas nativas FSC (Algarrobo, Quebracho, Caldén). Acabados biológicos sin VOCs y embalaje
+						ecológico.
+					</p>
+				</div>
+			</div>
+
+			<div class="footer__bottom">
+				<p class="footer__copy">© 2026 Hermanos Jota. Todos los derechos reservados.</p>
+				<nav class="footer__social-nav" aria-label="Redes sociales">
+					<ul class="footer__social-list">
+						<li><a href="#twitter" class="footer__social-link">Twitter</a></li>
+						<li><a href="#facebook" class="footer__social-link">Facebook</a></li>
+						<li><a href="#instagram" class="footer__social-link">Instagram</a></li>
+						<li><a href="#linkedin" class="footer__social-link">Linkedin</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script src="../scripts/catalogo-data.js"></script>
+	<script src="../scripts/buscador.js"></script>
+	<script src="../scripts/catalogo.js"></script>
+	<script src="../scripts/carrito.js"></script>
+	<script src="../scripts/favoritos.js"></script>
+</body>
+
+</html>

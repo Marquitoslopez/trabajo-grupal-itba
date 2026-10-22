@@ -110,6 +110,34 @@ Se incorpora:
 
 ---
 
+
+## Sprint 5 y 6 — Administración y persistencia
+
+- Formularios controlados para crear y editar productos.
+- Listado administrativo con opciones para editar y eliminar productos.
+- Categorías seleccionables: `living`, `habitacion`, `cocina`, `oficina` y `casa`. Se pueden marcar varias.
+- El carrito y favoritos guardan los identificadores de los productos en `localStorage`.
+- El botón **Comprar carrito** realiza una simulación local. No procesa pagos ni registra órdenes reales en MongoDB.
+
+### Configuración local de MongoDB
+
+1. Copiar `backend/.env.example` como `backend/.env`.
+2. Reemplazar los valores de ejemplo por la URI autorizada de MongoDB Atlas. No subir `backend/.env` a GitHub.
+3. En una terminal:
+   ```bash
+   cd backend
+   npm install
+   npm run dev
+   ```
+4. En otra terminal:
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
+
+La API se configura por defecto en `http://localhost:3000/api`. Para probar el carrito y favoritos, abrir la tienda desde el frontend servido por Vite (normalmente `http://localhost:5173`).
+
 # 🛠️ Tecnologías utilizadas
 
 | Tecnología | Uso |
@@ -505,3 +533,29 @@ El proyecto se encuentra **en desarrollo activo**.
 Proyecto académico desarrollado para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
 
 Uso educativo y académico.
+
+---
+
+# Sprint 5–6 — ítems 5, 6 y 7 (integración frontend)
+
+Se agregaron rutas de React Router para `/productos`, `/productos/:id`, `/contacto`, `/admin/crear-producto` y la administración de productos. Se conservaron `/catalogo` y `/producto/:id` como alias para no romper la navegación existente.
+
+La administración permite crear, consultar, editar y eliminar productos mediante la API de Express. Los formularios usan estado controlado y las operaciones escriben en MongoDB a través del backend; no se utiliza el catálogo de respaldo para confirmar operaciones administrativas.
+
+## Configurar MongoDB localmente
+
+1. Dentro de `backend/`, creá un archivo `.env` copiando `backend/.env.example`.
+2. Reemplazá los valores de ejemplo por la URI autorizada por el equipo. No subas el `.env` real a GitHub.
+3. En la carpeta `backend`, ejecutá `npm install` y luego `npm run dev`.
+4. En otra terminal, en `client`, ejecutá `npm install` y luego `npm run dev`.
+5. Abrí la URL que informa Vite (habitualmente `http://localhost:5173`).
+
+## Rutas de administración
+
+- `/admin/productos`: listado de productos existentes, con opciones de editar y eliminar.
+- `/admin/crear-producto`: formulario controlado para crear un producto.
+- `/admin/editar-producto/:id`: formulario controlado para modificar un producto existente.
+
+Las imágenes se guardan como una URL o como el nombre de un archivo dentro de `client/public/assets`. Para imágenes locales, ese archivo debe existir en esa carpeta.
+
+**Alcance:** este paquete incluye el trabajo de frontend correspondiente a los ítems 5–7 sobre la rama compartida de los ítems 1–4. El ítem 8 (pruebas de integración end-to-end) queda pendiente para el compañero, según el acuerdo del equipo. La conexión real a Atlas debe verificarse con las credenciales autorizadas del equipo.
