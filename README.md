@@ -558,4 +558,51 @@ La administración permite crear, consultar, editar y eliminar productos mediant
 
 Las imágenes se guardan como una URL o como el nombre de un archivo dentro de `client/public/assets`. Para imágenes locales, ese archivo debe existir en esa carpeta.
 
-**Alcance:** este paquete incluye el trabajo de frontend correspondiente a los ítems 5–7 sobre la rama compartida de los ítems 1–4. El ítem 8 (pruebas de integración end-to-end) queda pendiente para el compañero, según el acuerdo del equipo. La conexión real a Atlas debe verificarse con las credenciales autorizadas del equipo.
+**Alcance:** este paquete integra los ítems 5–7 y documenta el ítem 8, incluyendo el recorrido React → Express → Mongoose/MongoDB y una guía de pruebas manuales. Para confirmar la entrega, todavía hay que ejecutar esas pruebas con las credenciales autorizadas de MongoDB Atlas y comprobar que crear, consultar, editar y eliminar productos persista correctamente.
+
+
+## Ítem 8 — Ciclo completo de una petición Full Stack
+
+Se integra y documenta el recorrido completo de una operación desde la interfaz hasta MongoDB y de regreso al usuario. Las operaciones administrativas de crear, consultar, editar y eliminar productos ya están conectadas entre React, la API REST de Express y el modelo `Product` de Mongoose.
+
+### Recorrido de una petición
+
+1. El usuario realiza una acción en React desde el formulario o el listado administrativo.
+2. `client/src/services/api.js` convierte los datos al formato de la API y envía una petición HTTP (`GET`, `POST`, `PUT` o `DELETE`).
+3. Express recibe la petición en `backend/src/routes/productos.routes.js` y la deriva al controlador correspondiente.
+4. `backend/src/controllers/productos.controller.js` valida el identificador cuando corresponde y ejecuta la operación sobre el modelo `Product`.
+5. Mongoose aplica las validaciones del esquema y persiste los cambios en MongoDB.
+6. Express devuelve una respuesta JSON con el resultado o un error HTTP.
+7. React actualiza la vista y muestra una confirmación o un mensaje de error.
+
+### Endpoints utilizados
+
+| Acción en la interfaz | Método y endpoint | Resultado esperado |
+|---|---|---|
+| Cargar el listado administrativo | `GET /api/productos` | Devuelve los productos guardados en MongoDB. |
+| Consultar un producto | `GET /api/productos/:id` | Devuelve el producto o `404` si no existe. |
+| Crear un producto | `POST /api/productos` | Guarda el producto y responde `201`. |
+| Editar un producto | `PUT /api/productos/:id` | Actualiza el producto y devuelve el documento actualizado. |
+| Eliminar un producto | `DELETE /api/productos/:id` | Elimina el documento y devuelve una confirmación. |
+
+### Modelo `Product`
+
+- `nombre`: `String`, obligatorio.
+- `descripcion`: `String`, opcional.
+- `precio`: `Number`, obligatorio y no negativo.
+- `stock`: `Number`, opcional por defecto `0` y no negativo.
+- `imagenUrl`: `String`, opcional.
+- `categorias`: `String`, opcional por defecto `casa`; permite guardar las categorías seleccionadas en el formulario.
+- `timestamps`: Mongoose agrega `createdAt` y `updatedAt`.
+
+### Cómo comprobar el ciclo completo
+
+1. Configurar `backend/.env` con la URI de la base de datos autorizada y ejecutar el backend (`cd backend` y `npm run dev`).
+2. En otra terminal, ejecutar el frontend (`cd client` y `npm run dev`).
+3. Abrir la administración de productos y crear uno con nombre, precio, stock y categoría.
+4. Confirmar que aparece en el listado administrativo y actualizar la página. Si sigue apareciendo, la información se recuperó desde la API y no solamente desde el estado local de React.
+5. Editar el producto y comprobar que el cambio se mantiene al recargar.
+6. Eliminar el producto y comprobar que ya no aparece en el listado.
+7. Si se necesita verificar directamente la persistencia, revisar la colección `products` en la base de datos configurada en MongoDB Atlas.
+
+**Importante:** el carrito y los favoritos se guardan en `localStorage`. El botón “Comprar carrito” de esta entrega es una simulación local; no procesa pagos ni crea órdenes en MongoDB.
