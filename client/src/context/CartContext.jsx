@@ -53,12 +53,11 @@ export function CartProvider({ children }) {
   }, []);
 
   const addToCart = useCallback((productId) => {
-    const id = String(productId);
-    setCart((prev) => [...prev.map(String), id]);
-    setIsFavoritesOpen(false);
-    setIsCartOpen(true);
-    showToast('Producto agregado al carrito');
-  }, [showToast]);
+  const id = String(productId);
+
+  setCart((prev) => [...prev.map(String), id]);
+  showToast('Producto agregado al carrito');
+}, [showToast]);
 
   const increaseQuantity = useCallback((productId) => {
     const id = String(productId);
