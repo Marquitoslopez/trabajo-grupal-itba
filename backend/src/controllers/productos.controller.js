@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 const Product = require("../models/Product");
 
@@ -67,10 +66,11 @@ const actualizarProducto = async (req, res, next) => {
       });
     }
 
-    const producto = await Product.findByIdAndUpdate(id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const producto = await Product.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body,
+      { returnDocument: "after", runValidators: true },
+    );
 
     if (!producto) {
       return res.status(404).json({
