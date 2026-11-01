@@ -1,18 +1,10 @@
 import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 
-const CART_STORAGE_KEY = 'hermanos-jota-cart';
+export const CART_STORAGE_KEY = 'hermanos-jota-cart';
 const FAVORITES_STORAGE_KEY = 'hermanos-jota-favorites';
 const CartContext = createContext(null);
 
-export function CartProvider({ children }) {
-  const [cart, setCart] = useState(() => {
-    try {
-      const stored = localStorage.getItem(CART_STORAGE_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
+export function CartProvider({ children, cart, setCart }) {
   const [favorites, setFavorites] = useState(() => {
     try {
       const stored = localStorage.getItem(FAVORITES_STORAGE_KEY);

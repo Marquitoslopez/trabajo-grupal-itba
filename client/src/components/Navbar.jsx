@@ -4,9 +4,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import SearchPanel from './SearchPanel';
 
-export default function Navbar() {
+export default function Navbar({ cartCount }) {
   const {
-    cartCount,
     openCart,
     favoriteCount,
     openFavorites,
