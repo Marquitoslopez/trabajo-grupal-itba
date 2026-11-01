@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
-  const { addToCart, toggleFavorite, isFavorite, viewProduct } = useCart();
+  const { addToCart, toggleFavorite, isFavorite } = useCart();
 
   if (!product) return null;
 

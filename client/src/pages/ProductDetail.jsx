@@ -43,7 +43,7 @@ export default function ProductDetail() {
       .catch(async () => {
         try {
           const list = await getProductos();
-          const found = list.find((p) => p.id === id);
+          const found = list.find((p) => String(p.id) === String(id));
           if (found) setProduct(found);
           else setError('Producto no encontrado');
         } catch {
