@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { getProductos, productImageSrc } from '../services/api';
 import { formatPrice } from '../utils/format';
 
 export default function FavoritesPanel() {
-  const { isFavoritesOpen, closeFavorites, favorites, toggleFavorite, addToCart } = useCart();
+  const { isFavoritesOpen, closeFavorites, favorites, toggleFavorite, addToCart, viewProduct } = useCart();
   const [productsMap, setProductsMap] = useState({});
   const closeBtnRef = useRef(null);
 
@@ -91,10 +90,13 @@ export default function FavoritesPanel() {
             <div className="fav-drawer__items">
               {items.map((product) => (
                 <article key={product.id} className="fav-item">
-                  <Link
-                    to={`/producto/${product.id}`}
+                  <button
+                    type="button"
                     className="fav-item__image-link"
-                    onClick={closeFavorites}
+                    onClick={() => {
+                      closeFavorites();
+                      viewProduct(product.id);
+                    }}
                     aria-label={`Ver ${product.name}`}
                   >
                     <img
@@ -102,18 +104,21 @@ export default function FavoritesPanel() {
                       alt={product.alt || product.name}
                       className="fav-item__image"
                     />
-                  </Link>
+                  </button>
 
                   <div className="fav-item__content">
                     <div className="fav-item__heading">
                       <div>
-                        <Link
-                          to={`/producto/${product.id}`}
+                        <button
+                          type="button"
                           className="fav-item__name"
-                          onClick={closeFavorites}
+                          onClick={() => {
+                            closeFavorites();
+                            viewProduct(product.id);
+                          }}
                         >
                           {product.name}
-                        </Link>
+                        </button>
                         <span className="fav-item__price">{formatPrice(product.price)}</span>
                       </div>
                       <button

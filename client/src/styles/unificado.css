@@ -871,12 +871,25 @@ small {
 }
 
 .product-card__link-detail {
+	padding: 0;
+	border: 0;
+	background: none;
 	font-size: var(--font-size-caption);
 	font-weight: var(--font-weight-medium);
 	color: var(--color-text-muted);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	cursor: pointer;
 	transition: color var(--transition-fast);
+}
+
+.product-card__image-link {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
 }
 
 .product-card__link-detail:hover {
@@ -1203,6 +1216,7 @@ body.catalog-search-open::after {
 
 .catalog-search-result {
 	display: grid;
+	width: 100%;
 	grid-template-columns: 68px minmax(0, 1fr) auto;
 	min-width: 0;
 	padding: 0.5rem;
@@ -1210,7 +1224,8 @@ body.catalog-search-open::after {
 	background: rgba(255, 255, 255, 0.78);
 	border: 1px solid var(--color-border);
 	border-radius: 13px;
-	text-decoration: none;
+	text-align: left;
+	cursor: pointer;
 	align-items: center;
 	gap: 0.7rem;
 	transition:
@@ -1547,11 +1562,14 @@ body.cart-drawer-open {
 .cart-item__image-link {
 	display: flex;
 	min-height: 88px;
+	padding: 0;
 	background: var(--color-bg-soft);
+	border: 0;
 	border-radius: 9px;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 .cart-item__image {
@@ -1578,12 +1596,16 @@ body.cart-drawer-open {
 
 .cart-item__name {
 	display: block;
+	padding: 0;
 	color: var(--color-brand-primary);
+	background: none;
+	border: 0;
 	font-family: var(--font-secondary);
 	font-size: 0.92rem;
 	font-weight: var(--font-weight-bold);
 	line-height: 1.25;
-	text-decoration: none;
+	text-align: left;
+	cursor: pointer;
 }
 
 .cart-item__name:hover {
@@ -1951,11 +1973,14 @@ body.favorites-drawer-open {
 .fav-item__image-link {
 	display: flex;
 	min-height: 88px;
+	padding: 0;
 	background: var(--color-bg-soft);
+	border: 0;
 	border-radius: 9px;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 .fav-item__image {
@@ -1981,12 +2006,16 @@ body.favorites-drawer-open {
 
 .fav-item__name {
 	display: block;
+	padding: 0;
 	color: var(--color-brand-primary);
+	background: none;
+	border: 0;
 	font-family: var(--font-secondary);
 	font-size: 0.92rem;
 	font-weight: var(--font-weight-bold);
 	line-height: 1.25;
-	text-decoration: none;
+	text-align: left;
+	cursor: pointer;
 }
 
 .fav-item__name:hover {

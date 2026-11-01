@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { getProductos, productImageSrc } from '../services/api';
 import { formatPrice } from '../utils/format';
@@ -14,6 +13,7 @@ export default function CartPanel() {
     removeAllOf,
     clearCart,
     cartCount,
+    viewProduct,
   } = useCart();
   const [productsMap, setProductsMap] = useState({});
   const [checkoutBusy, setCheckoutBusy] = useState(false);
@@ -99,10 +99,13 @@ export default function CartPanel() {
               {visibleGrouped.map(({ productId, quantity, product }) =>
                 product ? (
                   <article key={productId} className="cart-item">
-                    <Link
-                      to={`/producto/${productId}`}
+                    <button
+                      type="button"
                       className="cart-item__image-link"
-                      onClick={closeCart}
+                      onClick={() => {
+                        closeCart();
+                        viewProduct(productId);
+                      }}
                       aria-label={`Ver detalle de ${product.name}`}
                     >
                       <img
@@ -110,18 +113,21 @@ export default function CartPanel() {
                         alt={product.alt || product.name}
                         className="cart-item__image"
                       />
-                    </Link>
+                    </button>
 
                     <div className="cart-item__content">
                       <div className="cart-item__heading">
                         <div>
-                          <Link
-                            to={`/producto/${productId}`}
+                          <button
+                            type="button"
                             className="cart-item__name"
-                            onClick={closeCart}
+                            onClick={() => {
+                              closeCart();
+                              viewProduct(productId);
+                            }}
                           >
                             {product.name}
-                          </Link>
+                          </button>
                           <span className="cart-item__unit-price">
                             {formatPrice(product.price)} c/u
                           </span>

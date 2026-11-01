@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getProductos, normalizeCategories } from '../services/api';
 import { formatPrice } from '../utils/format';
+import { useCart } from '../context/CartContext';
 
 const CATEGORY_LABELS = {
   living: 'Living',
@@ -39,6 +40,7 @@ function Highlight({ text, query }) {
 
 export default function SearchPanel({ isOpen, onOpen, onClose }) {
   const navigate = useNavigate();
+  const { viewProduct } = useCart();
   const [products, setProducts] = useState([]);
   const [value, setValue] = useState('');
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -126,7 +128,7 @@ export default function SearchPanel({ isOpen, onOpen, onClose }) {
 
   const goToProduct = (id) => {
     onClose();
-    navigate(`/producto/${id}`);
+    viewProduct(id);
   };
 
   const goToCatalog = () => {
@@ -259,14 +261,14 @@ export default function SearchPanel({ isOpen, onOpen, onClose }) {
             {results.map((product, index) => {
               const category = CATEGORY_LABELS[normalizeCategories(product.categories)[0]] ?? 'Mueble de autor';
               return (
-                <Link
+                <button
                   key={product.id}
-                  to={`/producto/${product.id}`}
+                  type="button"
                   id={`catalog-search-option-${index}`}
                   className={`catalog-search-result${index === activeIndex ? ' catalog-search-result--active' : ''}`}
                   role="option"
                   aria-selected={index === activeIndex}
-                  onClick={() => onClose()}
+                  onClick={() => goToProduct(product.id)}
                 >
                   <span className="catalog-search-result__image">
                     <img src={`/assets/${product.image}`} alt="" loading="lazy" />
@@ -278,7 +280,7 @@ export default function SearchPanel({ isOpen, onOpen, onClose }) {
                     <span>{category} · {formatPrice(product.price)}</span>
                   </span>
                   <span className="catalog-search-result__arrow" aria-hidden="true">↗</span>
-                </Link>
+                </button>
               );
             })}
           </div>

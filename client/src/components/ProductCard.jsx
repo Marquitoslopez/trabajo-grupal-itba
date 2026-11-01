@@ -1,14 +1,12 @@
-import { Link } from 'react-router-dom';
 import { formatPrice } from '../utils/format';
 import { productImageSrc } from '../services/api';
 import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
-  const { addToCart, toggleFavorite, isFavorite } = useCart();
+  const { addToCart, toggleFavorite, isFavorite, viewProduct } = useCart();
 
   if (!product) return null;
 
-  const productUrl = `/producto/${product.id}`;
   const favorite = isFavorite(product.id);
 
   return (
@@ -25,7 +23,12 @@ export default function ProductCard({ product }) {
         </div>
       </header>
       <div className="product-card__image-wrapper">
-        <Link to={productUrl} aria-label={`Ver detalle de ${product.name}`}>
+        <button
+          type="button"
+          className="product-card__image-link"
+          onClick={() => viewProduct(product.id)}
+          aria-label={`Ver detalle de ${product.name}`}
+        >
           <img
             src={productImageSrc(product.image)}
             alt={product.alt || product.name}
@@ -34,7 +37,7 @@ export default function ProductCard({ product }) {
             width="300"
             height="220"
           />
-        </Link>
+        </button>
       </div>
       <div className="product-card__actions">
         <div className="product-card__primary-actions">
@@ -59,9 +62,13 @@ export default function ProductCard({ product }) {
           </button>
         </div>
         <div className="product-card__secondary-actions">
-          <Link to={productUrl} className="product-card__link-detail">
+          <button
+            type="button"
+            className="product-card__link-detail"
+            onClick={() => viewProduct(product.id)}
+          >
             Ver detalle
-          </Link>
+          </button>
           <button
             type="button"
             className="btn--icon"
