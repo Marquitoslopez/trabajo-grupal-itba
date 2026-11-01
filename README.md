@@ -1,35 +1,30 @@
-# 🪵 Hermanos Jota — E-Commerce
+# Hermanos Jota — E-Commerce
 
-![Estado TP1](https://img.shields.io/badge/Estado-TP%201%20--%20Completo-brightgreen?style=for-the-badge)
-![Estado TP2](https://img.shields.io/badge/Estado-TP%202%20--%20Completo-brightgreen?style=for-the-badge)
+![Estado TP1](https://img.shields.io/badge/TP%201%20(Sprints%201--2)-Completo-brightgreen?style=for-the-badge)
+![Estado TP2](https://img.shields.io/badge/TP%202%20(Sprints%203--4)-Completo-brightgreen?style=for-the-badge)
+![Estado TP3](https://img.shields.io/badge/TP%203%20(Sprints%205--6)-Completo-brightgreen?style=for-the-badge)
 
-![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vite%20%7C%20Node.js%20%7C%20Express-blue?style=for-the-badge)
-
-E-commerce desarrollado para **Hermanos Jota**, una mueblería argentina especializada en piezas artesanales elaboradas con maderas nativas como algarrobo, quebracho y caldén, combinadas con cuero.
-
-El proyecto comenzó como una interfaz web desarrollada con **HTML, CSS y JavaScript**, y evolucionó progresivamente hacia una arquitectura basada en **React + Vite en el frontend** y **Node.js + Express en el backend**.
-
-El backend expone los productos mediante una **API REST**, mientras que el frontend consume dicha API para renderizar el catálogo y los detalles de cada producto.
+![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vite%20%7C%20Node.js%20%7C%20Express%20%7C%20MongoDB-blue?style=for-the-badge)
 
 Desarrollado como proyecto grupal para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
 
-> **Estado actual:** el proyecto se encuentra en desarrollo. Los Sprints 1 y 2 corresponden a la implementación inicial del e-commerce con HTML, CSS y JavaScript. Los Sprints 3 y 4 incorporan React, Vite, Node.js, Express y una API REST de productos. La migración y evolución del proyecto continúan en desarrollo.
+> **Estado actual:** TP 1 (Sprints 1 y 2), TP 2 (Sprints 3 y 4) y TP 3 (Sprints 5 y 6) completados. El proyecto continúa en desarrollo y puede evolucionar con nuevas funcionalidades.
 
 ---
 
-## 👥 Equipo
+## Equipo
 
-- **Marcos Lopez**
-- **Nehuén Peyrano**
-- **Gastón Davalos**
-- **Villarroel Giuliana**
-- **Alegre Gonzalo**
+- Marcos Lopez
+- Nehuén Peyrano
+- Gastón Davalos
 
 ---
 
-# 🚀 Evolución del proyecto
+# Evolución del proyecto
 
-## Sprint 1 — Estructura y diseño
+## TP 1 — Sprints 1 y 2
+
+### Sprint 1 — Estructura y diseño
 
 Se desarrolló la primera versión visual del e-commerce utilizando:
 
@@ -40,16 +35,14 @@ Se desarrolló la primera versión visual del e-commerce utilizando:
 - Identidad visual de la marca.
 - Estructura de las principales páginas del sitio.
 
-Se implementaron las principales páginas:
+Se implementaron las páginas principales:
 
 - Inicio.
 - Catálogo.
 - Detalle de producto.
 - Contacto.
 
----
-
-## Sprint 2 — Interactividad con JavaScript
+### Sprint 2 — Interactividad con JavaScript
 
 Se incorporó JavaScript para convertir la interfaz estática en una aplicación interactiva.
 
@@ -69,15 +62,17 @@ Se implementaron:
 - Simulación de carga asíncrona.
 - Interacciones mediante eventos.
 
+<badge>TP 1 completado</badge>
+
 ---
 
-## Sprints 3 y 4 — React + Backend
+## TP 2 — Sprints 3 y 4
 
-El proyecto evoluciona hacia una arquitectura moderna basada en un frontend desarrollado con React y un backend desarrollado con Node.js y Express.
+El proyecto evolucionó hacia una arquitectura separada entre frontend y backend.
 
 ### Frontend
 
-Se incorporan:
+Se incorporaron:
 
 - React.
 - Vite.
@@ -95,68 +90,94 @@ Se incorporan:
 
 ### Backend
 
-Se incorpora:
+Se incorporaron:
 
 - Node.js.
 - Express.
 - Express Router.
 - API REST.
 - Controllers.
+- Middlewares.
 - Middleware global de logging.
 - Middleware para rutas inexistentes.
-- Manejador centralizado de errores.
-- Archivo local de productos.
-- Endpoints para consulta de productos.
+- Manejo centralizado de errores.
+- Organización del código por responsabilidades.
+
+En esta etapa se comenzó a implementar la comunicación entre el frontend y el backend para consultar los productos mediante solicitudes HTTP.
+
+<badge>TP 2 completado</badge>
 
 ---
 
+## TP 3 — Sprints 5 y 6
 
-## Sprint 5 y 6 — Administración y persistencia
+En esta etapa se completó la integración entre frontend, backend y base de datos, incorporando un sistema de administración de productos.
 
-- Formularios controlados para crear y editar productos.
-- Listado administrativo con opciones para editar y eliminar productos.
-- Categorías seleccionables: `living`, `habitacion`, `cocina`, `oficina` y `casa`. Se pueden marcar varias.
-- El carrito y favoritos guardan los identificadores de los productos en `localStorage`.
-- El botón **Comprar carrito** realiza una simulación local. No procesa pagos ni registra órdenes reales en MongoDB.
+### 1. Navegación y rutas dinámicas
 
-### Configuración local de MongoDB
+Se implementó React Router DOM para gestionar las diferentes páginas de la aplicación.
 
-1. Copiar `backend/.env.example` como `backend/.env`.
-2. Reemplazar los valores de ejemplo por la URI autorizada de MongoDB Atlas. No subir `backend/.env` a GitHub.
-3. En una terminal:
-   ```bash
-   cd backend
-   npm install
-   npm run dev
-   ```
-4. En otra terminal:
-   ```bash
-   cd client
-   npm install
-   npm run dev
-   ```
+Se incorporaron:
 
-La API se configura por defecto en `http://localhost:3000/api`. Para probar el carrito y favoritos, abrir la tienda desde el frontend servido por Vite (normalmente `http://localhost:5173`).
+- Múltiples rutas para las distintas secciones.
+- Rutas dinámicas para consultar productos mediante su identificador.
+- Uso de `useParams()` para obtener parámetros de las rutas.
+- Navegación programática mediante `useNavigate()`.
+- Navegación entre el listado administrativo y los formularios de productos.
 
-# 🛠️ Tecnologías utilizadas
+### 2. Administración de productos
 
-| Tecnología | Uso |
-|---|---|
-| HTML5 | Estructura inicial |
-| CSS3 | Diseño y responsive |
-| JavaScript | Lógica de la primera versión |
-| React | Desarrollo del frontend actual |
-| Vite | Entorno de desarrollo y build |
-| React Router | Navegación de la aplicación |
-| Node.js | Runtime del backend |
-| Express | Servidor y API REST |
-| Git | Control de versiones |
-| GitHub | Repositorio y trabajo colaborativo |
-| localStorage | Persistencia del carrito y favoritos |
+Se desarrolló un panel administrativo que permite:
+
+- Consultar el listado de productos.
+- Crear nuevos productos.
+- Editar productos existentes.
+- Eliminar productos.
+
+Se incorporaron formularios controlados mediante `useState`, con gestión de los valores ingresados y validaciones.
+
+### 3. Persistencia en MongoDB Atlas
+
+Se integró MongoDB Atlas mediante Mongoose para almacenar los productos de forma persistente.
+
+Se implementaron:
+
+- Conexión a MongoDB Atlas.
+- Modelo `Product`.
+- Esquema de validación.
+- Operaciones CRUD mediante Mongoose.
+- Controladores para gestionar las operaciones.
+- Respuestas JSON desde la API REST.
+
+### 4. Integración Full Stack
+
+Se completó el recorrido de las operaciones entre las diferentes capas de la aplicación:
+
+1. El usuario realiza una acción desde la interfaz de React.
+2. El frontend envía una solicitud HTTP mediante `fetch`.
+3. Express recibe la solicitud a través de sus rutas.
+4. El controlador correspondiente procesa la operación.
+5. Mongoose interactúa con MongoDB Atlas.
+6. El backend devuelve una respuesta JSON.
+7. React actualiza la interfaz según el resultado.
+
+### 5. Pruebas realizadas
+
+Se verificó el funcionamiento de las principales operaciones:
+
+- Conexión del backend con MongoDB Atlas.
+- Consulta de productos.
+- Consulta individual mediante identificador.
+- Creación de productos.
+- Edición de productos.
+- Eliminación de productos.
+- Persistencia de los cambios al recargar la aplicación.
+
+<badge>TP 3 completado</badge>
 
 ---
 
-# ✨ Funcionalidades
+# Funcionalidades actuales
 
 ## Frontend
 
@@ -165,64 +186,185 @@ La API se configura por defecto en `http://localhost:3000/api`. Para probar el c
 - Filtrado por categorías.
 - Buscador de productos.
 - Detalle individual de productos.
+- Navegación mediante React Router.
+- Rutas dinámicas.
 - Carrito de compras.
 - Contador de productos.
 - Modificación de cantidades.
 - Eliminación de productos.
 - Sistema de favoritos.
 - Contador de favoritos.
-- Panel lateral de carrito.
+- Panel lateral del carrito.
 - Panel lateral de favoritos.
-- Buscador global.
 - Formulario de contacto controlado.
 - Validación de campos.
 - Modal de política de privacidad.
 - Mensajes de confirmación.
 - Toasts de interacción.
-- Navegación mediante React Router.
-- Persistencia del carrito mediante `localStorage`.
-- Persistencia de favoritos mediante `localStorage`.
+- Persistencia del carrito y favoritos mediante `localStorage`.
+- Panel administrativo de productos.
+- Formularios controlados para crear y editar productos.
 
 ## Backend
 
-La API permite consultar los productos mediante los siguientes endpoints:
+La API REST permite realizar operaciones CRUD sobre los productos:
 
-### Obtener todos los productos
+- Obtener todos los productos.
+- Obtener un producto por su ID.
+- Crear productos.
+- Actualizar productos.
+- Eliminar productos.
+
+La información se almacena en MongoDB Atlas mediante Mongoose.
+
+---
+
+# Tecnologías utilizadas
+
+| Tecnología | Uso |
+|---|---|
+| HTML5 | Estructura inicial |
+| CSS3 | Diseño y responsive |
+| JavaScript | Lógica de la primera versión |
+| React | Desarrollo del frontend |
+| Vite | Entorno de desarrollo y build |
+| React Router | Navegación de la aplicación |
+| Context API | Gestión de estados compartidos |
+| Node.js | Runtime del backend |
+| Express | Servidor y API REST |
+| MongoDB Atlas | Base de datos en la nube |
+| Mongoose | Modelado y persistencia de datos |
+| Git | Control de versiones |
+| GitHub | Repositorio y trabajo colaborativo |
+| localStorage | Persistencia del carrito y favoritos |
+
+---
+
+# Modelo de datos
+
+## Product
+
+El modelo de productos utiliza los siguientes campos:
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `nombre` | String | Nombre del producto. Obligatorio. |
+| `descripcion` | String | Descripción del producto. |
+| `precio` | Number | Precio del producto. Obligatorio y no negativo. |
+| `stock` | Number | Cantidad disponible. Por defecto, 0. |
+| `imagenUrl` | String | URL o referencia de la imagen. |
+| `categorias` | String | Categoría o categorías del producto. |
+| `createdAt` | Date | Fecha de creación generada por Mongoose. |
+| `updatedAt` | Date | Fecha de última actualización generada por Mongoose. |
+
+El esquema utiliza `timestamps` de Mongoose para gestionar automáticamente las fechas de creación y actualización.
+
+Las categorías disponibles en el formulario incluyen:
+
+- `living`
+- `habitacion`
+- `cocina`
+- `oficina`
+- `casa`
+
+---
+
+# API REST
+
+La API utiliza la ruta base:
+
+```text
+http://localhost:3000/api
+```
+
+## Endpoints de productos
+
+| Método | Endpoint | Función |
+|---|---|---|
+| GET | `/api/productos` | Obtener todos los productos. |
+| GET | `/api/productos/:id` | Obtener un producto por ID. |
+| POST | `/api/productos` | Crear un producto. |
+| PUT | `/api/productos/:id` | Actualizar un producto. |
+| DELETE | `/api/productos/:id` | Eliminar un producto. |
+
+### Ejemplos
+
+Obtener todos los productos:
 
 ```http
 GET /api/productos
 ```
 
-Devuelve el listado completo de productos en formato JSON.
-
-### Obtener un producto
+Obtener un producto:
 
 ```http
-GET /api/productos/:id
+GET /api/productos/ID_DEL_PRODUCTO
 ```
 
-Devuelve el producto correspondiente al ID indicado.
-
-Si el producto no existe, la API devuelve:
+Crear un producto:
 
 ```http
-404 Not Found
+POST /api/productos
+Content-Type: application/json
 ```
+
+Actualizar un producto:
+
+```http
+PUT /api/productos/ID_DEL_PRODUCTO
+Content-Type: application/json
+```
+
+Eliminar un producto:
+
+```http
+DELETE /api/productos/ID_DEL_PRODUCTO
+```
+
+Las respuestas de la API se envían en formato JSON y utilizan códigos HTTP para indicar el resultado de las operaciones.
 
 ---
 
-# 📁 Estructura del proyecto
+# Rutas del frontend
+
+## Rutas públicas
+
+| Ruta | Página |
+|---|---|
+| `/` | Inicio |
+| `/catalogo` | Catálogo |
+| `/producto/:id` | Detalle del producto |
+| `/contacto` | Contacto |
+
+También se mantienen rutas alternativas para la navegación de productos, según la configuración de React Router.
+
+## Rutas administrativas
+
+| Ruta | Función |
+|---|---|
+| `/admin/productos` | Listado y administración de productos. |
+| `/admin/crear-producto` | Formulario para crear productos. |
+| `/admin/editar-producto/:id` | Formulario para editar productos existentes. |
+
+---
+
+# Estructura del proyecto
 
 ```text
 hermanos-jota/
 │
 ├── backend/
 │   ├── src/
+│   │   ├── config/
+│   │   │   └── database.js
+│   │   │
 │   │   ├── controllers/
 │   │   │
 │   │   ├── data/
 │   │   │
 │   │   ├── middlewares/
+│   │   │
+│   │   ├── models/
 │   │   │
 │   │   ├── routes/
 │   │   │
@@ -231,6 +373,7 @@ hermanos-jota/
 │   ├── server.js
 │   ├── package.json
 │   ├── package-lock.json
+│   ├── .env.example
 │   └── .gitignore
 │
 ├── client/
@@ -256,7 +399,9 @@ hermanos-jota/
 │   │   │   ├── Home.jsx
 │   │   │   ├── Catalog.jsx
 │   │   │   ├── ProductDetail.jsx
-│   │   │   └── Contact.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── AdminProducts.jsx
+│   │   │   └── AdminProductForm.jsx
 │   │   │
 │   │   ├── services/
 │   │   │   └── api.js
@@ -276,13 +421,13 @@ hermanos-jota/
 └── README.md
 ```
 
-> La estructura puede continuar evolucionando a medida que se incorporen nuevas funcionalidades durante los próximos sprints.
+> La estructura puede evolucionar a medida que se incorporen nuevas funcionalidades. Se muestra una organización representativa de las carpetas y archivos principales.
 
 ---
 
-# 🎨 Identidad de marca
+# Identidad de marca
 
-El diseño sigue el Manual de Marca de Hermanos Jota:
+El diseño sigue el Manual de Marca de Hermanos Jota.
 
 | Color | Uso |
 |---|---|
@@ -294,8 +439,8 @@ El diseño sigue el Manual de Marca de Hermanos Jota:
 
 ### Tipografía
 
-- **Playfair Display** para títulos editoriales.
-- **Inter** para cuerpo de texto e interfaz.
+- **Playfair Display:** títulos editoriales.
+- **Inter:** cuerpo de texto e interfaz.
 
 Las principales variables de diseño se encuentran centralizadas en:
 
@@ -305,19 +450,39 @@ client/src/styles/unificado.css
 
 ---
 
-# ⚙️ Requisitos
+# Configuración del entorno
 
-Para ejecutar el proyecto se necesita:
+Para ejecutar el proyecto es necesario contar con:
 
-- Node.js
-- npm
-- Git
+- Node.js.
+- npm.
+- Git.
+- Una URI de conexión autorizada a MongoDB Atlas.
 
-Se recomienda utilizar una versión reciente de Node.js.
+## Variables de entorno del backend
+
+Crear un archivo `.env` dentro de `backend/`, tomando como referencia `.env.example`.
+
+Contenido:
+
+```env
+MONGODB_URI=tu_uri_de_conexion_a_mongodb
+PORT=3000
+```
+
+## Variables de entorno del frontend
+
+Crear un archivo `.env` dentro de `client/`:
+
+```env
+VITE_API_URL=http://localhost:3000/api
+```
+
+> Los archivos `.env` contienen configuración local y no deben subirse al repositorio. Las credenciales de MongoDB deben mantenerse privadas. En MongoDB Atlas se deben autorizar únicamente las direcciones IP necesarias para el acceso.
 
 ---
 
-# 📥 Instalación
+# Instalación
 
 Clonar el repositorio:
 
@@ -333,7 +498,9 @@ cd trabajo-grupal-itba
 
 ---
 
-# ▶️ Ejecución
+# Ejecución
+
+El frontend y el backend deben ejecutarse simultáneamente en dos terminales diferentes.
 
 ## Backend
 
@@ -357,7 +524,12 @@ API de productos:
 http://localhost:3000/api/productos
 ```
 
----
+Si la conexión es correcta, la terminal mostrará:
+
+```text
+MongoDB conectado correctamente
+Servidor ejecutándose en http://localhost:3000
+```
 
 ## Frontend
 
@@ -369,113 +541,37 @@ npm install
 npm run dev
 ```
 
-Vite mostrará en la terminal la URL correspondiente, normalmente:
+Vite mostrará la dirección local, normalmente:
 
 ```text
 http://localhost:5173
 ```
 
-> Para utilizar correctamente el catálogo y los detalles de productos, el backend debe estar ejecutándose simultáneamente.
+Para utilizar correctamente el catálogo, los detalles y la administración de productos, el backend debe permanecer ejecutándose.
 
 ---
 
-# 🔌 API
+# Persistencia y alcance funcional
 
-## Productos
+### Productos
 
-### Obtener todos los productos
+Los productos se almacenan en MongoDB Atlas. Las operaciones administrativas de creación, consulta, edición y eliminación se realizan mediante la API REST.
 
-```http
-GET /api/productos
-```
+### Carrito y favoritos
 
-### Obtener un producto por ID
+El carrito y los favoritos utilizan `localStorage` para conservar su información en el navegador.
 
-```http
-GET /api/productos/:id
-```
+Se almacenan identificadores de productos y las cantidades se representan mediante la cantidad de veces que aparece cada identificador en el carrito.
 
-Ejemplo:
+### Compras
 
-```text
-http://localhost:3000/api/productos
-```
-
-La API devuelve la información de los productos en formato JSON.
+El botón **Comprar carrito** realiza una simulación local. No procesa pagos ni registra órdenes reales en MongoDB.
 
 ---
 
-# 🧩 Arquitectura
+# Objetivos de aprendizaje
 
-La aplicación se divide en dos partes principales:
-
-```text
-┌───────────────────────────────┐
-│           FRONTEND            │
-│        React + Vite           │
-│                               │
-│ Components / Pages / Context  │
-│ Services / React Router       │
-└───────────────┬───────────────┘
-                │
-                │ HTTP / REST
-                ▼
-┌───────────────────────────────┐
-│           BACKEND             │
-│       Node.js + Express       │
-│                               │
-│ Routes / Controllers          │
-│ Middlewares / Data            │
-└───────────────────────────────┘
-```
-
-El frontend obtiene los productos mediante solicitudes HTTP al backend.
-
-Por ejemplo:
-
-```text
-React
-  ↓
-GET /api/productos
-  ↓
-Express
-  ↓
-Data de productos
-  ↓
-JSON
-  ↓
-React
-  ↓
-Renderizado del catálogo
-```
-
----
-
-# 🌿 Trabajo colaborativo
-
-El desarrollo se realiza mediante **Git y GitHub**, utilizando ramas para separar las distintas etapas y funcionalidades.
-
-Las funcionalidades se desarrollan en ramas independientes y posteriormente se integran mediante **merge** o **Pull Requests**.
-
-Ejemplo:
-
-```text
-main
- │
- ├── Sprint 1-2
- │
- ├── backend-sprint3-4
- │
- └── ramas de desarrollo individuales
-```
-
-También se utilizan ramas temporales para revisión antes de integrar cambios a las ramas principales.
-
----
-
-# 📚 Objetivos de aprendizaje
-
-El proyecto permite poner en práctica:
+El proyecto permite poner en práctica los siguientes conocimientos:
 
 ## Frontend
 
@@ -508,101 +604,48 @@ El proyecto permite poner en práctica:
 24. Middleware de logging.
 25. Manejo de rutas inexistentes.
 26. Manejo centralizado de errores.
-27. Organización del código por responsabilidades.
+27. MongoDB Atlas.
+28. Mongoose.
+29. Modelado de datos.
+30. Operaciones CRUD.
+31. Variables de entorno.
+32. Integración Full Stack.
 
 ## Trabajo colaborativo
 
-28. Git.
-29. GitHub.
-30. Branches.
-31. Merge.
-32. Pull Requests.
-33. Trabajo colaborativo.
-34. Organización del desarrollo por sprints.
+33. Git.
+34. GitHub.
+35. Branches.
+36. Merge.
+37. Pull Requests.
+38. Trabajo colaborativo.
+39. Organización del desarrollo por sprints.
 
 ---
 
-# 📌 Estado actual
+# Estado actual
 
-El proyecto se encuentra **en desarrollo activo**.
+**TP 1 — Sprints 1 y 2:** Completado.
+
+**TP 2 — Sprints 3 y 4:** Completado.
+
+**TP 3 — Sprints 5 y 6:** Completado.
+
+El proyecto cuenta con una aplicación frontend en React, un backend desarrollado con Express y una base de datos MongoDB Atlas. Las operaciones CRUD de productos fueron probadas y verificadas mediante la interfaz de administración.
+
+El desarrollo puede continuar con nuevas funcionalidades en futuras etapas.
 
 ---
 
-# 📄 Licencia
+# 🌐 Demo y despliegue
 
-Proyecto académico desarrollado para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
+El proyecto cuenta con despliegue del frontend en Vercel y del backend en Render.
 
-Uso educativo y académico.
-
----
-
-# Sprint 5–6 — ítems 5, 6 y 7 (integración frontend)
-
-Se agregaron rutas de React Router para `/productos`, `/productos/:id`, `/contacto`, `/admin/crear-producto` y la administración de productos. Se conservaron `/catalogo` y `/producto/:id` como alias para no romper la navegación existente.
-
-La administración permite crear, consultar, editar y eliminar productos mediante la API de Express. Los formularios usan estado controlado y las operaciones escriben en MongoDB a través del backend; no se utiliza el catálogo de respaldo para confirmar operaciones administrativas.
-
-## Configurar MongoDB localmente
-
-1. Dentro de `backend/`, creá un archivo `.env` copiando `backend/.env.example`.
-2. Reemplazá los valores de ejemplo por la URI autorizada por el equipo. No subas el `.env` real a GitHub.
-3. En la carpeta `backend`, ejecutá `npm install` y luego `npm run dev`.
-4. En otra terminal, en `client`, ejecutá `npm install` y luego `npm run dev`.
-5. Abrí la URL que informa Vite (habitualmente `http://localhost:5173`).
-
-## Rutas de administración
-
-- `/admin/productos`: listado de productos existentes, con opciones de editar y eliminar.
-- `/admin/crear-producto`: formulario controlado para crear un producto.
-- `/admin/editar-producto/:id`: formulario controlado para modificar un producto existente.
-
-Las imágenes se guardan como una URL o como el nombre de un archivo dentro de `client/public/assets`. Para imágenes locales, ese archivo debe existir en esa carpeta.
-
-**Alcance:** este paquete integra los ítems 5–7 y documenta el ítem 8, incluyendo el recorrido React → Express → Mongoose/MongoDB y una guía de pruebas manuales. Para confirmar la entrega, todavía hay que ejecutar esas pruebas con las credenciales autorizadas de MongoDB Atlas y comprobar que crear, consultar, editar y eliminar productos persista correctamente.
-
-
-## Ítem 8 — Ciclo completo de una petición Full Stack
-
-Se integra y documenta el recorrido completo de una operación desde la interfaz hasta MongoDB y de regreso al usuario. Las operaciones administrativas de crear, consultar, editar y eliminar productos ya están conectadas entre React, la API REST de Express y el modelo `Product` de Mongoose.
-
-### Recorrido de una petición
-
-1. El usuario realiza una acción en React desde el formulario o el listado administrativo.
-2. `client/src/services/api.js` convierte los datos al formato de la API y envía una petición HTTP (`GET`, `POST`, `PUT` o `DELETE`).
-3. Express recibe la petición en `backend/src/routes/productos.routes.js` y la deriva al controlador correspondiente.
-4. `backend/src/controllers/productos.controller.js` valida el identificador cuando corresponde y ejecuta la operación sobre el modelo `Product`.
-5. Mongoose aplica las validaciones del esquema y persiste los cambios en MongoDB.
-6. Express devuelve una respuesta JSON con el resultado o un error HTTP.
-7. React actualiza la vista y muestra una confirmación o un mensaje de error.
-
-### Endpoints utilizados
-
-| Acción en la interfaz | Método y endpoint | Resultado esperado |
+| Servicio | Plataforma | Enlace |
 |---|---|---|
-| Cargar el listado administrativo | `GET /api/productos` | Devuelve los productos guardados en MongoDB. |
-| Consultar un producto | `GET /api/productos/:id` | Devuelve el producto o `404` si no existe. |
-| Crear un producto | `POST /api/productos` | Guarda el producto y responde `201`. |
-| Editar un producto | `PUT /api/productos/:id` | Actualiza el producto y devuelve el documento actualizado. |
-| Eliminar un producto | `DELETE /api/productos/:id` | Elimina el documento y devuelve una confirmación. |
+| Frontend | Vercel | [Ver aplicación](PEGAR_LINK_DE_VERCEL) |
+| Backend | Render | [Ver API](PEGAR_LINK_DE_RENDER) |
 
-### Modelo `Product`
-
-- `nombre`: `String`, obligatorio.
-- `descripcion`: `String`, opcional.
-- `precio`: `Number`, obligatorio y no negativo.
-- `stock`: `Number`, opcional por defecto `0` y no negativo.
-- `imagenUrl`: `String`, opcional.
-- `categorias`: `String`, opcional por defecto `casa`; permite guardar las categorías seleccionadas en el formulario.
-- `timestamps`: Mongoose agrega `createdAt` y `updatedAt`.
-
-### Cómo comprobar el ciclo completo
-
-1. Configurar `backend/.env` con la URI de la base de datos autorizada y ejecutar el backend (`cd backend` y `npm run dev`).
-2. En otra terminal, ejecutar el frontend (`cd client` y `npm run dev`).
-3. Abrir la administración de productos y crear uno con nombre, precio, stock y categoría.
-4. Confirmar que aparece en el listado administrativo y actualizar la página. Si sigue apareciendo, la información se recuperó desde la API y no solamente desde el estado local de React.
-5. Editar el producto y comprobar que el cambio se mantiene al recargar.
-6. Eliminar el producto y comprobar que ya no aparece en el listado.
-7. Si se necesita verificar directamente la persistencia, revisar la colección `products` en la base de datos configurada en MongoDB Atlas.
-
-**Importante:** el carrito y los favoritos se guardan en `localStorage`. El botón “Comprar carrito” de esta entrega es una simulación local; no procesa pagos ni crea órdenes en MongoDB.
+**Tecnologías de despliegue:**
+- Vercel: hosting del frontend desarrollado con React y Vite.
+- Render: hosting del backend desarrollado con Node.js y Express.
