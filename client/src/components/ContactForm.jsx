@@ -152,6 +152,8 @@ export default function ContactForm() {
       return;
     }
 
+    console.log('Datos del formulario de contacto:', form);
+
     setSent(true);
     showToast('Mensaje enviado correctamente');
 
