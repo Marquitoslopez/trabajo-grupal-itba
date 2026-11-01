@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getProductos, filterProducts, PRODUCT_CATEGORIES } from '../services/api';
+import { getProductosStrict, filterProducts, PRODUCT_CATEGORIES } from '../services/api';
 import ProductCard from '../components/ProductCard';
 
 const ALL_CATEGORIES = ['all', ...PRODUCT_CATEGORIES];
@@ -17,17 +17,35 @@ const CATEGORY_LABELS = {
 export default function Catalog() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const catParam = searchParams.get('cat') || 'all';
   const search = searchParams.get('q') || '';
 
   useEffect(() => {
-    getProductos()
-      .then(setProducts)
-      .catch(() => setProducts([]))
-      .finally(() => setLoading(false));
-  }, []);
+    let active = true;
+    setLoading(true);
+    setError(false);
+
+    getProductosStrict()
+      .then((items) => {
+        if (active) setProducts(items);
+      })
+      .catch(() => {
+        if (!active) return;
+        setProducts([]);
+        setError(true);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [retryCount]);
 
   const filtered = useMemo(() => {
     const category = catParam === 'all' ? '' : catParam;
@@ -82,6 +100,17 @@ export default function Catalog() {
         <div className="container">
           {loading ? (
             <p className="catalog__empty">Cargando catálogo…</p>
+          ) : error ? (
+            <div className="catalog__empty" role="alert">
+              <p>No se pudo cargar el catálogo. Comprobá que el backend esté activo e intentá nuevamente.</p>
+              <button
+                type="button"
+                className="btn btn--outline"
+                onClick={() => setRetryCount((count) => count + 1)}
+              >
+                Reintentar
+              </button>
+            </div>
           ) : filtered.length === 0 ? (
             <div className="catalog__empty">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true" focusable="false">

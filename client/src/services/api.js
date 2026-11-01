@@ -52,10 +52,14 @@ async function requestProductos(path = '', options = {}) {
   return body;
 }
 
-// Funciones estrictas para administración: no usan el catálogo de respaldo.
-export async function getAdminProductos() {
+// Obtiene productos desde la API y propaga errores, sin usar el catálogo de respaldo.
+export async function getProductosStrict() {
   const products = await requestProductos();
   return Array.isArray(products) ? products.map(normalizeProduct) : [];
+}
+
+export async function getAdminProductos() {
+  return getProductosStrict();
 }
 
 export async function getAdminProductoById(id) {
