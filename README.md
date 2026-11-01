@@ -35,11 +35,7 @@ Se desarrolló la primera versión visual del e-commerce utilizando:
 - Identidad visual de la marca.
 - Estructura de las principales páginas del sitio.
 
-<<<<<<< HEAD
-Se implementaron las principales páginas:
-=======
 Se implementaron las páginas principales:
->>>>>>> gaston
 
 - Inicio.
 - Catálogo.
