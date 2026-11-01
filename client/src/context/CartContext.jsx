@@ -4,7 +4,7 @@ export const CART_STORAGE_KEY = 'hermanos-jota-cart';
 const FAVORITES_STORAGE_KEY = 'hermanos-jota-favorites';
 const CartContext = createContext(null);
 
-export function CartProvider({ children, cart, setCart, setSelectedProductId }) {
+export function CartProvider({ children, cart, setCart }) {
   const [favorites, setFavorites] = useState(() => {
     try {
       const stored = localStorage.getItem(FAVORITES_STORAGE_KEY);
@@ -74,10 +74,6 @@ export function CartProvider({ children, cart, setCart, setSelectedProductId }) 
   }, []);
 
   const clearCart = useCallback(() => setCart([]), []);
-  const viewProduct = useCallback(
-    (productId) => setSelectedProductId(String(productId)),
-    [setSelectedProductId]
-  );
 
   const toggleFavorite = useCallback((productId) => {
     const id = String(productId);
@@ -133,7 +129,6 @@ export function CartProvider({ children, cart, setCart, setSelectedProductId }) 
         removeFromCart,
         removeAllOf,
         clearCart,
-        viewProduct,
         toggleFavorite,
         isFavorite,
         getGroupedCart,

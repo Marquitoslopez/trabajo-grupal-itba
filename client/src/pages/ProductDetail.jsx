@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getProductoById, getProductos, normalizeCategories, productImageSrc } from '../services/api';
 import { formatPrice } from '../utils/format';
 import { useCart } from '../context/CartContext';
@@ -20,7 +20,8 @@ const GALLERY_VIEWS = [
   { key: 'bottom', label: 'detalle inferior', thumbClass: 'product-gallery__thumb-img--detail-bottom', mainClass: 'product-gallery__main-img--detail-bottom' },
 ];
 
-export default function ProductDetail({ id, onBack }) {
+export default function ProductDetail() {
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -69,7 +70,7 @@ export default function ProductDetail({ id, onBack }) {
     return (
       <main className="container">
         <p>{error || 'Producto no encontrado'}</p>
-        <Link to="/catalogo" onClick={onBack}>Volver al catálogo</Link>
+        <Link to="/catalogo">Volver al catálogo</Link>
       </main>
     );
 

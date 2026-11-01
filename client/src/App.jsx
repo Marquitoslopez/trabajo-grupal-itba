@@ -1,5 +1,6 @@
+
 import { useEffect, useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -23,38 +24,24 @@ export default function App() {
       return [];
     }
   });
-  const [selectedProductId, setSelectedProductId] = useState(null);
-  const location = useLocation();
-
-  useEffect(() => {
-    setSelectedProductId(null);
-  }, [location.pathname]);
 
   return (
-    <CartProvider
-      cart={cart}
-      setCart={setCart}
-      setSelectedProductId={setSelectedProductId}
-    >
+    <CartProvider cart={cart} setCart={setCart}>
       <>
         <ScrollToTop />
         <Navbar cartCount={cart.length} />
-        {selectedProductId ? (
-          <ProductDetail
-            id={selectedProductId}
-            onBack={() => setSelectedProductId(null)}
-          />
-        ) : (
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/catalogo" element={<Catalog />} />
-            <Route path="/productos" element={<Catalog />} />
-            <Route path="/contacto" element={<Contact />} />
-            <Route path="/admin/productos" element={<AdminProducts />} />
-            <Route path="/admin/crear-producto" element={<AdminProductForm />} />
-            <Route path="/admin/editar-producto/:id" element={<AdminProductForm />} />
-          </Routes>
-        )}
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogo" element={<Catalog />} />
+          <Route path="/productos" element={<Catalog />} />
+          <Route path="/producto/:id" element={<ProductDetail />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/admin/productos" element={<AdminProducts />} />
+          <Route path="/admin/crear-producto" element={<AdminProductForm />} />
+          <Route path="/admin/editar-producto/:id" element={<AdminProductForm />} />
+        </Routes>
+
         <Footer />
         <CartPanel />
         <FavoritesPanel />

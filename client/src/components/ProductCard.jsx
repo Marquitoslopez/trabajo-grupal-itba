@@ -1,8 +1,10 @@
 import { formatPrice } from '../utils/format';
 import { productImageSrc } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }) {
+  const navigate = useNavigate();
   const { addToCart, toggleFavorite, isFavorite, viewProduct } = useCart();
 
   if (!product) return null;
@@ -26,7 +28,7 @@ export default function ProductCard({ product }) {
         <button
           type="button"
           className="product-card__image-link"
-          onClick={() => viewProduct(product.id)}
+         onClick={() => navigate(`/producto/${product.id}`)}
           aria-label={`Ver detalle de ${product.name}`}
         >
           <img
@@ -65,7 +67,7 @@ export default function ProductCard({ product }) {
           <button
             type="button"
             className="product-card__link-detail"
-            onClick={() => viewProduct(product.id)}
+            onClick={() => navigate(`/producto/${product.id}`)}
           >
             Ver detalle
           </button>
