@@ -18,6 +18,13 @@
       }
     },
     {
+      "source": "/admin/(.*)",
+      "destination": {
+        "service": "client",
+        "path": "/admin/$1"
+      }
+    },
+    {
       "source": "/(.*)",
       "destination": {
         "service": "client"
