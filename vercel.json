@@ -18,12 +18,6 @@
       }
     },
     {
-      "source": "/admin/(.*)",
-      "destination": {
-        "service": "client"
-      }
-    },
-    {
       "source": "/(.*)",
       "destination": {
         "service": "client"
