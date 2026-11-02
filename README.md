@@ -643,8 +643,8 @@ El proyecto cuenta con despliegue del frontend en Vercel y del backend en Render
 
 | Servicio | Plataforma | Enlace |
 |---|---|---|
-| Frontend | Vercel | [Ver aplicación](PEGAR_LINK_DE_VERCEL) |
-| Backend | Render | [Ver API](PEGAR_LINK_DE_RENDER) |
+| Frontend | Vercel | [Ver aplicación](https://trabajo-grupal-itba-6wgf.vercel.app/) |
+| Backend | Render | [Ver API](https://trabajo-grupal-itba.onrender.com/api/productos) |
 
 **Tecnologías de despliegue:**
 - Vercel: hosting del frontend desarrollado con React y Vite.
