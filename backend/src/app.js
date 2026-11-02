@@ -9,7 +9,20 @@ const errorHandler = require("./middlewares/errorHandler");
 const app = express();
 
 // Middlewares generales
-app.use(cors({ origin: "http://localhost:5173" }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.CLIENT_URL,
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    callback(new Error("Origen no permitido por CORS"));
+  },
+}));
 app.use(logger);
 app.use(express.json());
 
