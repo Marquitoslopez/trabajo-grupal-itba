@@ -28,7 +28,7 @@ export default function ProductCard({ product }) {
         <button
           type="button"
           className="product-card__image-link"
-         onClick={() => navigate(`/producto/${product.id}`)}
+         onClick={() => navigate(`/productos/${product.id}`)}
           aria-label={`Ver detalle de ${product.name}`}
         >
           <img
@@ -67,7 +67,7 @@ export default function ProductCard({ product }) {
           <button
             type="button"
             className="product-card__link-detail"
-            onClick={() => navigate(`/producto/${product.id}`)}
+            onClick={() => navigate(`/productos/${product.id}`)}
           >
             Ver detalle
           </button>

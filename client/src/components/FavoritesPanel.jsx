@@ -87,7 +87,7 @@ export default function FavoritesPanel() {
   // Navegar al detalle del producto
   const handleViewProduct = (productId) => {
     closeFavorites();
-    navigate(`/producto/${productId}`);
+    navigate(`/productos/${productId}`);
   };
 
   // Pasar un producto de favoritos al carrito

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getProductoById, getProductos, normalizeCategories, productImageSrc } from '../services/api';
+import { getProductoById, getProductosStrict, normalizeCategories, productImageSrc } from '../services/api';
 import { formatPrice } from '../utils/format';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
@@ -31,33 +31,43 @@ export default function ProductDetail() {
   const { addToCart, toggleFavorite, isFavorite } = useCart();
   const favorite = product ? isFavorite(product.id) : false;
 
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-    setView('full');
-    setAdded(false);
-    window.scrollTo(0, 0);
+useEffect(() => {
+  let cancelled = false;
 
-    getProductoById(id)
-      .then(setProduct)
-      .catch(async () => {
-        try {
-          const list = await getProductos();
-          const found = list.find((p) => String(p.id) === String(id));
-          if (found) setProduct(found);
-          else setError('Producto no encontrado');
-        } catch {
-          setError('Producto no encontrado');
-        }
-      })
-      .finally(() => setLoading(false));
-  }, [id]);
+  setLoading(true);
+  setError(null);
+  setProduct(null);
+  setView('full');
+  setAdded(false);
+  window.scrollTo(0, 0);
 
-  useEffect(() => {
-    getProductos()
-      .then(setAllProducts)
-      .catch(() => setAllProducts([]));
-  }, []);
+  getProductoById(id)
+    .then((data) => {
+      if (!cancelled) setProduct(data);
+    })
+    .catch((err) => {
+      if (cancelled) return;
+
+      if (err.status === 404) {
+        setError('Producto no encontrado');
+      } else {
+        setError('No pudimos conectar con el servidor. Intentá nuevamente.');
+      }
+    })
+    .finally(() => {
+      if (!cancelled) setLoading(false);
+    });
+
+  return () => {
+    cancelled = true;
+  };
+}, [id]);
+
+useEffect(() => {
+  getProductosStrict()
+    .then(setAllProducts)
+    .catch(() => setAllProducts([]));
+}, []);
 
   useEffect(() => {
     if (!added) return undefined;
@@ -66,13 +76,23 @@ export default function ProductDetail() {
   }, [added]);
 
   if (loading) return <main className="container"><p>Cargando…</p></main>;
-  if (error || !product)
-    return (
-      <main className="container">
-        <p>{error || 'Producto no encontrado'}</p>
-        <Link to="/catalogo">Volver al catálogo</Link>
-      </main>
-    );
+if (error || !product)
+  return (
+    <main className="container">
+      <p>{error || 'Producto no encontrado'}</p>
+
+      {error !== 'Producto no encontrado' && (
+        <button
+          type="button"
+          onClick={() => window.location.reload()}
+        >
+          Reintentar
+        </button>
+      )}
+
+      <Link to="/catalogo">Volver al catálogo</Link>
+    </main>
+  );
 
   const extras = PRODUCT_EXTRAS[product.id];
   const description = product.description ?? extras?.description;

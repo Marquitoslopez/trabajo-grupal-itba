@@ -333,7 +333,7 @@ Las respuestas de la API se envían en formato JSON y utilizan códigos HTTP par
 |---|---|
 | `/` | Inicio |
 | `/catalogo` | Catálogo |
-| `/producto/:id` | Detalle del producto |
+| `/productos/:id` | Detalle del producto |
 | `/contacto` | Contacto |
 
 También se mantienen rutas alternativas para la navegación de productos, según la configuración de React Router.

@@ -73,7 +73,7 @@ export default function CartPanel() {
   // Cerrar el carrito y navegar al detalle del producto
   const handleViewProduct = (productId) => {
     closeCart();
-    navigate(`/producto/${productId}`);
+    navigate(`/productos/${productId}`);
   };
 
   // Simulación de compra: no procesa pagos reales ni registra pedidos

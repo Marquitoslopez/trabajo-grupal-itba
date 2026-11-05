@@ -45,10 +45,25 @@ function toApiPayload(product) {
 async function requestProductos(path = '', options = {}) {
   const response = await fetch(`${API_BASE}/productos${path}`, {
     ...options,
-    headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
   });
+
   const body = await response.json().catch(() => null);
-  if (!response.ok) throw new Error(body?.error || body?.message || 'No se pudo completar la operación con productos.');
+
+  if (!response.ok) {
+    const error = new Error(
+      body?.error ||
+      body?.message ||
+      'No se pudo completar la operación con productos.'
+    );
+
+    error.status = response.status;
+    throw error;
+  }
+
   return body;
 }
 
@@ -206,13 +221,9 @@ export async function getProductos() {
 }
 
 export async function getProductoById(id) {
-  try {
-    const res = await fetch(`${API_BASE}/productos/${id}`);
-    if (!res.ok) throw new Error('Producto no encontrado');
-    return normalizeProduct(await res.json());
-  } catch {
-    const found = FALLBACK_PRODUCTS.find((p) => p.id === id);
-    if (found) return found;
-    throw new Error('Producto no encontrado');
-  }
+  const product = await requestProductos(
+    `/${encodeURIComponent(id)}`
+  );
+
+  return normalizeProduct(product);
 }
