@@ -48,8 +48,12 @@ useEffect(() => {
     .catch((err) => {
       if (cancelled) return;
 
-      if (err.status === 404) {
+      if (err.status === 400) {
+        setError('El identificador del producto no es válido.');
+      } else if (err.status === 404) {
         setError('Producto no encontrado');
+      } else if (err.status >= 500) {
+        setError('Ocurrió un error en el servidor. Intentá nuevamente.');
       } else {
         setError('No pudimos conectar con el servidor. Intentá nuevamente.');
       }
