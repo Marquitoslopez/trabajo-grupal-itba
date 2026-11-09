@@ -6,6 +6,7 @@ const authRouter = require("./routes/auth.routes");
 const logger = require("./middlewares/logger");
 const notFound = require("./middlewares/notFound");
 const errorHandler = require("./middlewares/errorHandler");
+const pedidosRouter = require("./routes/pedidos.routes");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 // Rutas
 app.use("/api/productos", productosRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/pedidos", pedidosRouter);
 
 // 404 general
 app.use(notFound);
