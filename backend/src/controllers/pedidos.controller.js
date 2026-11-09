@@ -89,6 +89,17 @@ const crearPedido = async (req, res, next) => {
 
           const subtotalCentavos = precioCentavos * cantidad;
 
+          if (
+            !Number.isSafeInteger(subtotalCentavos) ||
+            !Number.isSafeInteger(totalCentavos + subtotalCentavos)
+          ) {
+            const error = new Error(
+              "El importe total del pedido supera el límite permitido.",
+            );
+            error.statusCode = 400;
+            throw error;
+          }
+
           totalCentavos += subtotalCentavos;
 
           itemsPedido.push({

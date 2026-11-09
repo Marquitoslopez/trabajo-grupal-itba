@@ -18,6 +18,10 @@ const orderItemSchema = new mongoose.Schema(
       type: Number,
       required: true,
       min: 0,
+      validate: {
+        validator: Number.isFinite,
+        message: "El precio unitario debe ser un importe válido.",
+      },
     },
 
     cantidad: {
@@ -25,8 +29,8 @@ const orderItemSchema = new mongoose.Schema(
       required: true,
       min: 1,
       validate: {
-        validator: Number.isInteger,
-        message: "La cantidad debe ser un número entero.",
+        validator: Number.isSafeInteger,
+        message: "La cantidad debe ser un número entero seguro.",
       },
     },
 
@@ -37,8 +41,11 @@ const orderItemSchema = new mongoose.Schema(
       validate: {
         validator: function (value) {
           return (
+            Number.isFinite(value) &&
+            Number.isFinite(this.precioUnitario) &&
+            Number.isSafeInteger(this.cantidad) &&
             Math.round(value * 100) ===
-            Math.round(this.precioUnitario * this.cantidad * 100)
+              Math.round(this.precioUnitario * this.cantidad * 100)
           );
         },
         message:
@@ -73,6 +80,10 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       required: true,
       min: 0,
+      validate: {
+        validator: Number.isFinite,
+        message: "El total debe ser un importe numérico válido.",
+      },
     },
 
     estado: {
@@ -85,5 +96,24 @@ const orderSchema = new mongoose.Schema(
     timestamps: true,
   },
 );
+
+// Comprobar que el total coincida con la suma de los subtotales.
+orderSchema.pre("validate", function () {
+  if (!Array.isArray(this.items) || !Number.isFinite(this.total)) {
+    return;
+  }
+
+  const sumaSubtotales = this.items.reduce(
+    (acumulado, item) => acumulado + Math.round(item.subtotal * 100),
+    0,
+  );
+
+  if (sumaSubtotales !== Math.round(this.total * 100)) {
+    this.invalidate(
+      "total",
+      "El total del pedido debe coincidir con la suma de sus subtotales.",
+    );
+  }
+});
 
 module.exports = mongoose.model("Order", orderSchema);

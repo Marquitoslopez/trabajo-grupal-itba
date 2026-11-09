@@ -19,8 +19,10 @@ const productSchema = new mongoose.Schema(
       required: [true, "El precio del producto es obligatorio"],
       min: [0, "El precio no puede ser negativo"],
       validate: {
-        validator: Number.isFinite,
-        message: "El precio debe ser un número válido.",
+        validator: (precio) =>
+          Number.isFinite(precio) &&
+          Number.isSafeInteger(Math.round(precio * 100)),
+        message: "El precio debe ser un importe válido.",
       },
     },
 
