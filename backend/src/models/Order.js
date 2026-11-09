@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const orderItemSchema = new mongoose.Schema(
@@ -35,11 +34,21 @@ const orderItemSchema = new mongoose.Schema(
       type: Number,
       required: true,
       min: 0,
+      validate: {
+        validator: function (value) {
+          return (
+            Math.round(value * 100) ===
+            Math.round(this.precioUnitario * this.cantidad * 100)
+          );
+        },
+        message:
+          "El subtotal debe coincidir con el precio unitario por la cantidad.",
+      },
     },
   },
   {
     _id: false,
-  }
+  },
 );
 
 const orderSchema = new mongoose.Schema(
@@ -74,7 +83,7 @@ const orderSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 module.exports = mongoose.model("Order", orderSchema);

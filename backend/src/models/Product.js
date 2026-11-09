@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
@@ -19,12 +18,20 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: [true, "El precio del producto es obligatorio"],
       min: [0, "El precio no puede ser negativo"],
+      validate: {
+        validator: Number.isFinite,
+        message: "El precio debe ser un número válido.",
+      },
     },
 
     stock: {
       type: Number,
       default: 0,
       min: [0, "El stock no puede ser negativo"],
+      validate: {
+        validator: Number.isSafeInteger,
+        message: "El stock debe ser un número entero positivo y válido.",
+      },
     },
 
     imagenUrl: {
@@ -41,7 +48,7 @@ const productSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Product = mongoose.model("Product", productSchema);

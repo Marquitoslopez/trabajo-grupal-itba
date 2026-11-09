@@ -4,13 +4,17 @@ const Order = require("../models/Order");
 
 // POST /api/pedidos
 const crearPedido = async (req, res, next) => {
-  const { items } = req.body;
-
   try {
+    const items = req.body?.items;
     // Validación inicial del carrito.
     if (!Array.isArray(items) || items.length === 0) {
       return res.status(400).json({
         error: "El pedido debe contener al menos un producto.",
+      });
+    }
+    if (items.length > 100) {
+      return res.status(400).json({
+        error: "El pedido no puede contener más de 100 líneas de productos.",
       });
     }
 
@@ -26,14 +30,21 @@ const crearPedido = async (req, res, next) => {
         });
       }
 
-      if (!Number.isInteger(quantity) || quantity < 1) {
+      if (!Number.isSafeInteger(quantity) || quantity < 1) {
         return res.status(400).json({
-          error: "Las cantidades deben ser números enteros mayores a cero.",
+          error:
+            "Las cantidades deben ser números enteros positivos y válidos.",
         });
       }
 
       const id = String(productId);
       cantidades.set(id, (cantidades.get(id) || 0) + quantity);
+
+      if (!Number.isSafeInteger(cantidades.get(id))) {
+        return res.status(400).json({
+          error: "La cantidad total de un producto supera el límite permitido.",
+        });
+      }
     }
 
     const session = await mongoose.startSession();
@@ -83,7 +94,7 @@ const crearPedido = async (req, res, next) => {
           itemsPedido.push({
             producto: producto._id,
             nombre: producto.nombre,
-            precioUnitario: producto.precio,
+            precioUnitario: precioCentavos / 100,
             cantidad,
             subtotal: subtotalCentavos / 100,
           });
