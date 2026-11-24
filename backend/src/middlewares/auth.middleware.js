@@ -35,7 +35,7 @@ const verificarToken = async (req, res, next) => {
       return next(error);
     }
 
-    const user = await User.findById(decoded.id).select("_id nombre email");
+    const user = await User.findById(decoded.id).select("_id nombre email rol");
 
     if (!user) {
       return res.status(401).json({
