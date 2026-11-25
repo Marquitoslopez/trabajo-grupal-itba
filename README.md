@@ -666,14 +666,42 @@ Esta etapa incorpora autenticación de usuarios y protección de recursos.
 - El frontend conserva el token y los datos básicos de sesión en `localStorage`.
 - Al recargar, `AuthContext` valida la sesión contra `GET /api/auth/me`.
 
-## 2. Protección de rutas del backend
 
-El middleware `verificarToken` comprueba el encabezado `Authorization: Bearer <token>`, valida el JWT y recupera al usuario.
+## 2. Autenticación y autorización del backend
 
-- Públicas: `GET /api/productos`, `GET /api/productos/:id`, `POST /api/auth/registro`, `POST /api/auth/login`.
-- Protegidas: `POST /api/productos`, `PUT /api/productos/:id`, `DELETE /api/productos/:id`, `GET /api/auth/me`.
+El backend utiliza JWT para autenticar las solicitudes protegidas y middlewares para controlar los permisos de acceso.
 
-Las operaciones administrativas de productos requieren que el usuario haya iniciado sesión.
+### Autenticación
+
+El middleware `verificarToken`:
+- Comprueba el encabezado `Authorization: Bearer <token>`.
+- Valida la firma y vigencia del JWT.
+- Recupera el usuario desde MongoDB.
+- Adjunta los datos del usuario autenticado a `req.user`.
+
+### Autorización por roles
+
+Se implementaron dos roles:
+
+- `usuario`: puede consultar el catálogo, realizar compras y consultar sus propios pedidos.
+- `admin`: tiene los permisos del usuario y puede crear, editar y eliminar productos.
+
+El middleware `verificarAdmin` comprueba que el usuario autenticado tenga permisos administrativos.
+
+### Acceso a los endpoints
+
+| Operación | Permiso |
+|---|---|
+| Consultar productos | Público |
+| Crear productos | Administrador |
+| Editar productos | Administrador |
+| Eliminar productos | Administrador |
+| Consultar perfil | Usuario autenticado |
+| Crear pedidos | Usuario autenticado |
+| Consultar mis pedidos | Usuario autenticado |
+
+Las operaciones administrativas no dependen únicamente de la interfaz: los permisos se verifican directamente en el backend.
+
 
 ## 3. Estado global con Context API
 
