@@ -1,14 +1,18 @@
+
 # Hermanos Jota — E-Commerce
 
 ![Estado TP1](https://img.shields.io/badge/TP%201%20(Sprints%201--2)-Completo-brightgreen?style=for-the-badge)
 ![Estado TP2](https://img.shields.io/badge/TP%202%20(Sprints%203--4)-Completo-brightgreen?style=for-the-badge)
 ![Estado TP3](https://img.shields.io/badge/TP%203%20(Sprints%205--6)-Completo-brightgreen?style=for-the-badge)
+![Estado TP4](https://img.shields.io/badge/TP%204%20(Sprints%207--8)-En%20desarrollo-orange?style=for-the-badge)
 
-![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vite%20%7C%20Node.js%20%7C%20Express%20%7C%20MongoDB-blue?style=for-the-badge)
+![Stack](https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge)
 
-Desarrollado como proyecto grupal para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
+E-commerce de muebles artesanales desarrollado como proyecto grupal para el **ITBA (Instituto Tecnológico de Buenos Aires)**.
 
-> **Estado actual:** TP 1 (Sprints 1 y 2), TP 2 (Sprints 3 y 4) y TP 3 (Sprints 5 y 6) completados. El proyecto continúa en desarrollo y puede evolucionar con nuevas funcionalidades.
+El proyecto utiliza una arquitectura MERN, con React en el frontend, Node.js y Express en el backend y MongoDB como sistema de persistencia.
+
+> **Estado actual:** TP 1, TP 2 y TP 3 completados. TP 4 en desarrollo, con autenticación, autorización por roles y gestión de pedidos implementadas en el backend.
 
 ---
 
@@ -62,7 +66,7 @@ Se implementaron:
 - Simulación de carga asíncrona.
 - Interacciones mediante eventos.
 
-<badge>TP 1 completado</badge>
+**TP 1 completado.**
 
 ---
 
@@ -105,7 +109,7 @@ Se incorporaron:
 
 En esta etapa se comenzó a implementar la comunicación entre el frontend y el backend para consultar los productos mediante solicitudes HTTP.
 
-<badge>TP 2 completado</badge>
+**TP 2 completado.**
 
 ---
 
@@ -119,7 +123,7 @@ Se implementó React Router DOM para gestionar las diferentes páginas de la apl
 
 Se incorporaron:
 
-- Múltiples rutas para las distintas secciones.
+- Múltiples rutas para las distintas páginas.
 - Rutas dinámicas para consultar productos mediante su identificador.
 - Uso de `useParams()` para obtener parámetros de las rutas.
 - Navegación programática mediante `useNavigate()`.
@@ -173,11 +177,11 @@ Se verificó el funcionamiento de las principales operaciones:
 - Eliminación de productos.
 - Persistencia de los cambios al recargar la aplicación.
 
-<badge>TP 3 completado</badge>
+**TP 3 completado.**
 
 ---
 
-# Funcionalidades actuales
+# Funcionalidades
 
 ## Frontend
 
@@ -198,24 +202,47 @@ Se verificó el funcionamiento de las principales operaciones:
 - Panel lateral de favoritos.
 - Formulario de contacto controlado.
 - Validación de campos.
-- Modal de política de privacidad.
 - Mensajes de confirmación.
-- Toasts de interacción.
+- Notificaciones mediante Toast.
 - Persistencia del carrito y favoritos mediante `localStorage`.
 - Panel administrativo de productos.
-- Formularios controlados para crear y editar productos.
+- Formularios para crear y editar productos.
+- Registro e inicio de sesión.
+- Persistencia y validación de sesión.
+- Perfil de usuario.
+- Página de consulta de pedidos.
+- Rutas protegidas para usuarios autenticados.
 
 ## Backend
 
-La API REST permite realizar operaciones CRUD sobre los productos:
+### Productos
 
 - Obtener todos los productos.
 - Obtener un producto por su ID.
 - Crear productos.
 - Actualizar productos.
 - Eliminar productos.
+- Validación de datos.
+- Control de permisos administrativos.
 
-La información se almacena en MongoDB Atlas mediante Mongoose.
+### Autenticación y usuarios
+
+- Registro de usuarios.
+- Inicio de sesión.
+- Encriptación de contraseñas mediante bcrypt.
+- Generación y validación de JWT.
+- Consulta del perfil autenticado.
+- Autorización basada en roles.
+
+### Pedidos
+
+- Registro de pedidos asociados al usuario autenticado.
+- Validación de productos y cantidades.
+- Obtención de precios directamente desde MongoDB.
+- Validación de stock disponible.
+- Descuento de stock mediante transacciones.
+- Consulta del historial de pedidos del usuario.
+- Cálculo y validación de subtotales y totales.
 
 ---
 
@@ -223,20 +250,70 @@ La información se almacena en MongoDB Atlas mediante Mongoose.
 
 | Tecnología | Uso |
 |---|---|
-| HTML5 | Estructura inicial |
+| HTML5 | Estructura |
 | CSS3 | Diseño y responsive |
-| JavaScript | Lógica de la primera versión |
+| JavaScript | Lógica de la aplicación |
 | React | Desarrollo del frontend |
 | Vite | Entorno de desarrollo y build |
-| React Router | Navegación de la aplicación |
+| React Router | Navegación |
 | Context API | Gestión de estados compartidos |
 | Node.js | Runtime del backend |
 | Express | Servidor y API REST |
 | MongoDB Atlas | Base de datos en la nube |
-| Mongoose | Modelado y persistencia de datos |
+| Mongoose | Modelado y persistencia |
+| bcryptjs | Hash de contraseñas |
+| JSON Web Token | Autenticación |
 | Git | Control de versiones |
 | GitHub | Repositorio y trabajo colaborativo |
-| localStorage | Persistencia del carrito y favoritos |
+| localStorage | Persistencia local del navegador |
+| Vercel | Despliegue del frontend |
+| Render | Despliegue del backend |
+
+---
+
+# Arquitectura del proyecto
+
+La aplicación utiliza una arquitectura cliente-servidor:
+
+```text
+┌─────────────────────────────┐
+│          FRONTEND           │
+│                             │
+│       React + Vite          │
+│                             │
+│  Components / Pages         │
+│  Context API                │
+│  React Router               │
+│  Services                   │
+└──────────────┬──────────────┘
+               │
+               │ HTTP / JSON
+               │ REST API
+               ▼
+┌─────────────────────────────┐
+│           BACKEND           │
+│                             │
+│       Node.js + Express     │
+│                             │
+│  Routes                     │
+│  Middlewares                │
+│  Controllers                │
+│  Models                     │
+│  JWT / bcrypt               │
+└──────────────┬──────────────┘
+               │
+               │ Mongoose
+               ▼
+┌─────────────────────────────┐
+│         DATABASE            │
+│                             │
+│        MongoDB Atlas        │
+│                             │
+│  Products                   │
+│  Users                      │
+│  Orders                     │
+└─────────────────────────────┘
+```
 
 ---
 
@@ -253,75 +330,212 @@ El modelo de productos utiliza los siguientes campos:
 | `precio` | Number | Precio del producto. Obligatorio y no negativo. |
 | `stock` | Number | Cantidad disponible. Por defecto, 0. |
 | `imagenUrl` | String | URL o referencia de la imagen. |
-| `categorias` | String | Categoría o categorías del producto. |
-| `createdAt` | Date | Fecha de creación generada por Mongoose. |
-| `updatedAt` | Date | Fecha de última actualización generada por Mongoose. |
+| `categorias` | String | Categoría del producto. |
+| `createdAt` | Date | Fecha de creación. |
+| `updatedAt` | Date | Fecha de última actualización. |
 
 El esquema utiliza `timestamps` de Mongoose para gestionar automáticamente las fechas de creación y actualización.
 
-Las categorías disponibles en el formulario incluyen:
+## User
 
-- `living`
-- `habitacion`
-- `cocina`
-- `oficina`
-- `casa`
+El modelo de usuarios utiliza los siguientes campos:
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `nombre` | String | Nombre del usuario. Obligatorio. |
+| `email` | String | Correo electrónico único. |
+| `password` | String | Contraseña almacenada mediante hash. |
+| `rol` | String | Rol del usuario: `usuario` o `admin`. |
+| `createdAt` | Date | Fecha de creación. |
+| `updatedAt` | Date | Fecha de última actualización. |
+
+El rol predeterminado es `usuario`. La contraseña no se incluye en las consultas habituales del modelo.
+
+## Order
+
+El modelo de pedidos utiliza los siguientes campos:
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `usuario` | ObjectId | Referencia al usuario que realizó el pedido. |
+| `items` | Array | Productos incluidos en el pedido. |
+| `items.producto` | ObjectId | Referencia al producto. |
+| `items.nombre` | String | Nombre del producto al momento de la compra. |
+| `items.precioUnitario` | Number | Precio unitario registrado. |
+| `items.cantidad` | Number | Cantidad solicitada. |
+| `items.subtotal` | Number | Subtotal de cada producto. |
+| `total` | Number | Importe total del pedido. |
+| `estado` | String | Estado del pedido. |
+| `createdAt` | Date | Fecha de creación. |
+| `updatedAt` | Date | Fecha de última actualización. |
+
+Los estados disponibles son:
+
+- `pendiente`
+- `confirmado`
+- `cancelado`
+
+El modelo valida que el total coincida con la suma de los subtotales.
 
 ---
 
 # API REST
 
-La API utiliza la ruta base:
+La API utiliza la siguiente ruta base:
 
 ```text
 http://localhost:3000/api
 ```
 
-## Endpoints de productos
+## Productos
 
-| Método | Endpoint | Función |
-|---|---|---|
-| GET | `/api/productos` | Obtener todos los productos. |
-| GET | `/api/productos/:id` | Obtener un producto por ID. |
-| POST | `/api/productos` | Crear un producto. |
-| PUT | `/api/productos/:id` | Actualizar un producto. |
-| DELETE | `/api/productos/:id` | Eliminar un producto. |
+| Método | Endpoint | Función | Acceso |
+|---|---|---|---|
+| GET | `/productos` | Obtener todos los productos. | Público |
+| GET | `/productos/:id` | Obtener un producto por ID. | Público |
+| POST | `/productos` | Crear un producto. | Administrador |
+| PUT | `/productos/:id` | Actualizar un producto. | Administrador |
+| DELETE | `/productos/:id` | Eliminar un producto. | Administrador |
 
-### Ejemplos
+## Autenticación
 
-Obtener todos los productos:
+| Método | Endpoint | Función | Acceso |
+|---|---|---|---|
+| POST | `/auth/registro` | Registrar un usuario. | Público |
+| POST | `/auth/login` | Iniciar sesión. | Público |
+| GET | `/auth/me` | Obtener el perfil del usuario autenticado. | Autenticado |
 
-```http
-GET /api/productos
-```
-
-Obtener un producto:
-
-```http
-GET /api/productos/ID_DEL_PRODUCTO
-```
-
-Crear un producto:
+### Registro
 
 ```http
-POST /api/productos
+POST /api/auth/registro
 Content-Type: application/json
 ```
 
-Actualizar un producto:
+Permite crear una cuenta. Las contraseñas se almacenan mediante hash con `bcryptjs`.
+
+Los usuarios nuevos reciben el rol `usuario` por defecto.
+
+### Inicio de sesión
 
 ```http
-PUT /api/productos/ID_DEL_PRODUCTO
+POST /api/auth/login
 Content-Type: application/json
 ```
 
-Eliminar un producto:
+Valida las credenciales y devuelve un JWT para autenticar las siguientes solicitudes.
+
+### Perfil autenticado
 
 ```http
-DELETE /api/productos/ID_DEL_PRODUCTO
+GET /api/auth/me
+Authorization: Bearer <token>
 ```
 
-Las respuestas de la API se envían en formato JSON y utilizan códigos HTTP para indicar el resultado de las operaciones.
+Devuelve los datos del usuario correspondiente al token enviado.
+
+## Pedidos
+
+| Método | Endpoint | Función | Acceso |
+|---|---|---|---|
+| POST | `/pedidos` | Registrar un pedido. | Autenticado |
+| GET | `/pedidos/mis-pedidos` | Consultar los pedidos propios. | Autenticado |
+
+### Registrar un pedido
+
+```http
+POST /api/pedidos
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+Ejemplo del cuerpo de la solicitud:
+
+```json
+{
+  "items": [
+    {
+      "productId": "ID_DEL_PRODUCTO",
+      "quantity": 2
+    },
+    {
+      "productId": "ID_DE_OTRO_PRODUCTO",
+      "quantity": 1
+    }
+  ]
+}
+```
+
+El backend:
+
+1. Verifica que exista un usuario autenticado.
+2. Valida los identificadores y las cantidades recibidas.
+3. Consulta los productos en MongoDB.
+4. Obtiene los precios desde la base de datos, sin confiar en los valores enviados por el cliente.
+5. Comprueba que exista stock suficiente.
+6. Calcula subtotales y total.
+7. Descuenta el stock disponible.
+8. Registra el pedido asociado al usuario autenticado.
+
+Las operaciones de creación del pedido y actualización del stock se realizan dentro de una transacción de MongoDB para mantener la consistencia de los datos.
+
+### Consultar mis pedidos
+
+```http
+GET /api/pedidos/mis-pedidos
+Authorization: Bearer <token>
+```
+
+Devuelve únicamente los pedidos correspondientes al usuario autenticado.
+
+## Autorización mediante JWT
+
+Los endpoints protegidos requieren el siguiente encabezado:
+
+```http
+Authorization: Bearer <token>
+```
+
+La API utiliza middlewares para verificar la identidad del usuario y controlar los permisos de acceso.
+
+## Códigos HTTP
+
+| Código | Significado |
+|---|---|
+| 200 | Solicitud procesada correctamente. |
+| 201 | Recurso creado correctamente. |
+| 400 | Solicitud o datos inválidos. |
+| 401 | Usuario no autenticado o token inválido. |
+| 403 | Usuario autenticado sin permisos suficientes. |
+| 404 | Recurso no encontrado. |
+| 409 | Conflicto con un recurso existente. |
+| 500 | Error interno del servidor. |
+
+---
+
+# Autenticación y autorización
+
+El sistema diferencia dos roles:
+
+### Usuario
+
+- Consultar el catálogo.
+- Consultar los detalles de productos.
+- Realizar operaciones de compra mediante los endpoints de pedidos.
+- Consultar su perfil.
+- Consultar sus propios pedidos.
+
+### Administrador
+
+Cuenta con los permisos de un usuario y, además, puede:
+
+- Crear productos.
+- Editar productos.
+- Eliminar productos.
+
+La autorización administrativa se verifica directamente en el backend mediante el middleware `verificarAdmin`.
+
+La asignación del rol no se realiza desde el formulario público de registro. Los nuevos usuarios se crean con el rol `usuario` por defecto.
 
 ---
 
@@ -333,18 +547,51 @@ Las respuestas de la API se envían en formato JSON y utilizan códigos HTTP par
 |---|---|
 | `/` | Inicio |
 | `/catalogo` | Catálogo |
+| `/productos` | Catálogo (ruta alternativa) |
 | `/producto/:id` | Detalle del producto |
 | `/contacto` | Contacto |
+| `/login` | Inicio de sesión |
+| `/registro` | Registro de usuario |
 
-También se mantienen rutas alternativas para la navegación de productos, según la configuración de React Router.
+## Rutas protegidas
 
-## Rutas administrativas
-
-| Ruta | Función |
+| Ruta | Página |
 |---|---|
-| `/admin/productos` | Listado y administración de productos. |
-| `/admin/crear-producto` | Formulario para crear productos. |
-| `/admin/editar-producto/:id` | Formulario para editar productos existentes. |
+| `/perfil` | Perfil del usuario |
+| `/mis-pedidos` | Historial de pedidos |
+| `/admin/productos` | Listado administrativo |
+| `/admin/crear-producto` | Crear producto |
+| `/admin/editar-producto/:id` | Editar producto |
+
+El componente `ProtectedRoute` controla el acceso a las rutas protegidas y redirige a `/login` cuando no existe una sesión válida.
+
+Los permisos administrativos también se controlan desde el backend, independientemente de las restricciones visuales del frontend.
+
+---
+
+# Context API y estado global
+
+Se utiliza Context API para compartir información entre los componentes de la aplicación.
+
+## AuthContext
+
+Centraliza la información de autenticación:
+
+- Usuario autenticado.
+- Token JWT.
+- Estado de carga de sesión.
+- Registro.
+- Inicio de sesión.
+- Cierre de sesión.
+- Validación de sesión al cargar la aplicación.
+
+El contexto consulta `/api/auth/me` para comprobar que el token almacenado siga siendo válido.
+
+## CartContext
+
+Centraliza el estado del carrito y los favoritos.
+
+Permite compartir la información entre componentes sin necesidad de propagarla manualmente a través de múltiples niveles.
 
 ---
 
@@ -359,14 +606,26 @@ hermanos-jota/
 │   │   │   └── database.js
 │   │   │
 │   │   ├── controllers/
-│   │   │
-│   │   ├── data/
+│   │   │   ├── auth.controller.js
+│   │   │   ├── pedidos.controller.js
+│   │   │   └── productos.controller.js
 │   │   │
 │   │   ├── middlewares/
+│   │   │   ├── admin.middleware.js
+│   │   │   ├── auth.middleware.js
+│   │   │   ├── errorHandler.js
+│   │   │   ├── logger.js
+│   │   │   └── notFound.js
 │   │   │
 │   │   ├── models/
+│   │   │   ├── Order.js
+│   │   │   ├── Product.js
+│   │   │   └── User.js
 │   │   │
 │   │   ├── routes/
+│   │   │   ├── auth.routes.js
+│   │   │   ├── pedidos.routes.js
+│   │   │   └── productos.routes.js
 │   │   │
 │   │   └── app.js
 │   │
@@ -378,37 +637,13 @@ hermanos-jota/
 │
 ├── client/
 │   ├── public/
-│   │   └── assets/
 │   │
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── CartPanel.jsx
-│   │   │   ├── ContactForm.jsx
-│   │   │   ├── FavoritesPanel.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── ProductCard.jsx
-│   │   │   ├── ProductList.jsx
-│   │   │   ├── SearchPanel.jsx
-│   │   │   └── Toast.jsx
-│   │   │
 │   │   ├── context/
-│   │   │   └── CartContext.jsx
-│   │   │
 │   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Catalog.jsx
-│   │   │   ├── ProductDetail.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   ├── AdminProducts.jsx
-│   │   │   └── AdminProductForm.jsx
-│   │   │
 │   │   ├── services/
-│   │   │   └── api.js
-│   │   │
 │   │   ├── styles/
-│   │   │   └── unificado.css
-│   │   │
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   │
@@ -421,7 +656,7 @@ hermanos-jota/
 └── README.md
 ```
 
-> La estructura puede evolucionar a medida que se incorporen nuevas funcionalidades. Se muestra una organización representativa de las carpetas y archivos principales.
+La estructura puede evolucionar a medida que se incorporen nuevas funcionalidades.
 
 ---
 
@@ -463,12 +698,14 @@ Para ejecutar el proyecto es necesario contar con:
 
 Crear un archivo `.env` dentro de `backend/`, tomando como referencia `.env.example`.
 
-Contenido:
-
 ```env
 MONGODB_URI=tu_uri_de_conexion_a_mongodb
 PORT=3000
+JWT_SECRET=una_clave_segura_de_al_menos_32_caracteres
+CLIENT_URL=http://localhost:5173
 ```
+
+`CLIENT_URL` permite configurar los orígenes autorizados para las solicitudes CORS. Se pueden indicar varios separados por comas.
 
 ## Variables de entorno del frontend
 
@@ -478,7 +715,7 @@ Crear un archivo `.env` dentro de `client/`:
 VITE_API_URL=http://localhost:3000/api
 ```
 
-> Los archivos `.env` contienen configuración local y no deben subirse al repositorio. Las credenciales de MongoDB deben mantenerse privadas. En MongoDB Atlas se deben autorizar únicamente las direcciones IP necesarias para el acceso.
+> Los archivos `.env` contienen configuración local y no deben subirse al repositorio. Las credenciales de MongoDB y la clave JWT deben mantenerse privadas.
 
 ---
 
@@ -498,7 +735,7 @@ cd trabajo-grupal-itba
 
 ---
 
-# Ejecución
+# Ejecución local
 
 El frontend y el backend deben ejecutarse simultáneamente en dos terminales diferentes.
 
@@ -547,7 +784,7 @@ Vite mostrará la dirección local, normalmente:
 http://localhost:5173
 ```
 
-Para utilizar correctamente el catálogo, los detalles y la administración de productos, el backend debe permanecer ejecutándose.
+Para utilizar correctamente el catálogo, la autenticación y las operaciones administrativas, el backend debe permanecer ejecutándose.
 
 ---
 
@@ -555,23 +792,27 @@ Para utilizar correctamente el catálogo, los detalles y la administración de p
 
 ### Productos
 
-Los productos se almacenan en MongoDB Atlas. Las operaciones administrativas de creación, consulta, edición y eliminación se realizan mediante la API REST.
+Los productos se almacenan en MongoDB Atlas. Las operaciones de creación, consulta, edición y eliminación se realizan mediante la API REST.
+
+### Usuarios
+
+Los usuarios se almacenan en MongoDB Atlas. Las contraseñas se guardan mediante hash y la autenticación se gestiona con JWT.
 
 ### Carrito y favoritos
 
 El carrito y los favoritos utilizan `localStorage` para conservar su información en el navegador.
 
-Se almacenan identificadores de productos y las cantidades se representan mediante la cantidad de veces que aparece cada identificador en el carrito.
+### Pedidos
 
-### Compras
+El backend dispone de endpoints para registrar pedidos asociados al usuario autenticado, validar stock, calcular importes y descontar existencias mediante transacciones.
 
-El botón **Comprar carrito** realiza una simulación local. No procesa pagos ni registra órdenes reales en MongoDB.
+La integración completa de estos endpoints con el flujo de checkout del frontend forma parte del trabajo de desarrollo de Sprint 7–8.
+
+El proyecto no procesa pagos reales.
 
 ---
 
 # Objetivos de aprendizaje
-
-El proyecto permite poner en práctica los siguientes conocimientos:
 
 ## Frontend
 
@@ -592,174 +833,74 @@ El proyecto permite poner en práctica los siguientes conocimientos:
 15. Context API.
 16. Consumo de APIs REST.
 17. Formularios controlados.
+18. Autenticación en aplicaciones React.
+19. Protección de rutas.
 
 ## Backend
 
-18. Node.js.
-19. Express.
-20. Creación de APIs REST.
-21. Express Router.
-22. Controllers.
-23. Middlewares.
-24. Middleware de logging.
-25. Manejo de rutas inexistentes.
+20. Node.js.
+21. Express.
+22. Creación de APIs REST.
+23. Express Router.
+24. Controllers.
+25. Middlewares.
 26. Manejo centralizado de errores.
 27. MongoDB Atlas.
 28. Mongoose.
 29. Modelado de datos.
 30. Operaciones CRUD.
 31. Variables de entorno.
-32. Integración Full Stack.
+32. bcrypt.
+33. JSON Web Token.
+34. Autenticación y autorización.
+35. Control de acceso basado en roles.
+36. Transacciones de MongoDB.
+37. Validación de datos y stock.
+38. Integración Full Stack.
 
 ## Trabajo colaborativo
 
-33. Git.
-34. GitHub.
-35. Branches.
-36. Merge.
-37. Pull Requests.
-38. Trabajo colaborativo.
-39. Organización del desarrollo por sprints.
+39. Git.
+40. GitHub.
+41. Branches.
+42. Merge.
+43. Pull Requests.
+44. Trabajo colaborativo.
+45. Organización del desarrollo por sprints.
 
 ---
 
-# Estado actual
+# Estado del proyecto
 
-**TP 1 — Sprints 1 y 2:** Completado.
+| Entrega | Estado |
+|---|---|
+| TP 1 — Sprints 1 y 2 | Completado |
+| TP 2 — Sprints 3 y 4 | Completado |
+| TP 3 — Sprints 5 y 6 | Completado |
+| TP 4 — Sprints 7 y 8 | En desarrollo |
 
-**TP 2 — Sprints 3 y 4:** Completado.
+El proyecto cuenta con una aplicación frontend desarrollada en React, un backend desarrollado con Express y una base de datos MongoDB Atlas.
 
-**TP 3 — Sprints 5 y 6:** Completado.
+Durante Sprint 7–8 se incorporaron autenticación de usuarios, autorización por roles, protección de endpoints y gestión de pedidos en el backend.
 
-El proyecto cuenta con una aplicación frontend en React, un backend desarrollado con Express y una base de datos MongoDB Atlas. Las operaciones CRUD de productos fueron probadas y verificadas mediante la interfaz de administración.
-
-El desarrollo puede continuar con nuevas funcionalidades en futuras etapas.
+Continúa el trabajo de integración entre el checkout, el carrito y el historial de pedidos del frontend, junto con las verificaciones finales de despliegue.
 
 ---
 
-# 🌐 Demo y despliegue
+# Demo y despliegue
 
-El proyecto cuenta con despliegue del frontend en Vercel y del backend en Render.
+El proyecto cuenta con despliegues del frontend y backend.
 
 | Servicio | Plataforma | Enlace |
 |---|---|---|
-| Frontend | Vercel | [Ver aplicación](PEGAR_LINK_DE_VERCEL) |
-| Backend | Render | [Ver API](PEGAR_LINK_DE_RENDER) |
+| Frontend | Vercel | [Ver aplicación](https://trabajo-grupal-itba-6wgf.vercel.app/) |
+| Backend | Render | [Ver API](https://trabajo-grupal-itba.onrender.com) |
 
 **Tecnologías de despliegue:**
+
 - Vercel: hosting del frontend desarrollado con React y Vite.
 - Render: hosting del backend desarrollado con Node.js y Express.
 
+Las variables de entorno de producción deben configurarse desde los respectivos paneles de cada plataforma.
 
 ---
-
-# TP 4 — Sprint 7 y 8 (objetivos 1 al 4)
-
-Esta etapa incorpora autenticación de usuarios y protección de recursos.
-
-## 1. Autenticación Full Stack
-
-- Registro de usuarios mediante `POST /api/auth/registro`.
-- Login mediante `POST /api/auth/login`.
-- Las contraseñas se almacenan hasheadas con `bcryptjs` (factor de costo 12); nunca se guardan en texto plano.
-- La API devuelve un JWT firmado con `JWT_SECRET`, con vencimiento de 7 días.
-- El frontend conserva el token y los datos básicos de sesión en `localStorage`.
-- Al recargar, `AuthContext` valida la sesión contra `GET /api/auth/me`.
-
-
-## 2. Autenticación y autorización del backend
-
-El backend utiliza JWT para autenticar las solicitudes protegidas y middlewares para controlar los permisos de acceso.
-
-### Autenticación
-
-El middleware `verificarToken`:
-- Comprueba el encabezado `Authorization: Bearer <token>`.
-- Valida la firma y vigencia del JWT.
-- Recupera el usuario desde MongoDB.
-- Adjunta los datos del usuario autenticado a `req.user`.
-
-### Autorización por roles
-
-Se implementaron dos roles:
-
-- `usuario`: puede consultar el catálogo, realizar compras y consultar sus propios pedidos.
-- `admin`: tiene los permisos del usuario y puede crear, editar y eliminar productos.
-
-El middleware `verificarAdmin` comprueba que el usuario autenticado tenga permisos administrativos.
-
-### Acceso a los endpoints
-
-| Operación | Permiso |
-|---|---|
-| Consultar productos | Público |
-| Crear productos | Administrador |
-| Editar productos | Administrador |
-| Eliminar productos | Administrador |
-| Consultar perfil | Usuario autenticado |
-| Crear pedidos | Usuario autenticado |
-| Consultar mis pedidos | Usuario autenticado |
-
-Las operaciones administrativas no dependen únicamente de la interfaz: los permisos se verifican directamente en el backend.
-
-
-## 3. Estado global con Context API
-
-- `AuthContext`: usuario, token, estado de carga, registro, login y logout.
-- `CartContext`: conserva el estado global del carrito y favoritos, como en los sprints anteriores.
-- Los componentes acceden a estos estados mediante `useAuth()` y `useCart()`.
-
-## 4. Rutas protegidas del frontend
-
-Se incorporó `ProtectedRoute`, que espera la validación inicial de sesión y redirige a `/login` si el usuario no está autenticado.
-
-- `/perfil`
-- `/mis-pedidos`
-- `/admin/productos`
-- `/admin/crear-producto`
-- `/admin/editar-producto/:id`
-
-También se agregaron las páginas `/registro` y `/login`, y una navegación condicional para mostrar el acceso a la cuenta y cerrar sesión.
-
-> Alcance de esta entrega: objetivos 1 al 4 de la consigna. El despliegue y el registro real de pedidos no forman parte de este alcance y deben implementarse en las etapas correspondientes si se solicitan.
-
-## Nuevas variables de entorno del backend
-
-Copiar `backend/.env.example` a `backend/.env` y completar los valores reales:
-
-```env
-MONGODB_URI=tu_uri_de_mongodb_atlas
-PORT=3000
-JWT_SECRET=una_clave_larga_aleatoria_y_privada
-CLIENT_URL=http://localhost:5173
-```
-
-No subir `.env` a GitHub. `JWT_SECRET` debe ser privado, largo y diferente de la URI de MongoDB.
-
-## Instalación de dependencias para Sprint 7 y 8
-
-Desde una terminal, ejecutar `npm install` dentro de `backend/` y luego dentro de `client/`. En el backend se incorporaron `bcryptjs` y `jsonwebtoken`; `npm install` actualizará el archivo `package-lock.json` con esas dependencias.
-
-Para iniciar los servicios, abrir dos terminales:
-
-```bash
-# Terminal 1
-cd backend
-npm run dev
-```
-
-```bash
-# Terminal 2
-cd client
-npm run dev
-```
-
-## Prueba manual de autenticación
-
-1. Iniciar backend y frontend.
-2. Entrar a `/registro` y crear un usuario.
-3. Comprobar que la API devuelve token y datos básicos del usuario, sin devolver la contraseña.
-4. Cerrar sesión y volver a ingresar desde `/login`.
-5. Recargar la página y comprobar que la sesión se mantiene.
-6. Sin sesión, intentar abrir `/perfil` o `/mis-pedidos`: debe redirigir a `/login`.
-7. Desde una herramienta como Postman, probar `POST /api/productos` sin token (debe responder 401) y luego con `Authorization: Bearer <token>` (debe permitir la operación si los datos son válidos).
