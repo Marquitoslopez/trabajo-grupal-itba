@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const productosRouter = require("./routes/productos.routes");
+const pedidosRouter = require("./routes/pedidos.routes");
 const logger = require("./middlewares/logger");
 const notFound = require("./middlewares/notFound");
 const errorHandler = require("./middlewares/errorHandler");
@@ -28,6 +29,7 @@ app.use(express.json());
 
 // Rutas
 app.use("/api/productos", productosRouter);
+app.use("/api/pedidos", pedidosRouter);
 
 // 404 general
 app.use(notFound);
