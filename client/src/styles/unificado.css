@@ -4173,6 +4173,25 @@ body.favorites-drawer-open {
 .admin-page__back { margin-top: var(--space-lg); }
 @media (max-width: 600px) { .admin-form__row { grid-template-columns: 1fr; } .admin-form__actions .btn { width: 100%; } }
 
+.checkout-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr); gap: var(--space-lg); align-items: start; }
+.checkout-summary { padding: clamp(1rem, 3vw, 2rem); background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.checkout-summary h2 { margin-bottom: var(--space-md); font-size: var(--font-size-h3); }
+.checkout-summary__item { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: var(--space-sm); align-items: center; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+.checkout-summary__item img { width: 64px; height: 56px; object-fit: contain; border-radius: var(--radius-sm); background: var(--color-bg-soft); }
+.checkout-summary__item > div { display: grid; }
+.checkout-summary__item > div span, .checkout-summary__unavailable { color: var(--color-text-muted); font-size: var(--font-size-caption); }
+.checkout-summary__total, .order-card__total { display: flex; justify-content: space-between; gap: var(--space-sm); margin-top: var(--space-md); font-size: 1.1rem; }
+.order-list { display: grid; gap: var(--space-md); }
+.order-card { padding: clamp(1rem, 3vw, 2rem); background: var(--color-bg-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.order-card__header { display: flex; justify-content: space-between; gap: var(--space-md); align-items: start; }
+.order-card__header h2 { font-size: 1rem; overflow-wrap: anywhere; }
+.order-card__header p { color: var(--color-text-muted); margin-top: .35rem; }
+.order-card__status { padding: .25rem .7rem; border-radius: var(--radius-pill); color: #355c24; background: #eff7e9; text-transform: capitalize; }
+.order-card__items { list-style: none; margin-top: var(--space-md); }
+.order-card__items li { display: flex; justify-content: space-between; gap: var(--space-sm); padding: .5rem 0; border-bottom: 1px solid var(--color-border); }
+
+@media (max-width: 760px) { .checkout-layout { grid-template-columns: 1fr; } }
+
 
 /* Categorías del formulario de administración */
 .admin-form__categories {

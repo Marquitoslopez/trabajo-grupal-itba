@@ -1,4 +1,5 @@
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const ORDER_TOKEN_STORAGE_KEY = 'hermanos-jota-order-token';
 
 export const PRODUCT_CATEGORIES = ['living', 'habitacion', 'cocina', 'oficina', 'casa'];
 
@@ -65,6 +66,81 @@ async function requestProductos(path = '', options = {}) {
   }
 
   return body;
+}
+
+function getOrderToken() {
+  let token;
+
+  try {
+    token = localStorage.getItem(ORDER_TOKEN_STORAGE_KEY);
+  } catch {
+    throw new Error('No se pudo guardar el acceso al historial de pedidos en este navegador.');
+  }
+
+  if (/^[a-f\d]{64}$/i.test(token || '')) return token;
+
+  if (!globalThis.crypto?.getRandomValues) {
+    throw new Error('Este navegador no permite generar un token seguro para los pedidos.');
+  }
+
+  const bytes = new Uint8Array(32);
+  globalThis.crypto.getRandomValues(bytes);
+  token = Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+
+  try {
+    localStorage.setItem(ORDER_TOKEN_STORAGE_KEY, token);
+  } catch {
+    throw new Error('No se pudo guardar el acceso al historial de pedidos en este navegador.');
+  }
+
+  return token;
+}
+
+async function requestPedidos(path, options = {}) {
+  const response = await fetch(`${API_BASE}/pedidos${path}`, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+  });
+  const body = await response.json().catch(() => null);
+
+  if (!response.ok) {
+    const error = new Error(
+      body?.error || body?.message || 'No se pudo completar la operación con pedidos.'
+    );
+    error.status = response.status;
+    throw error;
+  }
+
+  return body;
+}
+
+export async function createPedido({ cliente, items }) {
+  const pedido = await requestPedidos('', {
+    method: 'POST',
+    body: JSON.stringify({ cliente, items, tokenCliente: getOrderToken() }),
+  });
+
+  if (!pedido || typeof pedido !== 'object' || !pedido._id) {
+    throw new Error('La API no devolvió el pedido creado.');
+  }
+
+  return pedido;
+}
+
+export async function getMisPedidos() {
+  const token = getOrderToken();
+  const pedidos = await requestPedidos('/mis-pedidos', {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!Array.isArray(pedidos)) {
+    throw new Error('La API devolvió un historial de pedidos inválido.');
+  }
+
+  return pedidos;
 }
 
 // Obtiene productos desde la API y propaga errores, sin usar el catálogo de respaldo.

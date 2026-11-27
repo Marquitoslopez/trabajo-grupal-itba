@@ -177,6 +177,22 @@ export default function Navbar({ cartCount }) {
               </NavLink>
             </li>
 
+            <li className="header__menu-item">
+              <NavLink
+                to="/mis-pedidos"
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `header__menu-link${
+                    isActive
+                      ? ' header__menu-link--active'
+                      : ''
+                  }`
+                }
+              >
+                Mis pedidos
+              </NavLink>
+            </li>
+
           </ul>
 
           {/* Acciones */}

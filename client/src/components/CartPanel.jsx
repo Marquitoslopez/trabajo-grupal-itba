@@ -18,7 +18,6 @@ export default function CartPanel() {
   } = useCart();
 
   const [productsMap, setProductsMap] = useState({});
-  const [checkoutBusy, setCheckoutBusy] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -76,31 +75,16 @@ export default function CartPanel() {
     navigate(`/productos/${productId}`);
   };
 
-  // Simulación de compra: no procesa pagos reales ni registra pedidos
   const handleCheckout = () => {
     if (
       visibleGrouped.length === 0 ||
-      hasUnresolvedItems ||
-      checkoutBusy
+      hasUnresolvedItems
     ) {
       return;
     }
 
-    const confirmed = window.confirm(
-      `Vas a finalizar una compra de prueba por ${formatPrice(total)}. Esta versión no procesa pagos reales ni registra pedidos en el servidor. ¿Querés continuar con la simulación?`
-    );
-
-    if (!confirmed) return;
-
-    setCheckoutBusy(true);
-
-    window.alert(
-      'Simulación de compra completada. No se realizó ningún cobro ni se registró un pedido real.'
-    );
-
-    clearCart();
-    setCheckoutBusy(false);
     closeCart();
+    navigate('/checkout');
   };
 
   // Eliminar del carrito los productos que ya no existen
@@ -301,13 +285,9 @@ export default function CartPanel() {
               type="button"
               className="cart-drawer__checkout"
               onClick={handleCheckout}
-              disabled={
-                checkoutBusy ||
-                visibleGrouped.length === 0 ||
-                hasUnresolvedItems
-              }
+              disabled={visibleGrouped.length === 0 || hasUnresolvedItems}
             >
-              {checkoutBusy ? 'Procesando…' : 'Comprar carrito'}
+              Finalizar compra
             </button>
 
             <button

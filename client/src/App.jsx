@@ -13,6 +13,8 @@ import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import AdminProductForm from './pages/AdminProductForm';
 import AdminProducts from './pages/AdminProducts';
+import Checkout from './pages/Checkout';
+import MyOrders from './pages/MyOrders';
 import { CART_STORAGE_KEY, CartProvider } from './context/CartContext';
 
 export default function App() {
@@ -37,6 +39,8 @@ export default function App() {
           <Route path="/productos" element={<Catalog />} />
           <Route path="/productos/:id" element={<ProductDetail />} />
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/mis-pedidos" element={<MyOrders />} />
           <Route path="/admin/productos" element={<AdminProducts />} />
           <Route path="/admin/crear-producto" element={<AdminProductForm />} />
           <Route path="/admin/editar-producto/:id" element={<AdminProductForm />} />
