@@ -49,10 +49,10 @@ export default function App() {
             <Route path="/registro" element={<Register />} />
             <Route path="/perfil" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
             <Route path="/mis-pedidos" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
-            <Route path="/checkout" element={ <ProtectedRoute> <Checkout /> </ProtectedRoute> } />
-            <Route path="/admin/productos" element={<ProtectedRoute><AdminProducts /></ProtectedRoute>} />
-            <Route path="/admin/crear-producto" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
-            <Route path="/admin/editar-producto/:id" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
+            <Route path="/checkout" element={<ProtectedRoute> <Checkout /> </ProtectedRoute>} />
+            <Route path="/admin/productos" element={<ProtectedRoute requiredRole="admin"><AdminProducts /> </ProtectedRoute>} />
+            <Route path="/admin/crear-producto" element={ <ProtectedRoute requiredRole="admin"> <AdminProductForm /> </ProtectedRoute> } />
+            <Route path="/admin/editar-producto/:id" element={ <ProtectedRoute requiredRole="admin"> <AdminProductForm /> </ProtectedRoute> } />
           </Routes>
 
           <Footer />

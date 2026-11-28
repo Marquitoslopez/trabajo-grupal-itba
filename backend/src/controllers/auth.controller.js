@@ -61,6 +61,7 @@ const registrar = async (req, res, next) => {
         id: user._id,
         nombre: user.nombre,
         email: user.email,
+        rol: user.rol,
       },
     });
   } catch (error) {
@@ -101,6 +102,7 @@ const login = async (req, res, next) => {
         id: user._id,
         nombre: user.nombre,
         email: user.email,
+        rol: user.rol,
       },
     });
   } catch (error) {
@@ -114,6 +116,7 @@ const perfilActual = (req, res) => {
       id: req.user._id,
       nombre: req.user.nombre,
       email: req.user.email,
+      rol: req.user.rol,
     },
   });
 };
