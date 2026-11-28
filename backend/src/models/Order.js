@@ -66,6 +66,33 @@ const orderSchema = new mongoose.Schema(
       required: true,
       index: true,
     },
+    datosEntrega: {
+      nombre: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 120,
+      },
+      email: {
+        type: String,
+        required: true,
+        trim: true,
+        lowercase: true,
+        maxlength: 254,
+      },
+      telefono: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 40,
+      },
+      direccion: {
+        type: String,
+        required: true,
+        trim: true,
+        maxlength: 300,
+      },
+    },
 
     items: {
       type: [orderItemSchema],

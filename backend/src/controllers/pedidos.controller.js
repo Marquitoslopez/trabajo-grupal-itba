@@ -3,15 +3,60 @@ const Product = require("../models/Product");
 const Order = require("../models/Order");
 
 // POST /api/pedidos
+
 const crearPedido = async (req, res, next) => {
   try {
-    const items = req.body?.items;
-    // Validación inicial del carrito.
+    const { items, datosEntrega } = req.body || {};
+
+    // Validar datos de entrega.
+    const camposEntrega = ["nombre", "email", "telefono", "direccion"];
+
+    if (
+      !datosEntrega ||
+      typeof datosEntrega !== "object" ||
+      Array.isArray(datosEntrega) ||
+      camposEntrega.some(
+        (campo) =>
+          typeof datosEntrega[campo] !== "string" ||
+          !datosEntrega[campo].trim(),
+      )
+    ) {
+      return res.status(400).json({
+        error: "Todos los datos de entrega son obligatorios.",
+      });
+    }
+
+    const entrega = {
+      nombre: datosEntrega.nombre.trim(),
+      email: datosEntrega.email.trim().toLowerCase(),
+      telefono: datosEntrega.telefono.trim(),
+      direccion: datosEntrega.direccion.trim(),
+    };
+
+    if (
+      entrega.nombre.length > 120 ||
+      entrega.email.length > 254 ||
+      entrega.telefono.length > 40 ||
+      entrega.direccion.length > 300
+    ) {
+      return res.status(400).json({
+        error: "Uno o más datos de entrega superan la longitud permitida.",
+      });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(entrega.email)) {
+      return res.status(400).json({
+        error: "El email ingresado no es válido.",
+      });
+    }
+
+    // Validar el carrito.
     if (!Array.isArray(items) || items.length === 0) {
       return res.status(400).json({
         error: "El pedido debe contener al menos un producto.",
       });
     }
+
     if (items.length > 100) {
       return res.status(400).json({
         error: "El pedido no puede contener más de 100 líneas de productos.",
@@ -55,7 +100,6 @@ const crearPedido = async (req, res, next) => {
       await session.withTransaction(async () => {
         const productIds = [...cantidades.keys()];
 
-        // Consultar los productos reales en la base de datos.
         const productos = await Product.find({
           _id: { $in: productIds },
         }).session(session);
@@ -73,7 +117,7 @@ const crearPedido = async (req, res, next) => {
         const itemsPedido = [];
         let totalCentavos = 0;
 
-        // Comprobar stock y calcular importes desde MongoDB.
+        // Calcular importes usando los precios reales de MongoDB.
         for (const [productId, cantidad] of cantidades) {
           const producto = productosMap.get(productId);
 
@@ -86,7 +130,6 @@ const crearPedido = async (req, res, next) => {
           }
 
           const precioCentavos = Math.round(producto.precio * 100);
-
           const subtotalCentavos = precioCentavos * cantidad;
 
           if (
@@ -111,8 +154,7 @@ const crearPedido = async (req, res, next) => {
           });
         }
 
-        // Descontar stock con una condición para evitar
-        // vender unidades que ya no están disponibles.
+        // Descontar stock de forma segura.
         for (const [productId, cantidad] of cantidades) {
           const resultado = await Product.updateOne(
             {
@@ -134,14 +176,15 @@ const crearPedido = async (req, res, next) => {
           }
         }
 
-        // Registrar el pedido asociado al usuario del JWT.
+        // Crear pedido asociado al usuario autenticado.
         const [pedido] = await Order.create(
           [
             {
               usuario: req.user._id,
+              datosEntrega: entrega,
               items: itemsPedido,
               total: totalCentavos / 100,
-              estado: "confirmado",
+              estado: "pendiente",
             },
           ],
           { session },

@@ -20,6 +20,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import MyOrders from './pages/MyOrders';
+import Checkout from './pages/Checkout';
 
 export default function App() {
   const [cart, setCart] = useState(() => {
@@ -33,32 +34,33 @@ export default function App() {
 
   return (
     <AuthProvider>
-    <CartProvider cart={cart} setCart={setCart}>
-      <>
-        <ScrollToTop />
-        <Navbar cartCount={cart.length} />
+      <CartProvider cart={cart} setCart={setCart}>
+        <>
+          <ScrollToTop />
+          <Navbar cartCount={cart.length} />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/catalogo" element={<Catalog />} />
-          <Route path="/productos" element={<Catalog />} />
-          <Route path="/producto/:id" element={<ProductDetail />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registro" element={<Register />} />
-          <Route path="/perfil" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-          <Route path="/mis-pedidos" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
-          <Route path="/admin/productos" element={<ProtectedRoute><AdminProducts /></ProtectedRoute>} />
-          <Route path="/admin/crear-producto" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
-          <Route path="/admin/editar-producto/:id" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalogo" element={<Catalog />} />
+            <Route path="/productos" element={<Catalog />} />
+            <Route path="/producto/:id" element={<ProductDetail />} />
+            <Route path="/contacto" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registro" element={<Register />} />
+            <Route path="/perfil" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+            <Route path="/mis-pedidos" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
+            <Route path="/checkout" element={ <ProtectedRoute> <Checkout /> </ProtectedRoute> } />
+            <Route path="/admin/productos" element={<ProtectedRoute><AdminProducts /></ProtectedRoute>} />
+            <Route path="/admin/crear-producto" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
+            <Route path="/admin/editar-producto/:id" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
+          </Routes>
 
-        <Footer />
-        <CartPanel />
-        <FavoritesPanel />
-        <Toast />
-      </>
-    </CartProvider>
+          <Footer />
+          <CartPanel />
+          <FavoritesPanel />
+          <Toast />
+        </>
+      </CartProvider>
     </AuthProvider>
   );
 }

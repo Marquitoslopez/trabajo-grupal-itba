@@ -70,13 +70,11 @@ export default function CartPanel() {
     0
   );
 
-  // Cerrar el carrito y navegar al detalle del producto
   const handleViewProduct = (productId) => {
     closeCart();
     navigate(`/producto/${productId}`);
   };
 
-  // Simulación de compra: no procesa pagos reales ni registra pedidos
   const handleCheckout = () => {
     if (
       visibleGrouped.length === 0 ||
@@ -86,24 +84,12 @@ export default function CartPanel() {
       return;
     }
 
-    const confirmed = window.confirm(
-      `Vas a finalizar una compra de prueba por ${formatPrice(total)}. Esta versión no procesa pagos reales ni registra pedidos en el servidor. ¿Querés continuar con la simulación?`
-    );
-
-    if (!confirmed) return;
-
     setCheckoutBusy(true);
-
-    window.alert(
-      'Simulación de compra completada. No se realizó ningún cobro ni se registró un pedido real.'
-    );
-
-    clearCart();
-    setCheckoutBusy(false);
     closeCart();
+    navigate('/checkout');
+    setCheckoutBusy(false);
   };
 
-  // Eliminar del carrito los productos que ya no existen
   const handleRemoveUnavailable = () => {
     grouped
       .filter((item) => !item.product)
@@ -307,7 +293,7 @@ export default function CartPanel() {
                 hasUnresolvedItems
               }
             >
-              {checkoutBusy ? 'Procesando…' : 'Comprar carrito'}
+              {checkoutBusy ? 'Procesando…' : 'Finalizar compra'}
             </button>
 
             <button

@@ -222,3 +222,42 @@ export async function getProductoById(id) {
     throw new Error('Producto no encontrado');
   }
 }
+
+// Registra un pedido para el usuario autenticado.
+export async function createPedido(payload, token) {
+  const response = await fetch(`${API_BASE}/pedidos`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const body = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(body.error || 'No se pudo registrar el pedido.');
+  }
+
+  return body;
+}
+
+// Obtiene el historial de pedidos del usuario autenticado.
+export async function getMisPedidos(token) {
+  const response = await fetch(`${API_BASE}/pedidos/mis-pedidos`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const body = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(
+      body.error || 'No se pudo obtener el historial de pedidos.'
+    );
+  }
+
+  return body;
+}
